@@ -9,8 +9,8 @@
 ### 📌 Deliverable 1
 - **📅 Deadline:** **April 4, 2025**  
 - **📝 Includes:**  
-  - 🔄 [`Project Description`](#) (_Project-description-v0.1.pdf_)  
-  - 🔄 [`Use Case`](#) (_Use-case-v0.1.pdf_)  
+  - 🔄 [`Project Description`](https://docs.google.com/document/d/1by1xnSm-Jo8Ildj1wbJ43YJ4qshJwnjNTQICzGNxZz0/edit?usp=sharing) (_Project-description-v0.1.pdf_)  
+  - 🔄 [`Use Case`](https://docs.google.com/document/d/1KXgoxF3EFQFUQrY3Ha2aIjm0_Ofo7Y4os0XJJ7jQMAU/edit?usp=sharing) (_Use-case-v0.1.pdf_)  
   - 🔄 [`Domain Model`](#) (_Domain-model-v0.1.pdf_)  
 
 ---
