@@ -2,7 +2,8 @@
 
 ## 🛠 Tools  
 - [PapandjoDoc](https://docs.google.com/document/d/1LWYzZj5g0PrTYVeoMqu034dFPwDdbO9STg9uPr1al0A/edit?usp=sharing) - Brainstorming and notetaking
-- [LucidChart](https://lucid.app/lucidchart/b7b5925f-630f-4628-9e5f-98b20517f435/edit?invitationId=inv_cb69ee14-0ade-4774-986f-2fcaaf9d790e) – Diagrams
+- [LucidChart](https://lucid.app/lucidchart/b7b5925f-630f-4628-9e5f-98b20517f435/edit?invitationId=inv_cb69ee14-0ade-4774-986f-2fcaaf9d790e) – Use cases
+- [LucidChart](https://lucid.app/lucidchart/3400ca0a-1a28-4ef3-b3d4-da28f1e84853/edit?invitationId=inv_4a7d0ba6-4ceb-4a82-a134-dba140d9f103&page=0_0#) – Classes
   
 ---
 
