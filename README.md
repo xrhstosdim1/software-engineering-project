@@ -10,17 +10,18 @@
 ### 📌 Deliverable 1
 - **📅 Deadline:** **April 4, 2025**  
 - **📝 Includes:**  
-  - 🔄 [`Project Description`](https://docs.google.com/document/d/1by1xnSm-Jo8Ildj1wbJ43YJ4qshJwnjNTQICzGNxZz0/edit?usp=sharing) (_Project-description-v0.1.pdf_)  
-  - 🔄 [`Use Case`](https://docs.google.com/document/d/1KXgoxF3EFQFUQrY3Ha2aIjm0_Ofo7Y4os0XJJ7jQMAU/edit?usp=sharing) (_Use-case-v0.1.pdf_)  
-  - 🔄 [`Domain Model`](#) (_Domain-model-v0.1.pdf_)  
+  - ✔️ [`Project Description`](https://docs.google.com/document/d/1by1xnSm-Jo8Ildj1wbJ43YJ4qshJwnjNTQICzGNxZz0/edit?usp=sharing) (_Project-description-v0.1.pdf_)  
+  - ✔️ [`Use Case`](https://docs.google.com/document/d/1KXgoxF3EFQFUQrY3Ha2aIjm0_Ofo7Y4os0XJJ7jQMAU/edit?usp=sharing) (_Use-case-v0.1.pdf_)  
+  - ✔️ [`Domain Model`]([#](https://github.com/xrhstosdim1/software-engineering-project/blob/main/Deliverable%201/diagrams/domain_CarDeal.pdf)) (_Domain-model-v0.1.pdf_)
+  - ✔️ [`CarDeal_v0.1`](https://github.com/xrhstosdim1/software-engineering-project/blob/main/Deliverable%201/CarDeal_v0.1.pdf) (Deliverable 1)
 
 ---
 
 ### 📌 Deliverable 2 (Optional)  
 - **📅 Deadline:** **April 25, 2025**  
 - **📝 Includes:**  
-  - ⏳ `Robustness Diagram` (_Robustness-diagram-v0.1.pdf_)  
-  - ⏳ `Domain Model (v0.2)` (_Domain-model-v0.2.pdf_) _(only if updated)_  
+  - 🔄 `Robustness Diagram` (_Robustness-diagram-v0.1.pdf_)  
+  - 🔄 `Domain Model (v0.2)` (_Domain-model-v0.2.pdf_) _(only if updated)_  
 
 ---
 
