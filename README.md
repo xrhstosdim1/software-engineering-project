@@ -22,7 +22,7 @@
 - **📝 Includes:**  
   - 🔄 [`Robustness Diagram`](#) (_Robustness-diagram-v0.1.pdf_)
   - 🔄 [`Use Case (v0.2)`](https://docs.google.com/document/d/15TzSBXrV0o9tTkF9s9_6X3xqFXanWhSjBxan5dgkRbc/edit?tab=t.0) (_Use-case-v0.2.pdf_)
-  - 🔄 [`Project Description`](https://docs.google.com/document/d/1YiyAik6mGvyIN1DQK7bnTeoSnghwEKyeT36YcP7-j_c/edit?tab=t.0) (_Project-description-v0.1.pdf_)  
+  - 🔄 [`Project Description (v0.2)`](https://docs.google.com/document/d/1YiyAik6mGvyIN1DQK7bnTeoSnghwEKyeT36YcP7-j_c/edit?tab=t.0) (_Project-description-v0.1.pdf_)  
   - 🔄 [`Domain Model (v0.2)`](#) (_Domain-model-v0.2.pdf_)
   - 🔄 [`CarDeal_v0.2`](#) (_Deliverable 2_)
 
