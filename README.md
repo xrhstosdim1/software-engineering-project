@@ -21,11 +21,11 @@
 ### 📌 Deliverable 2 (Optional)  
 - **📅 Deadline:** **April 25, 2025**  
 - **📝 Includes:**  
-  - 🔄 [`Robustness Diagram`](#) (_Robustness-diagram-v0.1.pdf_)
-  - 🔄 [`Use Case (v0.2)`](https://docs.google.com/document/d/15TzSBXrV0o9tTkF9s9_6X3xqFXanWhSjBxan5dgkRbc/edit?tab=t.0) (_Use-case-v0.2.pdf_)
-  - 🔄 [`Project Description (v0.2)`](https://docs.google.com/document/d/1YiyAik6mGvyIN1DQK7bnTeoSnghwEKyeT36YcP7-j_c/edit?tab=t.0) (_Project-description-v0.1.pdf_)  
-  - 🔄 [`Domain Model (v0.2)`](#) (_Domain-model-v0.2.pdf_)
-  - 🔄 [`CarDeal_v0.2`](#) (_Deliverable 2_)
+  - ✔️ [`Robustness Diagram`](https://github.com/xrhstosdim1/software-engineering-project/tree/main/v0.2/diagrams/robustness) (_Robustness-diagram-v0.2.pdf_)
+  - ✔️ [`Use Case (v0.2)`](https://docs.google.com/document/d/15TzSBXrV0o9tTkF9s9_6X3xqFXanWhSjBxan5dgkRbc/edit?tab=t.0) (_Use-case-v0.2.pdf_)
+  - ❌ [`Project Description (v0.2)`](https://docs.google.com/document/d/1YiyAik6mGvyIN1DQK7bnTeoSnghwEKyeT36YcP7-j_c/edit?tab=t.0) (_Project-description-v0.1.pdf_)  
+  - ✔️ [`Domain Model (v0.2)`](https://github.com/xrhstosdim1/software-engineering-project/blob/main/v0.2/diagrams/domain-diagram_CarDeal_v0.2.pdf) (_Domain-model-v0.2.pdf_)
+  - ✔️ [`CarDeal_v0.2`](https://github.com/xrhstosdim1/software-engineering-project/blob/main/v0.2/CarDeal-v0.2.pdf) (_Deliverable 2_)
 
 ---
 
