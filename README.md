@@ -31,11 +31,13 @@
 
 ### 📌 Deliverable 3 (Optional)  
 - **📅 Deadline:** **May 9, 2025**  
-- **📝 Includes:**  
-  - ⏳ `Sequence Diagram` (_Sequence-diagram-v0.1.pdf_)  
-  - ⏳ `Robustness Diagram (v0.2)` (_Robustness-diagram-v0.2.pdf_) _(only if updated)_  
-  - ⏳ `Use Case (v0.3)` (_Use-case-v0.3.pdf_) _(only if updated)_  
-  - ⏳ `Test Cases` (_Test-cases-v0.1.pdf_)  
+- **📝 Includes:**
+  - 🔄 [`Project Description`](https://docs.google.com/document/d/1BarIcWfROt6JUE0h8rUxEwpulJ435Pwd-uApDBOe6i4/edit?tab=t.0) (_Project-description-v0.3.pdf_)  
+  - 🔄 `Sequence Diagram` (_Sequence-diagram-v0.1.pdf_)  
+  - 🔄 `Robustness Diagram (v0.2)` (_Robustness-diagram-v0.2.pdf_) 
+  - 🔄 [`Use Case (v0.3)`](https://docs.google.com/document/d/1q4D6ZlHP7UGjkJ6uKAERQsnselD18gfgoWshaD_UG5U/edit?tab=t.0) (_Use-case-v0.3.pdf_)
+  - 🔄 [`Test Cases`](https://docs.google.com/document/d/1uGqsJlAGATj1w67Efi4egYOgYmktlot93-q-njfrkcA/edit?tab=t.0) (_Test-cases-v0.1.pdf_)
+  - 🔄 [`CarDeal_v0.3`](#) (_Deliverable 3_)
 
 ---
 
