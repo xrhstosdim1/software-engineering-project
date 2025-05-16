@@ -32,23 +32,23 @@
 ### 📌 Deliverable 3 (Optional)  
 - **📅 Deadline:** **May 9, 2025**  
 - **📝 Includes:**
-  - 🔄 [`Project Description`](https://docs.google.com/document/d/1BarIcWfROt6JUE0h8rUxEwpulJ435Pwd-uApDBOe6i4/edit?tab=t.0) (_Project-description-v0.3.pdf_)  
-  - 🔄 `Sequence Diagram` (_Sequence-diagram-v0.1.pdf_)  
-  - 🔄 `Robustness Diagram (v0.2)` (_Robustness-diagram-v0.2.pdf_) 
-  - 🔄 [`Use Case (v0.3)`](https://docs.google.com/document/d/1q4D6ZlHP7UGjkJ6uKAERQsnselD18gfgoWshaD_UG5U/edit?tab=t.0) (_Use-case-v0.3.pdf_)
-  - 🔄 [`Test Cases`](https://docs.google.com/document/d/1uGqsJlAGATj1w67Efi4egYOgYmktlot93-q-njfrkcA/edit?tab=t.0) (_Test-cases-v0.1.pdf_)
-  - 🔄 [`CarDeal_v0.3`](#) (_Deliverable 3_)
+  - ❌ [`Project Description`](https://docs.google.com/document/d/1BarIcWfROt6JUE0h8rUxEwpulJ435Pwd-uApDBOe6i4/edit?tab=t.0) (_Project-description-v0.3.pdf_)  
+  - ✔️ [`Sequence Diagram`](https://github.com/xrhstosdim1/software-engineering-project/tree/main/v0.3/diagrams/sequence) (_Sequence-diagram-v0.1.pdf_)  
+  - ✔️ [`Robustness Diagram (v0.2)`](https://github.com/xrhstosdim1/software-engineering-project/tree/main/v0.3/diagrams/robustness) (_Robustness-diagram-v0.2.pdf_) 
+  - ✔️ [`Use Case (v0.3)`](https://docs.google.com/document/d/1q4D6ZlHP7UGjkJ6uKAERQsnselD18gfgoWshaD_UG5U/edit?tab=t.0) (_Use-case-v0.3.pdf_)
+  - ❌ [`Test Cases`](#) (_Test-cases-v0.1.pdf_)
+  - ✔️ [`CarDeal_v0.3`](https://github.com/xrhstosdim1/software-engineering-project/blob/main/v0.3/CarDeal-V0.3.pdf) (_Deliverable 3_)
 
 ---
 
 ### 📌 Deliverable 4
 - **📅 Deadline:** **May 30, 2025**  
 - **📝 Includes:**  
-  - ⏳ `Final Versions of All Previous Deliverables`  
-  - ⏳ `Final Code` (_Final-code.zip_)  
-  - ⏳ `Class Diagram` (_Class-diagram-v1.0.pdf_)  
-  - ⏳ `Test Cases` (_Test-cases-v1.0.pdf_)  
-  - ⏳ `Final Project Description` (_Project-description-v1.0.pdf_)  
+  - 🔄 `Final Versions of All Previous Deliverables`  
+  - 🔄 `Final Code` (_Final-code.zip_)  
+  - 🔄 `Class Diagram` (_Class-diagram-v1.0.pdf_)  
+  - 🔄 `Test Cases` (_Test-cases-v1.0.pdf_)  
+  - 🔄 `Final Project Description` (_Project-description-v1.0.pdf_)  
 
 ---
 
