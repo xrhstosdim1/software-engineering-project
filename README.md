@@ -43,12 +43,12 @@
 
 ### 📌 Deliverable 4
 - **📅 Deadline:** **May 30, 2025**  
-- **📝 Includes:**  
-  - 🔄 `Final Versions of All Previous Deliverables`  
-  - 🔄 `Final Code` (_Final-code.zip_)  
-  - 🔄 `Class Diagram` (_Class-diagram-v1.0.pdf_)  
-  - 🔄 `Test Cases` (_Test-cases-v1.0.pdf_)  
-  - 🔄 `Final Project Description` (_Project-description-v1.0.pdf_)  
+- **📝 Includes:**
+  - ⏳ [`Use_Case (v1.0)`](https://docs.google.com/document/d/12Yoq20UkKgS-gp--jqZdtO155eha7_yQuQPoXKjlXsw/edit?tab=t.0)
+  - ⏳ [`Final Code`](https://github.com/xrhstosdim1/software-engineering-project/tree/main/v1.0/code) (_Final-code.zip_)  
+  - ⏳ `Class Diagram` (_Class-diagram-v1.0.pdf_)  
+  - ⏳ [`Test Cases`](https://docs.google.com/document/d/1ZDeaNQJe4I4jmmOQBs5ZdZeJNSAVJ2oTEImh33KD89s/edit?tab=t.0) (_Test-cases-v1.0.pdf_)  
+  - ⏳ [`Project Description`](https://docs.google.com/document/d/1Ty3MZd2tWGfw6rEcdYK-lCJRSbrYUXmJ81v8pnYViKE/edit?tab=t.0) (_Project-description-v1.0.pdf_)  
 
 ---
 
