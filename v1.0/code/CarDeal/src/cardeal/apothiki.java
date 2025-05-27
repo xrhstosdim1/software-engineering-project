@@ -64,6 +64,7 @@ public class apothiki extends javax.swing.JFrame {
         save_packing_progress_btn = new javax.swing.JButton();
         finish_packing_btn = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jLabel29 = new javax.swing.JLabel();
         diaxeirisi_apothematos = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -125,7 +126,7 @@ public class apothiki extends javax.swing.JFrame {
                     .addGroup(default_loggedInLayout.createSequentialGroup()
                         .addGap(570, 570, 570)
                         .addComponent(jLabel17)))
-                .addContainerGap(504, Short.MAX_VALUE))
+                .addContainerGap(530, Short.MAX_VALUE))
         );
         default_loggedInLayout.setVerticalGroup(
             default_loggedInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,7 +216,7 @@ public class apothiki extends javax.swing.JFrame {
                     .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                     .addComponent(dief8insi_txt)
                     .addComponent(telephone_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 476, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 502, Short.MAX_VALUE)
                 .addComponent(jLabel2))
         );
         epexergasia_profileLayout.setVerticalGroup(
@@ -310,6 +311,8 @@ public class apothiki extends javax.swing.JFrame {
         jButton3.setText("Ακύρωση παραγγελίας");
         jButton3.setEnabled(false);
 
+        jLabel29.setText("Προιόντα");
+
         javax.swing.GroupLayout diaxeirisi_paraggeliwnLayout = new javax.swing.GroupLayout(diaxeirisi_paraggeliwn);
         diaxeirisi_paraggeliwn.setLayout(diaxeirisi_paraggeliwnLayout);
         diaxeirisi_paraggeliwnLayout.setHorizontalGroup(
@@ -321,7 +324,7 @@ public class apothiki extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                 .addGap(173, 173, 173)
                 .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 446, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 472, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,6 +362,10 @@ public class apothiki extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(save_packing_progress_btn)))
                 .addGap(98, 98, 98))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel29)
+                .addGap(330, 330, 330))
         );
         diaxeirisi_paraggeliwnLayout.setVerticalGroup(
             diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,7 +391,9 @@ public class apothiki extends javax.swing.JFrame {
                     .addComponent(jLabel27)
                     .addComponent(jLabel18)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(save_packing_progress_btn)
                     .addComponent(finish_packing_btn)
@@ -407,7 +416,6 @@ public class apothiki extends javax.swing.JFrame {
         jLabel10.setText("Είδος");
 
         part_id.setEditable(false);
-        part_id.setText("5");
         part_id.setEnabled(false);
 
         jLabel11.setText("Κωδικός");
@@ -417,7 +425,7 @@ public class apothiki extends javax.swing.JFrame {
 
         jLabel12.setText("Διαθεσιμότητα");
 
-        jLabel16.setText("Επιπλέον ποσότητα");
+        jLabel16.setText("Προσθήκη ποσότητας");
 
         jButton2.setText("Προσθήκη stock");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -432,7 +440,6 @@ public class apothiki extends javax.swing.JFrame {
         part_name2.setFocusable(false);
 
         part_id2.setEditable(false);
-        part_id2.setText("5");
         part_id2.setEnabled(false);
 
         jLabel22.setText("Κωδικός");
@@ -442,7 +449,7 @@ public class apothiki extends javax.swing.JFrame {
         part_stock2.setEditable(false);
         part_stock2.setFocusable(false);
 
-        jLabel24.setText("Αφαίρεση ποσότητα");
+        jLabel24.setText("Αφαίρεσης ποσότητας");
 
         jButton4.setText("Αφαίρεση stock");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -455,12 +462,6 @@ public class apothiki extends javax.swing.JFrame {
         diaxeirisi_apothematos.setLayout(diaxeirisi_apothematosLayout);
         diaxeirisi_apothematosLayout.setHorizontalGroup(
             diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
-                .addGap(472, 472, 472)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
@@ -509,7 +510,13 @@ public class apothiki extends javax.swing.JFrame {
                         .addComponent(jButton4)))
                 .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_apothematosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(622, 622, 622)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_apothematosLayout.createSequentialGroup()
+                .addGap(604, 604, 604)
                 .addComponent(jLabel15)
                 .addGap(515, 515, 515))
         );
@@ -518,11 +525,11 @@ public class apothiki extends javax.swing.JFrame {
             .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addComponent(jLabel15)
-                .addGap(59, 59, 59)
+                .addGap(50, 50, 50)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addGap(83, 83, 83)
+                .addGap(92, 92, 92)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -584,7 +591,7 @@ public class apothiki extends javax.swing.JFrame {
             .addGroup(messagesLayout.createSequentialGroup()
                 .addGap(597, 597, 597)
                 .addComponent(jLabel14)
-                .addGap(0, 676, Short.MAX_VALUE))
+                .addGap(0, 702, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -900,6 +907,7 @@ public void close() {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
