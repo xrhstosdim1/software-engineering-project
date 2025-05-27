@@ -29,6 +29,7 @@ public class apothiki extends javax.swing.JFrame {
         parent_panel = new javax.swing.JPanel();
         default_loggedIn = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         epexergasia_profile = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         onoma_txt = new javax.swing.JTextField();
@@ -47,6 +48,22 @@ public class apothiki extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         diaxeirisi_paraggeliwn = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        save_packing_progress_btn = new javax.swing.JButton();
+        finish_packing_btn = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         diaxeirisi_apothematos = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -94,21 +111,30 @@ public class apothiki extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("CarDeal - Αποθήκη");
 
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cardeal/logo_200x200.png"))); // NOI18N
+
         javax.swing.GroupLayout default_loggedInLayout = new javax.swing.GroupLayout(default_loggedIn);
         default_loggedIn.setLayout(default_loggedInLayout);
         default_loggedInLayout.setHorizontalGroup(
             default_loggedInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(default_loggedInLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 1136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addGroup(default_loggedInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(default_loggedInLayout.createSequentialGroup()
+                        .addGap(448, 448, 448)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(default_loggedInLayout.createSequentialGroup()
+                        .addGap(570, 570, 570)
+                        .addComponent(jLabel17)))
+                .addContainerGap(504, Short.MAX_VALUE))
         );
         default_loggedInLayout.setVerticalGroup(
             default_loggedInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(default_loggedInLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, default_loggedInLayout.createSequentialGroup()
+                .addContainerGap(145, Short.MAX_VALUE)
+                .addComponent(jLabel17)
+                .addGap(29, 29, 29)
+                .addComponent(jLabel9)
+                .addGap(182, 182, 182))
         );
 
         parent_panel.add(default_loggedIn, "card3");
@@ -189,7 +215,7 @@ public class apothiki extends javax.swing.JFrame {
                     .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                     .addComponent(dief8insi_txt)
                     .addComponent(telephone_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 452, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 476, Short.MAX_VALUE)
                 .addComponent(jLabel2))
         );
         epexergasia_profileLayout.setVerticalGroup(
@@ -209,11 +235,12 @@ public class apothiki extends javax.swing.JFrame {
                         .addComponent(dief8insi_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)))
                 .addGap(18, 18, 18)
-                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eponimo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ari8mos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
+                    .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(eponimo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel6)))
                 .addGap(26, 26, 26)
                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -222,29 +249,147 @@ public class apothiki extends javax.swing.JFrame {
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82)
                 .addComponent(Update_DB)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
 
         parent_panel.add(epexergasia_profile, "card2");
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Διαχείριση παραγγελιών");
+
+        jLabel19.setText("Αρ. επιλεγμένης παραγγελίας");
+
+        jTextField2.setEditable(false);
+        jTextField2.setEnabled(false);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setText("Όνομα");
+
+        jLabel25.setText("Επώνυμο");
+
+        jTextField3.setEditable(false);
+        jTextField3.setEnabled(false);
+
+        jTextField4.setEditable(false);
+        jTextField4.setEnabled(false);
+
+        jLabel27.setText("email");
+
+        jTextField6.setEditable(false);
+        jTextField6.setEnabled(false);
+
+        jLabel28.setText("Κατάσταση");
+
+        jTextField7.setEditable(false);
+        jTextField7.setEnabled(false);
+
+        jLabel18.setText("Ημερομηνία");
+
+        jTextField5.setEditable(false);
+        jTextField5.setEnabled(false);
+
+        jLabel26.setText("Παραγγελίες");
+
+        save_packing_progress_btn.setText("Αποθήκευση");
+        save_packing_progress_btn.setEnabled(false);
+        save_packing_progress_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_packing_progress_btnActionPerformed(evt);
+            }
+        });
+
+        finish_packing_btn.setText("Ολοκλήρωση συσκευασίας");
+        finish_packing_btn.setToolTipText("");
+        finish_packing_btn.setEnabled(false);
+
+        jButton3.setText("Ακύρωση παραγγελίας");
+        jButton3.setEnabled(false);
 
         javax.swing.GroupLayout diaxeirisi_paraggeliwnLayout = new javax.swing.GroupLayout(diaxeirisi_paraggeliwn);
         diaxeirisi_paraggeliwn.setLayout(diaxeirisi_paraggeliwnLayout);
         diaxeirisi_paraggeliwnLayout.setHorizontalGroup(
             diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                .addGap(509, 509, 509)
+                .addGap(535, 535, 535)
                 .addComponent(jLabel13)
-                .addContainerGap(593, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                .addGap(173, 173, 173)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 446, Short.MAX_VALUE)
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(39, 39, 39))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(39, 39, 39)))
+                                .addGap(17, 17, 17)
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel25)
+                                    .addComponent(jLabel18))
+                                .addGap(18, 18, 18))
+                            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel28)
+                                .addGap(18, 18, 18)))
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField7)
+                            .addComponent(jTextField4)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(18, 18, 18)
+                        .addComponent(finish_packing_btn)
+                        .addGap(18, 18, 18)
+                        .addComponent(save_packing_progress_btn)))
+                .addGap(98, 98, 98))
         );
         diaxeirisi_paraggeliwnLayout.setVerticalGroup(
             diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
+                .addGap(59, 59, 59)
                 .addComponent(jLabel13)
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
+                .addGap(18, 18, 18)
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel18)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(save_packing_progress_btn)
+                    .addComponent(finish_packing_btn)
+                    .addComponent(jButton3))
+                .addGap(27, 27, 27))
         );
 
         parent_panel.add(diaxeirisi_paraggeliwn, "card4");
@@ -340,7 +485,7 @@ public class apothiki extends javax.swing.JFrame {
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGap(228, 228, 228)
                         .addComponent(jButton2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 451, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 475, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
@@ -384,8 +529,8 @@ public class apothiki extends javax.swing.JFrame {
                             .addComponent(part_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10))
                         .addGap(18, 18, 18)
-                        .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(part_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(part_id, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11))
                         .addGap(18, 18, 18)
                         .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -402,8 +547,8 @@ public class apothiki extends javax.swing.JFrame {
                             .addComponent(part_name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel21))
                         .addGap(18, 18, 18)
-                        .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(part_id2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(part_id2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22))
                         .addGap(18, 18, 18)
                         .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -415,7 +560,7 @@ public class apothiki extends javax.swing.JFrame {
                             .addComponent(jLabel24))
                         .addGap(55, 55, 55)
                         .addComponent(jButton4)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         parent_panel.add(diaxeirisi_apothematos, "card6");
@@ -439,7 +584,7 @@ public class apothiki extends javax.swing.JFrame {
             .addGroup(messagesLayout.createSequentialGroup()
                 .addGap(597, 597, 597)
                 .addComponent(jLabel14)
-                .addGap(0, 652, Short.MAX_VALUE))
+                .addGap(0, 676, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,7 +602,7 @@ public class apothiki extends javax.swing.JFrame {
                 .addComponent(jLabel14)
                 .addGap(92, 92, 92)
                 .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(send_new_message_btn)
                 .addGap(97, 97, 97))
         );
@@ -671,6 +816,14 @@ public void close() {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void save_packing_progress_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_packing_progress_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_save_packing_progress_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -721,8 +874,10 @@ public void close() {
     private javax.swing.JTextField email_txt;
     private javax.swing.JPanel epexergasia_profile;
     private javax.swing.JTextField eponimo_txt;
+    private javax.swing.JButton finish_packing_btn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -732,11 +887,19 @@ public void close() {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -746,6 +909,12 @@ public void close() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JMenu leitourgies_axrhsto;
     private javax.swing.JPanel messages;
     private javax.swing.JTextField new_message_txt;
@@ -759,6 +928,7 @@ public void close() {
     private javax.swing.JTextField part_new_stock2;
     private javax.swing.JTextField part_stock;
     private javax.swing.JTextField part_stock2;
+    private javax.swing.JButton save_packing_progress_btn;
     private javax.swing.JButton send_new_message_btn;
     private javax.swing.JMenuItem stock_btn;
     private javax.swing.JTextField telephone_txt;
