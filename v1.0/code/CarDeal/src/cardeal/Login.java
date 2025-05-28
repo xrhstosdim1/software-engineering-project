@@ -7,10 +7,7 @@ package cardeal;
 import java.sql.*;
 import javax.swing.*;
 
-/**
- *
- * @author fpilo
- */
+
 public class Login extends javax.swing.JFrame {
     /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -148,7 +145,7 @@ PreparedStatement pst=null;
                           pstMech.close();
                        }
                        
-                       
+                    Session.setUsername(username); 
                     rsapo8iki.close();
                     pstapo8iki.close();
                     JOptionPane.showMessageDialog(rootPane, "Successful login!");

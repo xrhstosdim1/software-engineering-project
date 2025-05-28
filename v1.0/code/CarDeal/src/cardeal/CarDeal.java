@@ -4,10 +4,7 @@
  */
 package cardeal;
 
-/**
- *
- * @author fpilo
- */
+
 public class CarDeal {
 
     /**

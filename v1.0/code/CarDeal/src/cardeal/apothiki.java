@@ -4,17 +4,20 @@
  */
 package cardeal;
 
-/**
- *
- * @author fpilo
- */
-public class apothiki extends javax.swing.JFrame {
+import java.sql.*;
+import javax.swing.*;
 
+
+public class apothiki extends javax.swing.JFrame {
+Connection conn=null;
+ResultSet rs =null;
+PreparedStatement pst=null;
     /**
      * Creates new form apothiki
      */
     public apothiki() {
         initComponents();
+        conn = connect.connectDb();
     }
 
     /**
@@ -718,9 +721,29 @@ public class apothiki extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void close() { 
+ public void close() { 
     this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
     this.dispose();
+}
+ private void loadUserProfile() {
+    String username = Session.getUsername();
+    try {
+        String sql = "SELECT FirstName, LastName, Email, Address, Telephone FROM User WHERE Username = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, username);
+        ResultSet rs = pst.executeQuery();
+        if (rs.next()) {
+            onoma_txt.setText(rs.getString("FirstName"));
+            eponimo_txt.setText(rs.getString("LastName"));
+            email_txt.setText(rs.getString("Email"));
+            dief8insi_txt.setText(rs.getString("Address"));
+            telephone_txt.setText(rs.getString("Telephone"));
+        }
+        rs.close();
+        pst.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
+    }
 }
     private void diaxeirisi_parageliwnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaxeirisi_parageliwnActionPerformed
        parent_panel.removeAll();
@@ -764,6 +787,9 @@ public void close() {
        parent_panel.add(epexergasia_profile);
        parent_panel.repaint();
        parent_panel.revalidate();
+       loadUserProfile();
+       String username = Session.getUsername();
+ 
     }//GEN-LAST:event_edit_profile_buttonMenuSelected
 
     private void diaxeirisi_parageliwnMenuKeyPressed(javax.swing.event.MenuKeyEvent evt) {//GEN-FIRST:event_diaxeirisi_parageliwnMenuKeyPressed

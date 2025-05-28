@@ -4,10 +4,7 @@
  */
 package cardeal;
 
-/**
- *
- * @author Paris
- */
+
 public class service extends javax.swing.JFrame {
 
     /**
