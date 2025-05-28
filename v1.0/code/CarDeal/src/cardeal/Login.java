@@ -102,65 +102,89 @@ PreparedStatement pst=null;
           String sql="SELECT u.username, u.UserPassword FROM User u  WHERE u.username = ? AND u.Userpassword = ?"; 
 //LOGIN QUERY GIA ELEGXO IMEROMINIAS KAI USERNAME KAI PASSWORD
                
-                    
-            try{
-                pst=conn.prepareStatement(sql);
-               
-                pst.setString(1, txt_username.getText()); // STRING RECOGNITION GIA USERNAME K PASSWORD APO TA FIELDS
-               
-                pst.setString(2, new String(txt_password.getPassword()));
-               
-                 rs=pst.executeQuery();
-               
-                 
-                    if(rs.next()){
-                       String username = txt_username.getText().trim();
-                       String checkapo8iki = "Select AdminUsername FROM Admin Where AdminUsername = ?" ;
-                       PreparedStatement pstapo8iki = conn.prepareStatement(checkapo8iki);
-                       pstapo8iki.setString(1, username);
-                       ResultSet rsapo8iki = pstapo8iki.executeQuery();
-                       
-                       if (rsapo8iki.next()){
-                           apothiki ap = new apothiki();
-                            ap.setVisible(true);
-                            ap.pack();
-                            ap.setLocationRelativeTo(null);
-                            ap.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
-                            close();
-                       }
-                       else{
-                           String checkMech ="SELECT MechanicUsername FROM Mechanic Where MechanicUsername = ?";
-                           PreparedStatement pstMech = conn.prepareStatement(checkMech);
-                           pstMech.setString(1,username);
-                           ResultSet rsMech = pstMech.executeQuery();
-                           if (rsMech.next()){
-                               service ser = new service ();
-                               ser.setVisible(true);
-                               ser.pack();
-                               ser.setLocationRelativeTo(null);
-                               ser.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
-                               close();    
-                           }
-                          rsMech.close();
-                          pstMech.close();
-                       }
-                       
-                    Session.setUsername(username); 
-                    rsapo8iki.close();
-                    pstapo8iki.close();
-                    JOptionPane.showMessageDialog(rootPane, "Successful login!");
-                  
                 
-                     
-                                    }
-                else {
-                        JOptionPane.showMessageDialog(rootPane, "Invalid or expired credentials ", "Login Failed", 2);
-                     }         
+            try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, txt_username.getText().trim());
+            pst.setString(2, new String(txt_password.getPassword()));
+
+            rs = pst.executeQuery();
+
+            if (rs.next()) {
+                String username = txt_username.getText().trim();
+                boolean foundRole = false;
+
+                // Check Admin
+                String checkapo8iki = "SELECT AdminUsername FROM Admin WHERE AdminUsername = ?";
+                PreparedStatement pstapo8iki = conn.prepareStatement(checkapo8iki);
+                pstapo8iki.setString(1, username);
+                ResultSet rsapo8iki = pstapo8iki.executeQuery();
+
+                if (rsapo8iki.next()) {
+                    Session.setUsername(username);
+                    apothiki ap = new apothiki();
+                    ap.setVisible(true);
+                    ap.pack();
+                    ap.setLocationRelativeTo(null);
+                    ap.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                    close();
+                    foundRole = true;
                 }
-           catch(Exception e){
-                    JOptionPane.showMessageDialog(null, e);
+                rsapo8iki.close();
+                pstapo8iki.close();
+
+                if (!foundRole) {
+                    // Check Mechanic
+                    String checkMech ="SELECT MechanicUsername FROM Mechanic WHERE MechanicUsername = ?";
+                    PreparedStatement pstMech = conn.prepareStatement(checkMech);
+                    pstMech.setString(1, username);
+                    ResultSet rsMech = pstMech.executeQuery();
+                    if (rsMech.next()) {
+                        Session.setUsername(username);
+                        
+                        service ser = new service();
+                        ser.setVisible(true);
+                        ser.pack();
+                        ser.setLocationRelativeTo(null);
+                        ser.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                        close();
+                        foundRole = true;
+                     
                     }
-    }                                        
+                    rsMech.close();
+                    pstMech.close();
+                }
+
+                if (!foundRole) {
+                    // Check Customer/Costumer
+                    String checkCust = "SELECT CustomerUsername FROM Customer WHERE CustomerUsername = ?";
+                    PreparedStatement pstCust = conn.prepareStatement(checkCust);
+                    pstCust.setString(1, username);
+                    ResultSet rsCust = pstCust.executeQuery();
+                    if (rsCust.next()) {
+                        Session.setUsername(username);
+                        
+                        // Replace 'customerWindow' with your actual customer JFrame class
+                        customer custWin = new customer();
+                        custWin.setVisible(true);
+                        custWin.pack();
+                        custWin.setLocationRelativeTo(null);
+                        custWin.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                        close();
+                        foundRole = true;
+                      
+                    }
+                    rsCust.close();
+                    pstCust.close();
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Invalid or expired credentials ", "Login Failed", 2);
+            }
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
 public void close() { 
     this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
     this.dispose();
