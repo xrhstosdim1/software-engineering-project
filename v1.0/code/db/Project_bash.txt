@@ -1,0 +1,130 @@
+CREATE TABLE Product
+(
+    ProductID INT(10) PRIMARY KEY,
+    ProductName VARCHAR(100) UNIQUE,
+    Price DECIMAL(10, 2),
+    Quantity INT(3),
+    Status ENUM('Avaible for purchase', 'Unavailable','Avaible for leasing')
+);
+
+
+CREATE TABLE User
+(
+    Username VARCHAR(30) PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName  VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    UserPassword VARCHAR(100),
+    Telephone INT(10),
+    Address VARCHAR(100)
+);
+
+CREATE TABLE Costumer
+(
+    CostumerUsername VARCHAR(30) PRIMARY KEY,
+     CONSTRAINT FK_CostumerID FOREIGN KEY (CostumerUsername)   REFERENCES User(Username)
+    ON UPDATE CASCADE ON DELETE CASCADE
+  
+);
+
+CREATE TABLE Mechanic
+(
+    MechanicUsername VARCHAR(30) PRIMARY KEY,
+     CONSTRAINT FK_MechanicID FOREIGN KEY (MechanicUsername)   REFERENCES User(Username)
+    ON UPDATE CASCADE ON DELETE CASCADE
+  
+);
+
+CREATE TABLE Admin
+(
+    AdminUsername VARCHAR(30) PRIMARY KEY,
+     CONSTRAINT FK_AdminID FOREIGN KEY (AdminUsername)   REFERENCES User(Username)
+    ON UPDATE CASCADE ON DELETE CASCADE
+  
+);
+
+CREATE TABLE Order_
+(
+    OrderNum INT(10) PRIMARY KEY AUTO_INCREMENT,
+    OrderID INT(10)  NOT NULL,
+    OrderDate DATE,
+    CostumerName VARCHAR(30),
+    ProductID INT(10) NOT NULL,
+    Quantity INT(2),
+    Sub_date DATE,
+    F_date DATE,
+    Status_ ENUM('Pending', 'Ready for Pickup', 'Finished', 'Cancelled'),
+    MechanicName VARCHAR(30),
+    Price DECIMAL(10, 2),
+    CONSTRAINT FP_CostumerID FOREIGN KEY (CostumerName)   REFERENCES Costumer(CostumerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FP_MechanicID FOREIGN KEY (MechanicName)   REFERENCES Mechanic(MechanicUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FP_ProductID FOREIGN KEY (ProductID)   REFERENCES Product(ProductID)
+    ON UPDATE CASCADE ON DELETE CASCADE
+
+);
+
+
+
+CREATE TABLE Test_Drive
+(
+    TestDriveID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    TestDriveDate DATETIME UNIQUE NOT NULL,
+    CostumerName VARCHAR(30) NOT NULL,
+    VehicleName VARCHAR(50) NOT NULL,
+    CONSTRAINT FF_CostumerID FOREIGN KEY (CostumerName)   REFERENCES Costumer(CostumerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE Table Repairs
+(
+    CarPlate VARCHAR(6) PRIMARY KEY,
+    CarName VARCHAR(50) NOT NULL,
+    Model VARCHAR(50) NOT NULL,
+    OwnerName VARCHAR(30) NOT NULL,
+    Mileage INT(10) NOT NULL,
+    CONSTRAINT FL_CostumerID3 FOREIGN KEY (OwnerName)  REFERENCES Costumer(CostumerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE Trade_In
+(
+    TradeID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    CostumerName VARCHAR(30),
+    TradeDate DATETIME UNIQUE NOT NULL,
+    CarName VARCHAR(50),
+    CarModel VARCHAR(50),
+    Description TEXT,	
+    Price DECIMAL(10, 2),
+    CONSTRAINT FX_CostumerID3 FOREIGN KEY (CostumerName)  REFERENCES Costumer(CostumerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE
+   
+);
+
+
+CREATE TABLE ServiceHistory(
+    ServiceID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    CarPlate VARCHAR(6),
+    ServiceType VARCHAR(50) NOT NULL,
+    ServiceDate DATE NOT NULL DEFAULT (CURRENT_DATE),
+    Description TEXT
+);
+
+
+
+CREATE TABLE Leasing
+(
+    LeasingID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    CostumerName VARCHAR(30),
+    ProductID INT(10) NOT NULL,
+    Start_date DATE,
+    Final_date DATE,
+    Status_ ENUM('Pending', 'Renting', 'Finished', 'Cancelled'),
+    Price DECIMAL(10, 2),
+    CONSTRAINT FZ_CostumerID FOREIGN KEY (CostumerName)   REFERENCES Costumer(CostumerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FZ_ProductID FOREIGN KEY (ProductID)   REFERENCES Product(ProductID)
+    ON UPDATE CASCADE ON DELETE CASCADE
+
+);
