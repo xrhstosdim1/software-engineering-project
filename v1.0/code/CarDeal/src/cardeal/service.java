@@ -174,11 +174,18 @@ public class service extends javax.swing.JFrame {
 
         jLabel15.setText("Χρονολογία");
 
+        make_txt.setFocusable(false);
         make_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 make_txtActionPerformed(evt);
             }
         });
+
+        vin_txt.setFocusable(false);
+
+        model_txt.setFocusable(false);
+
+        year_txt.setFocusable(false);
 
         jLabel16.setText("Σημειώσεις Service");
 
@@ -188,6 +195,7 @@ public class service extends javax.swing.JFrame {
 
         jLabel18.setText("Πελάτης");
 
+        pelatis_txt.setFocusable(false);
         pelatis_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pelatis_txtActionPerformed(evt);
@@ -388,43 +396,46 @@ public class service extends javax.swing.JFrame {
         epexergasia_profileLayout.setHorizontalGroup(
             epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                .addGap(396, 396, 396)
                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
-                        .addGap(396, 396, 396)
-                        .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(save_data)
-                            .addGroup(epexergasia_profileLayout.createSequentialGroup()
-                                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(40, 40, 40)
-                                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(email_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                                    .addComponent(eponimo_txt)
-                                    .addComponent(onoma_txt))
-                                .addGap(105, 105, 105))))
-                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
-                        .addGap(536, 536, 536)
-                        .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel6))))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(40, 40, 40)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(onoma_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(eponimo_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(email_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel8)
+                        .addComponent(jLabel6)))
                 .addGap(39, 39, 39)
                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                    .addComponent(dief8insi_txt)
-                    .addComponent(telephone_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 508, Short.MAX_VALUE)
+                    .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addComponent(telephone_txt)
+                    .addComponent(dief8insi_txt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 445, Short.MAX_VALUE)
                 .addComponent(jLabel2))
+            .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                        .addGap(555, 555, 555)
+                        .addComponent(jLabel9))
+                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                        .addGap(634, 634, 634)
+                        .addComponent(save_data)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         epexergasia_profileLayout.setVerticalGroup(
             epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(epexergasia_profileLayout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(68, 68, 68)
                 .addComponent(jLabel9)
-                .addGap(93, 93, 93)
+                .addGap(91, 91, 91)
                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(epexergasia_profileLayout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -448,9 +459,9 @@ public class service extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel8)
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82)
+                .addGap(51, 51, 51)
                 .addComponent(save_data)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         parentPanel.add(epexergasia_profile, "card2");
