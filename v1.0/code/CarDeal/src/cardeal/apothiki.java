@@ -735,7 +735,7 @@ public void close() {
        Lg.pack();
        Lg.setLocationRelativeTo(null);
        Lg.setDefaultCloseOperation(apothiki.DISPOSE_ON_CLOSE);
-       close();
+       close(); // axristooooo
     }//GEN-LAST:event_Logout_buttonActionPerformed
 
     private void edit_profile_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_profile_buttonActionPerformed

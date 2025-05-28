@@ -30,9 +30,31 @@ public class service extends javax.swing.JFrame {
         Welcome = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        messages = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        send_new_message_btn = new javax.swing.JButton();
+        new_message_txt = new javax.swing.JTextField();
+        epexergasia_profile = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        onoma_txt = new javax.swing.JTextField();
+        eponimo_txt = new javax.swing.JTextField();
+        email_txt = new javax.swing.JTextField();
+        dief8insi_txt = new javax.swing.JTextField();
+        ari8mos_txt = new javax.swing.JTextField();
+        telephone_txt = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Update_DB = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         leitourgies_btn = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        trade_in_btn = new javax.swing.JMenuItem();
+        minimata_btn = new javax.swing.JMenuItem();
         edit_profile_btn = new javax.swing.JMenu();
         Logout_btn = new javax.swing.JMenu();
 
@@ -52,40 +74,230 @@ public class service extends javax.swing.JFrame {
         Welcome.setLayout(WelcomeLayout);
         WelcomeLayout.setHorizontalGroup(
             WelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, WelcomeLayout.createSequentialGroup()
-                .addContainerGap(527, Short.MAX_VALUE)
+            .addGroup(WelcomeLayout.createSequentialGroup()
                 .addGroup(WelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(WelcomeLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGap(520, 520, 520)
+                        .addComponent(jLabel1))
+                    .addGroup(WelcomeLayout.createSequentialGroup()
+                        .addGap(604, 604, 604)
                         .addComponent(jLabel17)))
-                .addGap(529, 529, 529))
+                .addContainerGap(536, Short.MAX_VALUE))
         );
         WelcomeLayout.setVerticalGroup(
             WelcomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(WelcomeLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(137, 137, 137)
                 .addComponent(jLabel17)
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         parentPanel.add(Welcome, "card2");
 
-        leitourgies_btn.setText("Λειτουργίες");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1417, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 597, Short.MAX_VALUE)
+        );
 
-        jMenuItem1.setText("Αμάξια προς ανταλλαγή");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        parentPanel.add(jPanel1, "card4");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel14.setText("Μηνύματα");
+
+        send_new_message_btn.setText("Αποστολή");
+
+        new_message_txt.setText("Πληκτρολογήστε νέο μήνυμα");
+        new_message_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                new_message_txtActionPerformed(evt);
             }
         });
-        leitourgies_btn.add(jMenuItem1);
+
+        javax.swing.GroupLayout messagesLayout = new javax.swing.GroupLayout(messages);
+        messages.setLayout(messagesLayout);
+        messagesLayout.setHorizontalGroup(
+            messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(messagesLayout.createSequentialGroup()
+                .addGap(597, 597, 597)
+                .addComponent(jLabel14)
+                .addGap(0, 702, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
+                        .addComponent(send_new_message_btn)
+                        .addGap(332, 332, 332))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
+                        .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(74, 74, 74))))
+        );
+        messagesLayout.setVerticalGroup(
+            messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(messagesLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(jLabel14)
+                .addGap(92, 92, 92)
+                .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addComponent(send_new_message_btn)
+                .addGap(97, 97, 97))
+        );
+
+        parentPanel.add(messages, "card5");
+
+        epexergasia_profile.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.darkGray, null, null));
+        epexergasia_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        epexergasia_profile.setEnabled(false);
+        epexergasia_profile.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                epexergasia_profileComponentAdded(evt);
+            }
+        });
+
+        onoma_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onoma_txtActionPerformed(evt);
+            }
+        });
+
+        dief8insi_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dief8insi_txtActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Όνομα");
+
+        jLabel4.setText("Επώνυμο");
+
+        jLabel5.setText("Email");
+
+        Update_DB.setText("Αποθήκευση");
+        Update_DB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Update_DBActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Διεύθυνση");
+
+        jLabel7.setText("Αριθμός");
+
+        jLabel8.setText("Τηλέφωνο");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel9.setText("Επεξεργασία Προφίλ");
+
+        javax.swing.GroupLayout epexergasia_profileLayout = new javax.swing.GroupLayout(epexergasia_profile);
+        epexergasia_profile.setLayout(epexergasia_profileLayout);
+        epexergasia_profileLayout.setHorizontalGroup(
+            epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                        .addGap(396, 396, 396)
+                        .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Update_DB)
+                            .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGap(40, 40, 40)
+                                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(email_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                                    .addComponent(eponimo_txt)
+                                    .addComponent(onoma_txt))
+                                .addGap(105, 105, 105))))
+                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                        .addGap(536, 536, 536)
+                        .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6))))
+                .addGap(39, 39, 39)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                    .addComponent(dief8insi_txt)
+                    .addComponent(telephone_txt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 502, Short.MAX_VALUE)
+                .addComponent(jLabel2))
+        );
+        epexergasia_profileLayout.setVerticalGroup(
+            epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel9)
+                .addGap(93, 93, 93)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(epexergasia_profileLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(onoma_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dief8insi_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6)))
+                .addGap(18, 18, 18)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ari8mos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(eponimo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel7)))
+                .addGap(26, 26, 26)
+                .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel8)
+                    .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
+                .addComponent(Update_DB)
+                .addContainerGap(179, Short.MAX_VALUE))
+        );
+
+        parentPanel.add(epexergasia_profile, "card2");
+
+        leitourgies_btn.setText("Λειτουργίες");
+
+        trade_in_btn.setText("Αμάξια προς ανταλλαγή");
+        trade_in_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                trade_in_btnActionPerformed(evt);
+            }
+        });
+        leitourgies_btn.add(trade_in_btn);
+
+        minimata_btn.setText("Μηνύματα");
+        minimata_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minimata_btnActionPerformed(evt);
+            }
+        });
+        leitourgies_btn.add(minimata_btn);
 
         jMenuBar1.add(leitourgies_btn);
 
         edit_profile_btn.setText("Επεξεργασία προφίλ");
+        edit_profile_btn.addMenuListener(new javax.swing.event.MenuListener() {
+            public void menuCanceled(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuDeselected(javax.swing.event.MenuEvent evt) {
+            }
+            public void menuSelected(javax.swing.event.MenuEvent evt) {
+                edit_profile_btnMenuSelected(evt);
+            }
+        });
         jMenuBar1.add(edit_profile_btn);
 
         Logout_btn.setText("Αποσύνδεση");
@@ -124,22 +336,56 @@ public void close() {
     this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
     this.dispose();
 }
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void trade_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trade_in_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_trade_in_btnActionPerformed
 
     private void Logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_btnActionPerformed
-        Login Lg = new Login();
+      
+    }//GEN-LAST:event_Logout_btnActionPerformed
+
+    private void Logout_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_Logout_btnMenuSelected
+          Login Lg = new Login();
        Lg.setVisible(true);
        Lg.pack();
        Lg.setLocationRelativeTo(null);
        Lg.setDefaultCloseOperation(apothiki.DISPOSE_ON_CLOSE);
        close();
-    }//GEN-LAST:event_Logout_btnActionPerformed
-
-    private void Logout_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_Logout_btnMenuSelected
-        
     }//GEN-LAST:event_Logout_btnMenuSelected
+
+    private void onoma_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onoma_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onoma_txtActionPerformed
+
+    private void dief8insi_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dief8insi_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dief8insi_txtActionPerformed
+
+    private void Update_DBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_DBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Update_DBActionPerformed
+
+    private void epexergasia_profileComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_epexergasia_profileComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_epexergasia_profileComponentAdded
+
+    private void new_message_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_message_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_new_message_txtActionPerformed
+
+    private void minimata_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimata_btnActionPerformed
+       parentPanel.removeAll();
+       parentPanel.add(messages);
+       parentPanel.repaint();
+       parentPanel.revalidate();
+    }//GEN-LAST:event_minimata_btnActionPerformed
+
+    private void edit_profile_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_edit_profile_btnMenuSelected
+       parentPanel.removeAll();
+       parentPanel.add(epexergasia_profile);
+       parentPanel.repaint();
+       parentPanel.revalidate();
+    }//GEN-LAST:event_edit_profile_btnMenuSelected
 
     /**
      * @param args the command line arguments
@@ -178,13 +424,35 @@ public void close() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Logout_btn;
+    private javax.swing.JButton Update_DB;
     private javax.swing.JPanel Welcome;
+    private javax.swing.JTextField ari8mos_txt;
+    private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JMenu edit_profile_btn;
+    private javax.swing.JTextField email_txt;
+    private javax.swing.JPanel epexergasia_profile;
+    private javax.swing.JTextField eponimo_txt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu leitourgies_btn;
+    private javax.swing.JPanel messages;
+    private javax.swing.JMenuItem minimata_btn;
+    private javax.swing.JTextField new_message_txt;
+    private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parentPanel;
+    private javax.swing.JButton send_new_message_btn;
+    private javax.swing.JTextField telephone_txt;
+    private javax.swing.JMenuItem trade_in_btn;
     // End of variables declaration//GEN-END:variables
 }
