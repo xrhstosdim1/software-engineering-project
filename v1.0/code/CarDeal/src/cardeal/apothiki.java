@@ -6,7 +6,7 @@ package cardeal;
 
 import java.sql.*;
 import javax.swing.*;
-
+import net.proteanit.sql.DbUtils;
 
 public class apothiki extends javax.swing.JFrame {
 Connection conn=null;
@@ -94,8 +94,10 @@ PreparedStatement pst=null;
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
         new_message_txt = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Table_show = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
-        leitourgies_axrhsto = new javax.swing.JMenu();
+        messages_btn = new javax.swing.JMenu();
         diaxeirisi_parageliwn = new javax.swing.JMenuItem();
         stock_btn = new javax.swing.JMenuItem();
         diaxeirisi_stock = new javax.swing.JMenuItem();
@@ -135,7 +137,7 @@ PreparedStatement pst=null;
         default_loggedInLayout.setVerticalGroup(
             default_loggedInLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, default_loggedInLayout.createSequentialGroup()
-                .addContainerGap(145, Short.MAX_VALUE)
+                .addContainerGap(176, Short.MAX_VALUE)
                 .addComponent(jLabel17)
                 .addGap(29, 29, 29)
                 .addComponent(jLabel9)
@@ -254,7 +256,7 @@ PreparedStatement pst=null;
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82)
                 .addComponent(Update_DB)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         parent_panel.add(epexergasia_profile, "card2");
@@ -393,7 +395,7 @@ PreparedStatement pst=null;
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(save_packing_progress_btn)
                     .addComponent(finish_packing_btn)
@@ -567,7 +569,7 @@ PreparedStatement pst=null;
                             .addComponent(jLabel24))
                         .addGap(55, 55, 55)
                         .addComponent(jButton4)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
 
         parent_panel.add(diaxeirisi_apothematos, "card6");
@@ -576,6 +578,11 @@ PreparedStatement pst=null;
         jLabel14.setText("Μηνύματα");
 
         send_new_message_btn.setText("Αποστολή");
+        send_new_message_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                send_new_message_btnActionPerformed(evt);
+            }
+        });
 
         new_message_txt.setText("Πληκτρολογήστε νέο μήνυμα");
         new_message_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -584,42 +591,59 @@ PreparedStatement pst=null;
             }
         });
 
+        Table_show.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(Table_show);
+
         javax.swing.GroupLayout messagesLayout = new javax.swing.GroupLayout(messages);
         messages.setLayout(messagesLayout);
         messagesLayout.setHorizontalGroup(
             messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(messagesLayout.createSequentialGroup()
-                .addGap(597, 597, 597)
-                .addComponent(jLabel14)
-                .addGap(0, 702, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
-                        .addComponent(send_new_message_btn)
-                        .addGap(332, 332, 332))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
-                        .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))))
+                    .addGroup(messagesLayout.createSequentialGroup()
+                        .addContainerGap(656, Short.MAX_VALUE)
+                        .addComponent(jLabel14))
+                    .addComponent(jScrollPane1))
+                .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(messagesLayout.createSequentialGroup()
+                        .addGap(294, 294, 294)
+                        .addComponent(send_new_message_btn))
+                    .addGroup(messagesLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
         );
         messagesLayout.setVerticalGroup(
             messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(messagesLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel14)
-                .addGap(92, 92, 92)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addGap(72, 72, 72)
                 .addComponent(send_new_message_btn)
-                .addGap(97, 97, 97))
+                .addGap(88, 88, 88))
+            .addGroup(messagesLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel14)
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE))
         );
 
         parent_panel.add(messages, "card5");
 
-        leitourgies_axrhsto.setText("Λειτουργίες");
-        leitourgies_axrhsto.addActionListener(new java.awt.event.ActionListener() {
+        messages_btn.setText("Λειτουργίες");
+        messages_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                leitourgies_axrhstoActionPerformed(evt);
+                messages_btnActionPerformed(evt);
             }
         });
 
@@ -643,7 +667,7 @@ PreparedStatement pst=null;
                 diaxeirisi_parageliwnActionPerformed(evt);
             }
         });
-        leitourgies_axrhsto.add(diaxeirisi_parageliwn);
+        messages_btn.add(diaxeirisi_parageliwn);
 
         stock_btn.setText("Μηνύματα");
         stock_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -651,7 +675,7 @@ PreparedStatement pst=null;
                 stock_btnActionPerformed(evt);
             }
         });
-        leitourgies_axrhsto.add(stock_btn);
+        messages_btn.add(stock_btn);
 
         diaxeirisi_stock.setText("Διαχείριση αποθέματος");
         diaxeirisi_stock.addActionListener(new java.awt.event.ActionListener() {
@@ -659,9 +683,9 @@ PreparedStatement pst=null;
                 diaxeirisi_stockActionPerformed(evt);
             }
         });
-        leitourgies_axrhsto.add(diaxeirisi_stock);
+        messages_btn.add(diaxeirisi_stock);
 
-        jMenuBar1.add(leitourgies_axrhsto);
+        jMenuBar1.add(messages_btn);
 
         edit_profile_button.setText("Επεξεργασία προφιλ");
         edit_profile_button.addMenuListener(new javax.swing.event.MenuListener() {
@@ -728,7 +752,7 @@ PreparedStatement pst=null;
  private void loadUserProfile() {
     String username = Session.getUsername();
     try {
-        String sql = "SELECT FirstName, LastName, Email, Address, Telephone FROM User WHERE Username = ?";
+        String sql = "SELECT FirstName, LastName, Email, Street, StreetNum, Telephone FROM User WHERE Username = ?";
         PreparedStatement pst = conn.prepareStatement(sql);
         pst.setString(1, username);
         ResultSet rs = pst.executeQuery();
@@ -736,7 +760,8 @@ PreparedStatement pst=null;
             onoma_txt.setText(rs.getString("FirstName"));
             eponimo_txt.setText(rs.getString("LastName"));
             email_txt.setText(rs.getString("Email"));
-            dief8insi_txt.setText(rs.getString("Address"));
+            dief8insi_txt.setText(rs.getString("Street"));
+            ari8mos_txt.setText(rs.getString("StreetNum"));
             telephone_txt.setText(rs.getString("Telephone"));
         }
         rs.close();
@@ -745,6 +770,19 @@ PreparedStatement pst=null;
         JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
     }
 }
+ private void Update_Table(String tablename){
+   
+        try {
+                  String sql = "SELECT * FROM " + tablename ;
+                  pst=conn.prepareStatement(sql);
+                  rs=pst.executeQuery();
+                    Table_show.setModel(DbUtils.resultSetToTableModel(rs));
+              } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);
+ 
+    }
+    }
+ 
     private void diaxeirisi_parageliwnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaxeirisi_parageliwnActionPerformed
        parent_panel.removeAll();
        parent_panel.add(diaxeirisi_paraggeliwn);
@@ -796,9 +834,9 @@ PreparedStatement pst=null;
 
     }//GEN-LAST:event_diaxeirisi_parageliwnMenuKeyPressed
 
-    private void leitourgies_axrhstoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leitourgies_axrhstoActionPerformed
+    private void messages_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messages_btnActionPerformed
 
-    }//GEN-LAST:event_leitourgies_axrhstoActionPerformed
+    }//GEN-LAST:event_messages_btnActionPerformed
 
     private void diaxeirisi_parageliwnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_diaxeirisi_parageliwnMouseClicked
 
@@ -809,6 +847,7 @@ PreparedStatement pst=null;
        parent_panel.add(messages);
        parent_panel.repaint();
        parent_panel.revalidate();
+      Update_Table("Messages");
     }//GEN-LAST:event_stock_btnActionPerformed
 
     private void diaxeirisi_stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaxeirisi_stockActionPerformed
@@ -823,7 +862,30 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_epexergasia_profileComponentAdded
 
     private void Update_DBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_DBActionPerformed
-        // TODO add your handling code here:
+             String username = Session.getUsername();                           
+        try{
+            String value1= onoma_txt.getText();
+            String value2= eponimo_txt.getText();
+            String value3= email_txt.getText();
+            String value4= dief8insi_txt.getText();
+            String value5= ari8mos_txt.getText();
+            String value6= telephone_txt.getText();
+            String sql ="UPDATE  User set FirstName = ?, LastName=?, email=?, Telephone=?, Street=?, StreetNum=? WHERE Username=? ";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, value1);
+            pst.setString(2, value2);
+            pst.setString(3, value3);
+            pst.setString(4, value6);
+            pst.setString(5, value4);
+            pst.setString(6, value5);
+            pst.setString(7, username);
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data updated succesfully");
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, ex);}
+       
+     
     }//GEN-LAST:event_Update_DBActionPerformed
 
     private void dief8insi_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dief8insi_txtActionPerformed
@@ -853,6 +915,21 @@ PreparedStatement pst=null;
     private void save_packing_progress_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_packing_progress_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_save_packing_progress_btnActionPerformed
+
+    private void send_new_message_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_new_message_btnActionPerformed
+        String username = Session.getUsername();
+        try{
+            String sql ="INSERT INTO Messages (MessageText, SenderName) VALUES (?, ?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, new_message_txt.getText());
+            pst.setString(2, username);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Message Sent Succesfully!");
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, ex);}
+        Update_Table("Messages");
+    }//GEN-LAST:event_send_new_message_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -892,6 +969,7 @@ PreparedStatement pst=null;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Logout_button;
+    private javax.swing.JTable Table_show;
     private javax.swing.JButton Update_DB;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JPanel default_loggedIn;
@@ -939,6 +1017,7 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -946,8 +1025,8 @@ PreparedStatement pst=null;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JMenu leitourgies_axrhsto;
     private javax.swing.JPanel messages;
+    private javax.swing.JMenu messages_btn;
     private javax.swing.JTextField new_message_txt;
     private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parent_panel;
