@@ -15,9 +15,9 @@ CREATE TABLE User
     LastName  VARCHAR(50),
     Email VARCHAR(100) UNIQUE,
     UserPassword VARCHAR(100),
-    Telephone INT(10),
+    Telephone INT(15),
     Street VARCHAR(100),
-    StreetNum INT(3)
+    StreetNum INT(4)
 	
 );
 
