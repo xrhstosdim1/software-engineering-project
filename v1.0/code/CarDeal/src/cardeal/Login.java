@@ -102,19 +102,10 @@ PreparedStatement pst=null;
     }// </editor-fold>                        
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-          String sql="SELECT u.username, u.password FROM user u JOIN DBAs d ON u.username = d.username WHERE d.end_date IS NULL AND u.username = ? AND u.password = ?"; 
+          String sql="SELECT u.username, u.UserPassword FROM User u  WHERE u.username = ? AND u.Userpassword = ?"; 
 //LOGIN QUERY GIA ELEGXO IMEROMINIAS KAI USERNAME KAI PASSWORD
-               apothiki ap = new apothiki();
-                 ap.setVisible(true);
-                 ap.pack();
-                 ap.setLocationRelativeTo(null);
-                 ap.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
-                 service ser = new service ();
-                 ser.setVisible(true);
-                 ser.pack();
-                 ser.setLocationRelativeTo(null);
-                 ser.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
-                 close();       
+               
+                    
             try{
                 pst=conn.prepareStatement(sql);
                
@@ -126,9 +117,40 @@ PreparedStatement pst=null;
                
                  
                     if(rs.next()){
-                    pst.close();
-                    rs.close(); 
-                    close();
+                       String username = txt_username.getText().trim();
+                       String checkapo8iki = "Select AdminUsername FROM Admin Where AdminUsername = ?" ;
+                       PreparedStatement pstapo8iki = conn.prepareStatement(checkapo8iki);
+                       pstapo8iki.setString(1, username);
+                       ResultSet rsapo8iki = pstapo8iki.executeQuery();
+                       
+                       if (rsapo8iki.next()){
+                           apothiki ap = new apothiki();
+                            ap.setVisible(true);
+                            ap.pack();
+                            ap.setLocationRelativeTo(null);
+                            ap.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                            close();
+                       }
+                       else{
+                           String checkMech ="SELECT MechanicUsername FROM Mechanic Where MechanicUsername = ?";
+                           PreparedStatement pstMech = conn.prepareStatement(checkMech);
+                           pstMech.setString(1,username);
+                           ResultSet rsMech = pstMech.executeQuery();
+                           if (rsMech.next()){
+                               service ser = new service ();
+                               ser.setVisible(true);
+                               ser.pack();
+                               ser.setLocationRelativeTo(null);
+                               ser.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                               close();    
+                           }
+                          rsMech.close();
+                          pstMech.close();
+                       }
+                       
+                       
+                    rsapo8iki.close();
+                    pstapo8iki.close();
                     JOptionPane.showMessageDialog(rootPane, "Successful login!");
                   
                 
