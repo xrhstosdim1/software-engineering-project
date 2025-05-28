@@ -30,7 +30,26 @@ public class service extends javax.swing.JFrame {
         Welcome = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        service_dash = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        service_notes_txt = new javax.swing.JTextArea();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        make_txt = new javax.swing.JTextField();
+        vin_txt = new javax.swing.JTextField();
+        model_txt = new javax.swing.JTextField();
+        year_txt = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        ipovoli_btn = new javax.swing.JButton();
+        add_parts_btn = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        pelatis_txt = new javax.swing.JTextField();
+        new_customer_btn = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
@@ -46,15 +65,59 @@ public class service extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Update_DB = new javax.swing.JButton();
+        save_data = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        trade_in_dash = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
+        vin_txt1 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        model_txt1 = new javax.swing.JTextField();
+        year_txt1 = new javax.swing.JTextField();
+        ipovoli_btn1 = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        add_parts_btn1 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        pelatis_txt1 = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        make_txt1 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        new_client_dash = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        email_new_txt1 = new javax.swing.JTextField();
+        jLabel31 = new javax.swing.JLabel();
+        dief8insi_txt1 = new javax.swing.JTextField();
+        ari8mos_txt1 = new javax.swing.JTextField();
+        telephone_txt1 = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        Update_DB1 = new javax.swing.JButton();
+        jLabel35 = new javax.swing.JLabel();
+        onoma_txt1 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        eponimo_txt1 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        new_vin_txt = new javax.swing.JTextField();
+        new_make_txt = new javax.swing.JTextField();
+        new_year_txt = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        new_model_txt = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         leitourgies_btn = new javax.swing.JMenu();
         trade_in_btn = new javax.swing.JMenuItem();
         minimata_btn = new javax.swing.JMenuItem();
+        service_btn = new javax.swing.JMenuItem();
         edit_profile_btn = new javax.swing.JMenu();
         Logout_btn = new javax.swing.JMenu();
 
@@ -96,18 +159,143 @@ public class service extends javax.swing.JFrame {
 
         parentPanel.add(Welcome, "card2");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1417, Short.MAX_VALUE)
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setText("Service");
+
+        service_notes_txt.setColumns(20);
+        service_notes_txt.setRows(5);
+        jScrollPane1.setViewportView(service_notes_txt);
+
+        jLabel11.setText("Μάρκα");
+
+        jLabel12.setText("VIN");
+
+        jLabel13.setText("Μοντέλο");
+
+        jLabel15.setText("Χρονολογία");
+
+        make_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                make_txtActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("Σημειώσεις Service");
+
+        ipovoli_btn.setText("Υποβολή Service");
+
+        add_parts_btn.setText("Προσθήκη Ανταλλακτικών");
+
+        jLabel18.setText("Πελάτης");
+
+        pelatis_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pelatis_txtActionPerformed(evt);
+            }
+        });
+
+        new_customer_btn.setText("Νέος Πελάτης");
+        new_customer_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                new_customer_btnActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Ιστορικό Service");
+
+        jLabel20.setText("Στοιχεία οχήματος");
+
+        javax.swing.GroupLayout service_dashLayout = new javax.swing.GroupLayout(service_dash);
+        service_dash.setLayout(service_dashLayout);
+        service_dashLayout.setHorizontalGroup(
+            service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(service_dashLayout.createSequentialGroup()
+                .addGap(640, 640, 640)
+                .addComponent(jLabel10)
+                .addContainerGap(701, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(service_dashLayout.createSequentialGroup()
+                                .addComponent(add_parts_btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(58, 58, 58))
+                            .addGroup(service_dashLayout.createSequentialGroup()
+                                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel18))
+                                .addGap(65, 65, 65)
+                                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(make_txt)
+                                    .addComponent(vin_txt)
+                                    .addComponent(model_txt)
+                                    .addComponent(year_txt)
+                                    .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(136, 136, 136)
+                        .addComponent(ipovoli_btn)
+                        .addGap(92, 92, 92))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addComponent(new_customer_btn)
+                        .addGap(251, 251, 251))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(247, 247, 247)
+                        .addComponent(jLabel19)
+                        .addGap(94, 94, 94))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addGap(288, 288, 288))))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
+        service_dashLayout.setVerticalGroup(
+            service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(service_dashLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel10)
+                .addGap(36, 36, 36)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20))
+                .addGap(17, 17, 17)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(make_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(vin_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(model_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(jLabel16)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_parts_btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ipovoli_btn))
+                .addGap(18, 18, 18)
+                .addComponent(new_customer_btn)
+                .addGap(40, 40, 40))
         );
 
-        parentPanel.add(jPanel1, "card4");
+        parentPanel.add(service_dash, "card4");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel14.setText("Μηνύματα");
@@ -153,7 +341,6 @@ public class service extends javax.swing.JFrame {
 
         parentPanel.add(messages, "card5");
 
-        epexergasia_profile.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.darkGray, null, null));
         epexergasia_profile.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         epexergasia_profile.setEnabled(false);
         epexergasia_profile.addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -180,10 +367,10 @@ public class service extends javax.swing.JFrame {
 
         jLabel5.setText("Email");
 
-        Update_DB.setText("Αποθήκευση");
-        Update_DB.addActionListener(new java.awt.event.ActionListener() {
+        save_data.setText("Αποθήκευση");
+        save_data.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Update_DBActionPerformed(evt);
+                save_dataActionPerformed(evt);
             }
         });
 
@@ -205,7 +392,7 @@ public class service extends javax.swing.JFrame {
                     .addGroup(epexergasia_profileLayout.createSequentialGroup()
                         .addGap(396, 396, 396)
                         .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Update_DB)
+                            .addComponent(save_data)
                             .addGroup(epexergasia_profileLayout.createSequentialGroup()
                                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -229,7 +416,7 @@ public class service extends javax.swing.JFrame {
                     .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                     .addComponent(dief8insi_txt)
                     .addComponent(telephone_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 502, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 508, Short.MAX_VALUE)
                 .addComponent(jLabel2))
         );
         epexergasia_profileLayout.setVerticalGroup(
@@ -262,15 +449,288 @@ public class service extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82)
-                .addComponent(Update_DB)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addComponent(save_data)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         parentPanel.add(epexergasia_profile, "card2");
 
+        jLabel21.setText("Στοιχεία οχήματος");
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel22.setText("Trade-In");
+
+        ipovoli_btn1.setText("Απόριψη Trade In");
+
+        jLabel24.setText("Μάρκα");
+
+        add_parts_btn1.setText("Αποδοχή Trade In");
+
+        jLabel25.setText("VIN");
+
+        jLabel26.setText("Πελάτης");
+
+        jLabel27.setText("Μοντέλο");
+
+        pelatis_txt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pelatis_txt1ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setText("Χρονολογία");
+
+        jLabel29.setText("Ιστορικό Service");
+
+        make_txt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                make_txt1ActionPerformed(evt);
+            }
+        });
+
+        jLabel30.setText("Ποσό αγοράς");
+
+        javax.swing.GroupLayout trade_in_dashLayout = new javax.swing.GroupLayout(trade_in_dash);
+        trade_in_dash.setLayout(trade_in_dashLayout);
+        trade_in_dashLayout.setHorizontalGroup(
+            trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trade_in_dashLayout.createSequentialGroup()
+                .addGap(640, 640, 640)
+                .addComponent(jLabel22)
+                .addContainerGap(687, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel30))
+                        .addGap(57, 57, 57)
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(year_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addComponent(pelatis_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addComponent(model_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addComponent(vin_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addComponent(make_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                            .addComponent(jTextField1)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel21)
+                        .addGap(79, 79, 79))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
+                        .addComponent(add_parts_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)))
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(trade_in_dashLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(jLabel29))
+                    .addGroup(trade_in_dashLayout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(ipovoli_btn1)))
+                .addGap(119, 119, 119))
+        );
+        trade_in_dashLayout.setVerticalGroup(
+            trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trade_in_dashLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addGap(100, 100, 100)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel29))
+                .addGap(18, 18, 18)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(make_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(vin_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(model_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel28)
+                    .addComponent(year_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(pelatis_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel30))
+                .addGap(29, 29, 29)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(add_parts_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ipovoli_btn1))
+                .addContainerGap(151, Short.MAX_VALUE))
+        );
+
+        parentPanel.add(trade_in_dash, "card6");
+
+        jLabel23.setText("Τηλέφωνο");
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel31.setText("Νέος Πελάτης");
+
+        dief8insi_txt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dief8insi_txt1ActionPerformed(evt);
+            }
+        });
+
+        jLabel32.setText("Όνομα");
+
+        jLabel33.setText("Επώνυμο");
+
+        jLabel34.setText("Email");
+
+        Update_DB1.setText("Αποθήκευση");
+        Update_DB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Update_DB1ActionPerformed(evt);
+            }
+        });
+
+        jLabel35.setText("Διεύθυνση");
+
+        onoma_txt1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onoma_txt1ActionPerformed(evt);
+            }
+        });
+
+        jLabel36.setText("Αριθμός");
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel37.setText("Στοιχεία Πελάτη");
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel38.setText("Στοιχεία οχήματος");
+
+        jLabel39.setText("VIN");
+
+        jLabel40.setText("Μάρκα");
+
+        jLabel41.setText("Έτος");
+
+        jLabel42.setText("Μοντέλο");
+
+        javax.swing.GroupLayout new_client_dashLayout = new javax.swing.GroupLayout(new_client_dash);
+        new_client_dash.setLayout(new_client_dashLayout);
+        new_client_dashLayout.setHorizontalGroup(
+            new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(new_client_dashLayout.createSequentialGroup()
+                .addGap(419, 419, 419)
+                .addComponent(jLabel37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 473, Short.MAX_VALUE)
+                .addComponent(jLabel38)
+                .addGap(239, 239, 239))
+            .addGroup(new_client_dashLayout.createSequentialGroup()
+                .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(new_client_dashLayout.createSequentialGroup()
+                        .addGap(631, 631, 631)
+                        .addComponent(jLabel31))
+                    .addGroup(new_client_dashLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(40, 40, 40)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(onoma_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(eponimo_txt1)
+                            .addComponent(email_new_txt1))
+                        .addGap(82, 82, 82)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel36)
+                            .addComponent(jLabel35))
+                        .addGap(39, 39, 39)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(ari8mos_txt1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                            .addComponent(dief8insi_txt1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(telephone_txt1))
+                        .addGap(83, 83, 83)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel40)
+                            .addComponent(jLabel41)
+                            .addComponent(jLabel42))
+                        .addGap(25, 25, 25)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(new_vin_txt)
+                            .addComponent(new_make_txt)
+                            .addComponent(new_year_txt)
+                            .addComponent(new_model_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)))
+                    .addGroup(new_client_dashLayout.createSequentialGroup()
+                        .addGap(619, 619, 619)
+                        .addComponent(Update_DB1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        new_client_dashLayout.setVerticalGroup(
+            new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(new_client_dashLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel31)
+                .addGap(33, 33, 33)
+                .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel38))
+                .addGap(39, 39, 39)
+                .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(new_client_dashLayout.createSequentialGroup()
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(onoma_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel32))
+                        .addGap(18, 18, 18)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(eponimo_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel33))
+                        .addGap(26, 26, 26)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(email_new_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34)))
+                    .addGroup(new_client_dashLayout.createSequentialGroup()
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dief8insi_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel35)
+                            .addComponent(jLabel39)
+                            .addComponent(new_vin_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ari8mos_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel40)
+                                .addComponent(new_make_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel36))
+                        .addGap(26, 26, 26)
+                        .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(telephone_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel42)
+                            .addComponent(new_model_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(26, 26, 26)
+                .addGroup(new_client_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(new_year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(78, 78, 78)
+                .addComponent(Update_DB1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(170, Short.MAX_VALUE))
+        );
+
+        parentPanel.add(new_client_dash, "card7");
+
         leitourgies_btn.setText("Λειτουργίες");
 
-        trade_in_btn.setText("Αμάξια προς ανταλλαγή");
+        trade_in_btn.setText("Οχήματα προς ανταλλαγή");
         trade_in_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 trade_in_btnActionPerformed(evt);
@@ -285,6 +745,14 @@ public class service extends javax.swing.JFrame {
             }
         });
         leitourgies_btn.add(minimata_btn);
+
+        service_btn.setText("Οχήματα για service");
+        service_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                service_btnActionPerformed(evt);
+            }
+        });
+        leitourgies_btn.add(service_btn);
 
         jMenuBar1.add(leitourgies_btn);
 
@@ -337,7 +805,10 @@ public void close() {
     this.dispose();
 }
     private void trade_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trade_in_btnActionPerformed
-        // TODO add your handling code here:
+       parentPanel.removeAll();
+       parentPanel.add(trade_in_dash);
+       parentPanel.repaint();
+       parentPanel.revalidate();
     }//GEN-LAST:event_trade_in_btnActionPerformed
 
     private void Logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_btnActionPerformed
@@ -361,9 +832,9 @@ public void close() {
         // TODO add your handling code here:
     }//GEN-LAST:event_dief8insi_txtActionPerformed
 
-    private void Update_DBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_DBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Update_DBActionPerformed
+    private void save_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_dataActionPerformed
+
+    }//GEN-LAST:event_save_dataActionPerformed
 
     private void epexergasia_profileComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_epexergasia_profileComponentAdded
         // TODO add your handling code here:
@@ -386,6 +857,51 @@ public void close() {
        parentPanel.repaint();
        parentPanel.revalidate();
     }//GEN-LAST:event_edit_profile_btnMenuSelected
+
+    private void service_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_btnActionPerformed
+        parentPanel.removeAll();
+       parentPanel.add(service_dash);
+       parentPanel.repaint();
+       parentPanel.revalidate();
+    }//GEN-LAST:event_service_btnActionPerformed
+
+    private void make_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_make_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_make_txtActionPerformed
+
+    private void pelatis_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pelatis_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pelatis_txtActionPerformed
+
+    private void pelatis_txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pelatis_txt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pelatis_txt1ActionPerformed
+
+    private void make_txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_make_txt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_make_txt1ActionPerformed
+
+    private void dief8insi_txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dief8insi_txt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dief8insi_txt1ActionPerformed
+
+    private void Update_DB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_DB1ActionPerformed
+        parentPanel.removeAll();
+       parentPanel.add(service_dash);
+       parentPanel.repaint();
+       parentPanel.revalidate();
+    }//GEN-LAST:event_Update_DB1ActionPerformed
+
+    private void onoma_txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onoma_txt1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_onoma_txt1ActionPerformed
+
+    private void new_customer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_customer_btnActionPerformed
+       parentPanel.removeAll();
+       parentPanel.add(new_client_dash);
+       parentPanel.repaint();
+       parentPanel.revalidate();
+    }//GEN-LAST:event_new_customer_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -424,35 +940,98 @@ public void close() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Logout_btn;
-    private javax.swing.JButton Update_DB;
+    private javax.swing.JButton Update_DB1;
     private javax.swing.JPanel Welcome;
+    private javax.swing.JTextField add_parts_btn;
+    private javax.swing.JTextField add_parts_btn1;
     private javax.swing.JTextField ari8mos_txt;
+    private javax.swing.JTextField ari8mos_txt1;
     private javax.swing.JTextField dief8insi_txt;
+    private javax.swing.JTextField dief8insi_txt1;
     private javax.swing.JMenu edit_profile_btn;
+    private javax.swing.JTextField email_new_txt1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JPanel epexergasia_profile;
     private javax.swing.JTextField eponimo_txt;
+    private javax.swing.JTextField eponimo_txt1;
+    private javax.swing.JButton ipovoli_btn;
+    private javax.swing.JButton ipovoli_btn1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JMenu leitourgies_btn;
+    private javax.swing.JTextField make_txt;
+    private javax.swing.JTextField make_txt1;
     private javax.swing.JPanel messages;
     private javax.swing.JMenuItem minimata_btn;
+    private javax.swing.JTextField model_txt;
+    private javax.swing.JTextField model_txt1;
+    private javax.swing.JPanel new_client_dash;
+    private javax.swing.JButton new_customer_btn;
+    private javax.swing.JTextField new_make_txt;
     private javax.swing.JTextField new_message_txt;
+    private javax.swing.JTextField new_model_txt;
+    private javax.swing.JTextField new_vin_txt;
+    private javax.swing.JTextField new_year_txt;
     private javax.swing.JTextField onoma_txt;
+    private javax.swing.JTextField onoma_txt1;
     private javax.swing.JPanel parentPanel;
+    private javax.swing.JTextField pelatis_txt;
+    private javax.swing.JTextField pelatis_txt1;
+    private javax.swing.JButton save_data;
     private javax.swing.JButton send_new_message_btn;
+    private javax.swing.JMenuItem service_btn;
+    private javax.swing.JPanel service_dash;
+    private javax.swing.JTextArea service_notes_txt;
     private javax.swing.JTextField telephone_txt;
+    private javax.swing.JTextField telephone_txt1;
     private javax.swing.JMenuItem trade_in_btn;
+    private javax.swing.JPanel trade_in_dash;
+    private javax.swing.JTextField vin_txt;
+    private javax.swing.JTextField vin_txt1;
+    private javax.swing.JTextField year_txt;
+    private javax.swing.JTextField year_txt1;
     // End of variables declaration//GEN-END:variables
 }
