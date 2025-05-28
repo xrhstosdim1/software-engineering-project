@@ -4,7 +4,7 @@ CREATE TABLE Product
     ProductName VARCHAR(100) UNIQUE,
     Price DECIMAL(10, 2),
     Quantity INT(3),
-    Status ENUM('Avaible for purchase', 'Unavailable','Avaible for leasing')
+    Status ENUM('Available for purchase', 'Unavailable','Available for leasing')
 );
 
 
