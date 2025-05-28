@@ -11,7 +11,7 @@ public class connect {
     public static Connection connectDb(){
     try{
         Class.forName("com.mysql.cj.jdbc.Driver");
-    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "root"); // OPOU ROOT ROOT, USERNAME PASSWORD, LOCALHOST= HOST :3306 = PORT
+    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", ""); // OPOU ROOT ROOT, USERNAME PASSWORD, LOCALHOST= HOST :3306 = PORT
     JOptionPane.showMessageDialog(null,"Connected to database succesfully"); 
     return conn;
     }catch(Exception e){
