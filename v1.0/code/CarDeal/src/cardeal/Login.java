@@ -43,7 +43,7 @@ PreparedStatement pst=null;
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("DB PROJECT BY P.B, C.D. AND G.L.");
+        setTitle("CarDeal by P.B. C. D. A. G. & G. L.");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("LOGIN");
@@ -106,10 +106,15 @@ PreparedStatement pst=null;
 //LOGIN QUERY GIA ELEGXO IMEROMINIAS KAI USERNAME KAI PASSWORD
                apothiki ap = new apothiki();
                  ap.setVisible(true);
-                    ap.pack();
-                    ap.setLocationRelativeTo(null);
-                    ap.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
-                    close();       
+                 ap.pack();
+                 ap.setLocationRelativeTo(null);
+                 ap.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                 service ser = new service ();
+                 ser.setVisible(true);
+                 ser.pack();
+                 ser.setLocationRelativeTo(null);
+                 ser.setDefaultCloseOperation(Login.DISPOSE_ON_CLOSE);
+                 close();       
             try{
                 pst=conn.prepareStatement(sql);
                
