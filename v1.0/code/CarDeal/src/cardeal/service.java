@@ -3,15 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cardeal;
-
+import java.sql.*;
+import javax.swing.*;
+import net.proteanit.sql.DbUtils;
 
 public class service extends javax.swing.JFrame {
-
+Connection conn=null;
+ResultSet rs =null;
+PreparedStatement pst=null;
     /**
      * Creates new form service
      */
     public service() {
-        initComponents();
+         initComponents();
+        conn = connect.connectDb();
     }
 
     /**
@@ -51,6 +56,8 @@ public class service extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
         new_message_txt = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Table_show = new javax.swing.JTable();
         epexergasia_profile = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         onoma_txt = new javax.swing.JTextField();
@@ -120,7 +127,6 @@ public class service extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CarDeal by P.B. C. D. A. G. & G. L.");
-        setPreferredSize(new java.awt.Dimension(1417, 620));
 
         parentPanel.setPreferredSize(new java.awt.Dimension(1417, 620));
         parentPanel.setLayout(new java.awt.CardLayout());
@@ -151,7 +157,7 @@ public class service extends javax.swing.JFrame {
                 .addComponent(jLabel17)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         parentPanel.add(Welcome, "card2");
@@ -287,7 +293,7 @@ public class service extends javax.swing.JFrame {
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,6 +312,11 @@ public class service extends javax.swing.JFrame {
         jLabel14.setText("Μηνύματα");
 
         send_new_message_btn.setText("Αποστολή");
+        send_new_message_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                send_new_message_btnActionPerformed(evt);
+            }
+        });
 
         new_message_txt.setText("Πληκτρολογήστε νέο μήνυμα");
         new_message_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -314,34 +325,51 @@ public class service extends javax.swing.JFrame {
             }
         });
 
+        Table_show.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(Table_show);
+
         javax.swing.GroupLayout messagesLayout = new javax.swing.GroupLayout(messages);
         messages.setLayout(messagesLayout);
         messagesLayout.setHorizontalGroup(
             messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(messagesLayout.createSequentialGroup()
-                .addGap(597, 597, 597)
-                .addComponent(jLabel14)
-                .addGap(0, 702, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
-                        .addComponent(send_new_message_btn)
-                        .addGap(332, 332, 332))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
-                        .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74))))
+                    .addGroup(messagesLayout.createSequentialGroup()
+                        .addContainerGap(662, Short.MAX_VALUE)
+                        .addComponent(jLabel14))
+                    .addComponent(jScrollPane2))
+                .addGroup(messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(messagesLayout.createSequentialGroup()
+                        .addGap(275, 275, 275)
+                        .addComponent(send_new_message_btn))
+                    .addGroup(messagesLayout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48))
         );
         messagesLayout.setVerticalGroup(
             messagesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(messagesLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel14)
-                .addGap(92, 92, 92)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(new_message_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addGap(69, 69, 69)
                 .addComponent(send_new_message_btn)
-                .addGap(97, 97, 97))
+                .addGap(124, 124, 124))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, messagesLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel14)
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
         );
 
         parentPanel.add(messages, "card5");
@@ -458,7 +486,7 @@ public class service extends javax.swing.JFrame {
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(save_data)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(262, Short.MAX_VALUE))
         );
 
         parentPanel.add(epexergasia_profile, "card2");
@@ -577,7 +605,7 @@ public class service extends javax.swing.JFrame {
                 .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(add_parts_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ipovoli_btn1))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
 
         parentPanel.add(trade_in_dash, "card6");
@@ -731,7 +759,7 @@ public class service extends javax.swing.JFrame {
                     .addComponent(new_year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(78, 78, 78)
                 .addComponent(Update_DB1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         parentPanel.add(new_client_dash, "card7");
@@ -812,6 +840,39 @@ public void close() {
     this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
     this.dispose();
 }
+ private void loadUserProfile() {
+    String username = Session.getUsername();
+    try {
+        String sql = "SELECT FirstName, LastName, Email, Street, StreetNum, Telephone FROM User WHERE Username = ?";
+        PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, username);
+        ResultSet rs = pst.executeQuery();
+        if (rs.next()) {
+            onoma_txt.setText(rs.getString("FirstName"));
+            eponimo_txt.setText(rs.getString("LastName"));
+            email_txt.setText(rs.getString("Email"));
+            dief8insi_txt.setText(rs.getString("Street"));
+            ari8mos_txt.setText(rs.getString("StreetNum"));
+            telephone_txt.setText(rs.getString("Telephone"));
+        }
+        rs.close();
+        pst.close();
+    } catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
+    }
+}
+ private void Update_Table(String tablename){
+   
+        try {
+                  String sql = "SELECT * FROM " + tablename ;
+                  pst=conn.prepareStatement(sql);
+                  rs=pst.executeQuery();
+                    Table_show.setModel(DbUtils.resultSetToTableModel(rs));
+              } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);
+ 
+    }
+    }
     private void trade_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trade_in_btnActionPerformed
        parentPanel.removeAll();
        parentPanel.add(trade_in_dash);
@@ -841,7 +902,29 @@ public void close() {
     }//GEN-LAST:event_dief8insi_txtActionPerformed
 
     private void save_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_dataActionPerformed
-
+            String username = Session.getUsername();                           
+        try{
+            String value1= onoma_txt.getText();
+            String value2= eponimo_txt.getText();
+            String value3= email_txt.getText();
+            String value4= dief8insi_txt.getText();
+            String value5= ari8mos_txt.getText();
+            String value6= telephone_txt.getText();
+            String sql ="UPDATE  User set FirstName = ?, LastName=?, email=?, Telephone=?, Street=?, StreetNum=? WHERE Username=? ";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, value1);
+            pst.setString(2, value2);
+            pst.setString(3, value3);
+            pst.setString(4, value6);
+            pst.setString(5, value4);
+            pst.setString(6, value5);
+            pst.setString(7, username);
+            pst.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data updated succesfully");
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, ex);}
+       
     }//GEN-LAST:event_save_dataActionPerformed
 
     private void epexergasia_profileComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_epexergasia_profileComponentAdded
@@ -857,6 +940,7 @@ public void close() {
        parentPanel.add(messages);
        parentPanel.repaint();
        parentPanel.revalidate();
+       Update_Table("Messages");
     }//GEN-LAST:event_minimata_btnActionPerformed
 
     private void edit_profile_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_edit_profile_btnMenuSelected
@@ -864,6 +948,7 @@ public void close() {
        parentPanel.add(epexergasia_profile);
        parentPanel.repaint();
        parentPanel.revalidate();
+       loadUserProfile();
     }//GEN-LAST:event_edit_profile_btnMenuSelected
 
     private void service_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_btnActionPerformed
@@ -911,6 +996,21 @@ public void close() {
        parentPanel.revalidate();
     }//GEN-LAST:event_new_customer_btnActionPerformed
 
+    private void send_new_message_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_new_message_btnActionPerformed
+           String username = Session.getUsername();
+        try{
+            String sql ="INSERT INTO Messages (MessageText, SenderName) VALUES (?, ?)";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, new_message_txt.getText());
+            pst.setString(2, username);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Message Sent Succesfully!");
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, ex);}
+        Update_Table("Messages");
+    }//GEN-LAST:event_send_new_message_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -948,6 +1048,7 @@ public void close() {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Logout_btn;
+    private javax.swing.JTable Table_show;
     private javax.swing.JButton Update_DB1;
     private javax.swing.JPanel Welcome;
     private javax.swing.JTextField add_parts_btn;
@@ -1008,6 +1109,7 @@ public void close() {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JMenu leitourgies_btn;
     private javax.swing.JTextField make_txt;
