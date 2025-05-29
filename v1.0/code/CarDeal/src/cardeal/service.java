@@ -3,19 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cardeal;
+
 import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
 
 public class service extends javax.swing.JFrame {
-Connection conn=null;
-ResultSet rs =null;
-PreparedStatement pst=null;
+
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+
     /**
      * Creates new form service
      */
     public service() {
-         initComponents();
+        initComponents();
         conn = connect.connectDb();
     }
 
@@ -40,17 +43,22 @@ PreparedStatement pst=null;
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        make_txt = new javax.swing.JTextField();
-        vin_txt = new javax.swing.JTextField();
+        mileage_txt = new javax.swing.JTextField();
+        carplate_txt = new javax.swing.JTextField();
         model_txt = new javax.swing.JTextField();
         year_txt = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         ipovoli_btn = new javax.swing.JButton();
-        add_parts_btn = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
         pelatis_txt = new javax.swing.JTextField();
         new_customer_btn = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        service_table = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        servicehistory_table = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        pros8ikiadalaktikwn_btn = new javax.swing.JButton();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
@@ -153,7 +161,7 @@ PreparedStatement pst=null;
                 .addComponent(jLabel17)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         parentPanel.add(Welcome, "card2");
@@ -165,22 +173,22 @@ PreparedStatement pst=null;
         service_notes_txt.setRows(5);
         jScrollPane1.setViewportView(service_notes_txt);
 
-        jLabel11.setText("Μάρκα");
+        jLabel11.setText("Χιλιόμετρα");
 
-        jLabel12.setText("VIN");
+        jLabel12.setText("Πινακίδα");
 
         jLabel13.setText("Μοντέλο");
 
         jLabel15.setText("Χρονολογία");
 
-        make_txt.setFocusable(false);
-        make_txt.addActionListener(new java.awt.event.ActionListener() {
+        mileage_txt.setFocusable(false);
+        mileage_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                make_txtActionPerformed(evt);
+                mileage_txtActionPerformed(evt);
             }
         });
 
-        vin_txt.setFocusable(false);
+        carplate_txt.setFocusable(false);
 
         model_txt.setFocusable(false);
 
@@ -189,8 +197,11 @@ PreparedStatement pst=null;
         jLabel16.setText("Σημειώσεις Service");
 
         ipovoli_btn.setText("Υποβολή Service");
-
-        add_parts_btn.setText("Προσθήκη Ανταλλακτικών");
+        ipovoli_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ipovoli_btnActionPerformed(evt);
+            }
+        });
 
         jLabel18.setText("Πελάτης");
 
@@ -210,90 +221,157 @@ PreparedStatement pst=null;
 
         jLabel20.setText("Στοιχεία οχήματος");
 
+        jScrollPane4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane4MouseClicked(evt);
+            }
+        });
+
+        service_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        service_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                service_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(service_table);
+
+        servicehistory_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(servicehistory_table);
+
+        jLabel19.setText("Ιστορικό Service");
+
+        pros8ikiadalaktikwn_btn.setText("Προσθήκη Ανταλλακτικών");
+
         javax.swing.GroupLayout service_dashLayout = new javax.swing.GroupLayout(service_dash);
         service_dash.setLayout(service_dashLayout);
         service_dashLayout.setHorizontalGroup(
             service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(service_dashLayout.createSequentialGroup()
-                .addGap(640, 640, 640)
-                .addComponent(jLabel10)
-                .addContainerGap(701, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(service_dashLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                                        .addComponent(jLabel20)
+                                        .addGap(61, 61, 61))
+                                    .addGroup(service_dashLayout.createSequentialGroup()
+                                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel11)
+                                            .addComponent(jLabel12)
+                                            .addComponent(jLabel13)
+                                            .addComponent(jLabel15)
+                                            .addComponent(jLabel18))
+                                        .addGap(65, 65, 65)
+                                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(mileage_txt)
+                                            .addComponent(carplate_txt)
+                                            .addComponent(model_txt)
+                                            .addComponent(year_txt)
+                                            .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel10)))
+                            .addGroup(service_dashLayout.createSequentialGroup()
+                                .addGap(169, 169, 169)
+                                .addComponent(pros8ikiadalaktikwn_btn)))
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ipovoli_btn)
+                                .addGap(95, 95, 95))
+                            .addGroup(service_dashLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(22, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                                .addComponent(new_customer_btn)
+                                .addGap(285, 285, 285))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(317, 317, 317))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(service_dashLayout.createSequentialGroup()
-                                .addComponent(add_parts_btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58))
-                            .addGroup(service_dashLayout.createSequentialGroup()
-                                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13)
-                                    .addComponent(jLabel15)
-                                    .addComponent(jLabel18))
-                                .addGap(65, 65, 65)
-                                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(make_txt)
-                                    .addComponent(vin_txt)
-                                    .addComponent(model_txt)
-                                    .addComponent(year_txt)
-                                    .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(136, 136, 136)
-                        .addComponent(ipovoli_btn)
-                        .addGap(92, 92, 92))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addComponent(new_customer_btn)
-                        .addGap(251, 251, 251))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel16)
-                        .addGap(288, 288, 288))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addGap(227, 227, 227))))
+                .addComponent(jLabel19)
+                .addGap(153, 153, 153))
         );
         service_dashLayout.setVerticalGroup(
             service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(service_dashLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10)
-                .addGap(1, 1, 1)
-                .addComponent(jLabel20)
-                .addGap(52, 52, 52)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(make_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(vin_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(model_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel20)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel11)
+                            .addComponent(mileage_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12)
+                            .addComponent(carplate_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel13)
+                            .addComponent(model_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(47, 47, 47))
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addContainerGap(53, Short.MAX_VALUE)
+                        .addComponent(jLabel19)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)))
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_parts_btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ipovoli_btn))
                 .addGap(18, 18, 18)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ipovoli_btn)
+                    .addComponent(pros8ikiadalaktikwn_btn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(new_customer_btn)
-                .addGap(40, 40, 40))
+                .addGap(17, 17, 17))
+            .addGroup(service_dashLayout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addComponent(jScrollPane4)
+                .addContainerGap())
         );
 
         parentPanel.add(service_dash, "card4");
@@ -359,7 +437,7 @@ PreparedStatement pst=null;
                 .addGap(42, 42, 42)
                 .addComponent(jLabel14)
                 .addGap(38, 38, 38)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE))
         );
 
         parentPanel.add(messages, "card5");
@@ -476,7 +554,7 @@ PreparedStatement pst=null;
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(save_data)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         parentPanel.add(epexergasia_profile, "card2");
@@ -604,7 +682,7 @@ PreparedStatement pst=null;
                             .addComponent(deny_btn1)
                             .addComponent(accepttrdin_btn))
                         .addContainerGap())
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)))
         );
 
         parentPanel.add(trade_in_dash, "card6");
@@ -758,7 +836,7 @@ PreparedStatement pst=null;
                     .addComponent(new_year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(78, 78, 78)
                 .addComponent(Update_DB1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(170, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         parentPanel.add(new_client_dash, "card7");
@@ -830,76 +908,80 @@ PreparedStatement pst=null;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(parentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
+            .addComponent(parentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void close() { 
-    this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
-    this.dispose();
-}
- private void loadUserProfile() {
-    String username = Session.getUsername();
-    try {
-        String sql = "SELECT FirstName, LastName, Email, Street, StreetNum, Telephone FROM User WHERE Username = ?";
-        PreparedStatement pst = conn.prepareStatement(sql);
-        pst.setString(1, username);
-        ResultSet rs = pst.executeQuery();
-        if (rs.next()) {
-            onoma_txt.setText(rs.getString("FirstName"));
-            eponimo_txt.setText(rs.getString("LastName"));
-            email_txt.setText(rs.getString("Email"));
-            dief8insi_txt.setText(rs.getString("Street"));
-            ari8mos_txt.setText(rs.getString("StreetNum"));
-            telephone_txt.setText(rs.getString("Telephone"));
-        }
-        rs.close();
-        pst.close();
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
+public void close() {
+        this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
+        this.dispose();
     }
-}
-   private void Update_Table(String tablename, JTable table_show){
-   
+
+    private void loadUserProfile() {
+        String username = Session.getUsername();
         try {
-                  String sql = "SELECT * FROM " + tablename ;
-                  pst=conn.prepareStatement(sql);
-                  rs=pst.executeQuery();
-                    table_show.setModel(DbUtils.resultSetToTableModel(rs));
-              } catch (SQLException ex) {
-                  JOptionPane.showMessageDialog(null,ex);
- 
+            String sql = "SELECT FirstName, LastName, Email, Street, StreetNum, Telephone FROM User WHERE Username = ?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                onoma_txt.setText(rs.getString("FirstName"));
+                eponimo_txt.setText(rs.getString("LastName"));
+                email_txt.setText(rs.getString("Email"));
+                dief8insi_txt.setText(rs.getString("Street"));
+                ari8mos_txt.setText(rs.getString("StreetNum"));
+                telephone_txt.setText(rs.getString("Telephone"));
+            }
+            rs.close();
+            pst.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
+        }
+        
+       
     }
+
+    private void Update_Table(String tablename, JTable table_show) {
+
+        try {
+            String sql = "SELECT * FROM " + tablename;
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            table_show.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+
+        }
     }
 
     private void trade_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trade_in_btnActionPerformed
-       parentPanel.removeAll();
-       parentPanel.add(trade_in_dash);
-       parentPanel.repaint();
-       parentPanel.revalidate();
-      try {
-                  String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' "  ;
-                  pst=conn.prepareStatement(sql);
-                  rs=pst.executeQuery();
-                    tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
-              } catch (SQLException ex) {
-                  JOptionPane.showMessageDialog(null,ex);
- 
-    }
+        parentPanel.removeAll();
+        parentPanel.add(trade_in_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        try {
+            String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' ";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+
+        }
     }//GEN-LAST:event_trade_in_btnActionPerformed
 
     private void Logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_btnActionPerformed
-      
+
     }//GEN-LAST:event_Logout_btnActionPerformed
 
     private void Logout_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_Logout_btnMenuSelected
-          Login Lg = new Login();
-       Lg.setVisible(true);
-       Lg.pack();
-       Lg.setLocationRelativeTo(null);
-       Lg.setDefaultCloseOperation(apothiki.DISPOSE_ON_CLOSE);
-       close();
+        Login Lg = new Login();
+        Lg.setVisible(true);
+        Lg.pack();
+        Lg.setLocationRelativeTo(null);
+        Lg.setDefaultCloseOperation(apothiki.DISPOSE_ON_CLOSE);
+        close();
     }//GEN-LAST:event_Logout_btnMenuSelected
 
     private void onoma_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onoma_txtActionPerformed
@@ -911,16 +993,16 @@ public void close() {
     }//GEN-LAST:event_dief8insi_txtActionPerformed
 
     private void save_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_dataActionPerformed
-            String username = Session.getUsername();                           
-        try{
-            String value1= onoma_txt.getText();
-            String value2= eponimo_txt.getText();
-            String value3= email_txt.getText();
-            String value4= dief8insi_txt.getText();
-            String value5= ari8mos_txt.getText();
-            String value6= telephone_txt.getText();
-            String sql ="UPDATE  User set FirstName = ?, LastName=?, email=?, Telephone=?, Street=?, StreetNum=? WHERE Username=? ";
-            pst=conn.prepareStatement(sql);
+        String username = Session.getUsername();
+        try {
+            String value1 = onoma_txt.getText();
+            String value2 = eponimo_txt.getText();
+            String value3 = email_txt.getText();
+            String value4 = dief8insi_txt.getText();
+            String value5 = ari8mos_txt.getText();
+            String value6 = telephone_txt.getText();
+            String sql = "UPDATE  User set FirstName = ?, LastName=?, email=?, Telephone=?, Street=?, StreetNum=? WHERE Username=? ";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, value1);
             pst.setString(2, value2);
             pst.setString(3, value3);
@@ -930,10 +1012,10 @@ public void close() {
             pst.setString(7, username);
             pst.executeUpdate();
             JOptionPane.showMessageDialog(null, "Data updated succesfully");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
         }
-        catch(Exception ex){
-        JOptionPane.showMessageDialog(null, ex);}
-       
+
     }//GEN-LAST:event_save_dataActionPerformed
 
     private void epexergasia_profileComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_epexergasia_profileComponentAdded
@@ -945,31 +1027,32 @@ public void close() {
     }//GEN-LAST:event_new_message_txtActionPerformed
 
     private void minimata_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimata_btnActionPerformed
-       parentPanel.removeAll();
-       parentPanel.add(messages);
-       parentPanel.repaint();
-       parentPanel.revalidate();
-       Update_Table("Messages", Table_show);
+        parentPanel.removeAll();
+        parentPanel.add(messages);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        Update_Table("Messages", Table_show);
     }//GEN-LAST:event_minimata_btnActionPerformed
 
     private void edit_profile_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_edit_profile_btnMenuSelected
-       parentPanel.removeAll();
-       parentPanel.add(epexergasia_profile);
-       parentPanel.repaint();
-       parentPanel.revalidate();
-       loadUserProfile();
+        parentPanel.removeAll();
+        parentPanel.add(epexergasia_profile);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        loadUserProfile();
     }//GEN-LAST:event_edit_profile_btnMenuSelected
 
     private void service_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_service_btnActionPerformed
         parentPanel.removeAll();
-       parentPanel.add(service_dash);
-       parentPanel.repaint();
-       parentPanel.revalidate();
+        parentPanel.add(service_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        Update_Table("Repairs", service_table);
     }//GEN-LAST:event_service_btnActionPerformed
 
-    private void make_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_make_txtActionPerformed
+    private void mileage_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mileage_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_make_txtActionPerformed
+    }//GEN-LAST:event_mileage_txtActionPerformed
 
     private void pelatis_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pelatis_txtActionPerformed
         // TODO add your handling code here:
@@ -989,9 +1072,9 @@ public void close() {
 
     private void Update_DB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Update_DB1ActionPerformed
         parentPanel.removeAll();
-       parentPanel.add(service_dash);
-       parentPanel.repaint();
-       parentPanel.revalidate();
+        parentPanel.add(service_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
     }//GEN-LAST:event_Update_DB1ActionPerformed
 
     private void onoma_txt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onoma_txt1ActionPerformed
@@ -999,102 +1082,167 @@ public void close() {
     }//GEN-LAST:event_onoma_txt1ActionPerformed
 
     private void new_customer_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_customer_btnActionPerformed
-       parentPanel.removeAll();
-       parentPanel.add(new_client_dash);
-       parentPanel.repaint();
-       parentPanel.revalidate();
+        parentPanel.removeAll();
+        parentPanel.add(new_client_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
     }//GEN-LAST:event_new_customer_btnActionPerformed
 
     private void send_new_message_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_new_message_btnActionPerformed
-           String username = Session.getUsername();
-        try{
-            String sql ="INSERT INTO Messages (MessageText, SenderName) VALUES (?, ?)";
-            pst=conn.prepareStatement(sql);
+        String username = Session.getUsername();
+        try {
+            String sql = "INSERT INTO Messages (MessageText, SenderName) VALUES (?, ?)";
+            pst = conn.prepareStatement(sql);
             pst.setString(1, new_message_txt.getText());
             pst.setString(2, username);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Message Sent Succesfully!");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
         }
-        catch(Exception ex){
-        JOptionPane.showMessageDialog(null, ex);}
         Update_Table("Messages", Table_show);
     }//GEN-LAST:event_send_new_message_btnActionPerformed
 
     private void tradein_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tradein_tableMouseClicked
-         try{
+        try {
             int row = tradein_table.getSelectedRow();
-            String Table_click=(tradein_table.getModel().getValueAt(row,0).toString());
-            String sql = "select * from Trade_In where TradeID='"+Table_click+"' AND  TradeStatus = 'pending'" ;
-            pst= conn.prepareStatement(sql);
-            rs=pst.executeQuery();
-            if(rs.next()){
-                String add1 =rs.getString("CustomerName");
+            String Table_click = (tradein_table.getModel().getValueAt(row, 0).toString());
+            String sql = "select * from Trade_In where TradeID='" + Table_click + "' AND  TradeStatus = 'pending'";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                String add1 = rs.getString("CustomerName");
                 pelatis_txt1.setText(add1);
-                String add2 =rs.getString("CarName");
+                String add2 = rs.getString("CarName");
                 make_txt1.setText(add2);
-                String add3 =rs.getString("CarModel");
+                String add3 = rs.getString("CarModel");
                 year_txt1.setText(add3);
-           
-               
+
             }
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-         
+
     }//GEN-LAST:event_tradein_tableMouseClicked
 
     private void accepttrdin_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accepttrdin_btnActionPerformed
-             String price_str = price_txt.getText().trim();
-            int price= Integer.parseInt(price_str);
-        try{
+        String price_str = price_txt.getText().trim();
+        int price = Integer.parseInt(price_str);
+        try {
             int row = tradein_table.getSelectedRow();
-            String Table_click=(tradein_table.getModel().getValueAt(row,0).toString());
-            String sql = "UPDATE Trade_In set Price = ? , TradeStatus ='Approved' where TradeID='"+Table_click+"'" ;
-            pst= conn.prepareStatement(sql);
+            String Table_click = (tradein_table.getModel().getValueAt(row, 0).toString());
+            String sql = "UPDATE Trade_In set Price = ? , TradeStatus ='Approved' where TradeID='" + Table_click + "'";
+            pst = conn.prepareStatement(sql);
             pst.setInt(1, price);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Trade in accepted successfuly!");
-        }
-        
-       catch(Exception ex){
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
-            
+
         }
-         try {
-                  String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' "  ;
-                  pst=conn.prepareStatement(sql);
-                  rs=pst.executeQuery();
-                    tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
-              } catch (SQLException ex) {
-                  JOptionPane.showMessageDialog(null,ex);
-              }
-            
+        try {
+            String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' ";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+
     }//GEN-LAST:event_accepttrdin_btnActionPerformed
 
     private void deny_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deny_btn1ActionPerformed
-    try{
+        try {
             int row = tradein_table.getSelectedRow();
-            String Table_click=(tradein_table.getModel().getValueAt(row,0).toString());
-            String sql = "UPDATE Trade_In set TradeStatus='Denied' where TradeID='"+Table_click+"'" ;
-            pst= conn.prepareStatement(sql);
+            String Table_click = (tradein_table.getModel().getValueAt(row, 0).toString());
+            String sql = "UPDATE Trade_In set TradeStatus='Denied' where TradeID='" + Table_click + "'";
+            pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Trade in denied successfuly!");
-        }
-        
-        catch(Exception ex){
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
-            try {
-                  String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' "  ;
-                  pst=conn.prepareStatement(sql);
-                  rs=pst.executeQuery();
-                    tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
-              } catch (SQLException ex) {
-                  JOptionPane.showMessageDialog(null,ex);
-              }
-    
+        try {
+            String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' ";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+
     }//GEN-LAST:event_deny_btn1ActionPerformed
+
+    private void jScrollPane4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane4MouseClicked
+
+    private void service_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_service_tableMouseClicked
+        try {
+            int row = service_table.getSelectedRow();
+            String Table_click = (service_table.getModel().getValueAt(row, 0).toString());
+            String sql = "select * from Repairs where CarPlate='" + Table_click + "' ";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                String add1 = rs.getString("Mileage");
+                mileage_txt.setText(add1);
+                String add2 = rs.getString("CarName");
+                model_txt.setText(add2);
+                String add3 = rs.getString("Model");
+                year_txt.setText(add3);
+                String add4 = rs.getString("OwnerName");
+                pelatis_txt.setText(add4);
+                String add5 = rs.getString("CarPlate");
+                carplate_txt.setText(add5);
+
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        try {
+            int row = service_table.getSelectedRow();
+            String Table_click = (service_table.getModel().getValueAt(row, 0).toString());
+            String sql = "SELECT sh.* FROM ServiceHistory sh JOIN CarCustomer cc ON sh.CarCostumerID = cc.CarCustomerID WHERE cc.CarPlate = '" + Table_click + "' AND cc.CarPlate IN (SELECT CarPlate FROM Repairs) AND cc.CarPlate IN (SELECT CarPlate FROM CarCustomer)";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            servicehistory_table.setModel(DbUtils.resultSetToTableModel(rs));
+             parentPanel.removeAll();
+        parentPanel.add(service_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        Update_Table("Repairs", service_table);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+       
+    }//GEN-LAST:event_service_tableMouseClicked
+
+    private void ipovoli_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipovoli_btnActionPerformed
+    
+  try {
+    int row = service_table.getSelectedRow();
+    String Table_click = service_table.getModel().getValueAt(row, 0).toString();
+
+    String sql = "INSERT INTO ServiceHistory (CarCostumerId, ServiceType, Description) VALUES ((SELECT CarCustomerID FROM CarCustomer WHERE CarPlate = ?), ?, ?)";
+
+    PreparedStatement pst = conn.prepareStatement(sql);
+    pst.setString(1, Table_click); 
+    pst.setString(2, "General Service"); 
+    pst.setString(3, service_notes_txt.getText()); 
+
+    pst.executeUpdate();
+    JOptionPane.showMessageDialog(null, "Service history added successfully.");
+    pst.close();
+    String del = "DELETE from Repairs where CarPlate='" + Table_click + "' ";
+    PreparedStatement pst2 = conn.prepareStatement(del);
+    pst2.execute();
+
+} catch (Exception ex) {
+    JOptionPane.showMessageDialog(null, ex);
+}
+  
+    }//GEN-LAST:event_ipovoli_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1137,9 +1285,9 @@ public void close() {
     private javax.swing.JButton Update_DB1;
     private javax.swing.JPanel Welcome;
     private javax.swing.JButton accepttrdin_btn;
-    private javax.swing.JTextField add_parts_btn;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JTextField ari8mos_txt1;
+    private javax.swing.JTextField carplate_txt;
     private javax.swing.JButton deny_btn1;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JTextField dief8insi_txt1;
@@ -1160,6 +1308,7 @@ public void close() {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
@@ -1192,10 +1341,12 @@ public void close() {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JMenu leitourgies_btn;
-    private javax.swing.JTextField make_txt;
     private javax.swing.JTextField make_txt1;
     private javax.swing.JPanel messages;
+    private javax.swing.JTextField mileage_txt;
     private javax.swing.JMenuItem minimata_btn;
     private javax.swing.JTextField model_txt;
     private javax.swing.JPanel new_client_dash;
@@ -1211,17 +1362,19 @@ public void close() {
     private javax.swing.JTextField pelatis_txt;
     private javax.swing.JTextField pelatis_txt1;
     private javax.swing.JTextField price_txt;
+    private javax.swing.JButton pros8ikiadalaktikwn_btn;
     private javax.swing.JButton save_data;
     private javax.swing.JButton send_new_message_btn;
     private javax.swing.JMenuItem service_btn;
     private javax.swing.JPanel service_dash;
     private javax.swing.JTextArea service_notes_txt;
+    private javax.swing.JTable service_table;
+    private javax.swing.JTable servicehistory_table;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JTextField telephone_txt1;
     private javax.swing.JMenuItem trade_in_btn;
     private javax.swing.JPanel trade_in_dash;
     private javax.swing.JTable tradein_table;
-    private javax.swing.JTextField vin_txt;
     private javax.swing.JTextField year_txt;
     private javax.swing.JTextField year_txt1;
     // End of variables declaration//GEN-END:variables
