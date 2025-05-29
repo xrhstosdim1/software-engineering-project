@@ -107,7 +107,17 @@ INSERT INTO Messages (MessageID, MessageText, SenderName) VALUES
 
 INSERT INTO Trade_in_eleuthera (TradeINID, FreeDates, Status_) VALUES
 (1, '2025-06-01 09:00:00', 'Available'),
-(2, '2025-06-02 09:00:00', 'Unavailable');
+(2, '2025-06-02 09:00:00', 'Unavailable'),
+(3, '2025-06-01 09:30:00', 'Available'),
+(4, '2025-06-02 10:00:00', 'Available'),
+(5, '2025-06-03 10:30:00', 'Available'),
+(6, '2025-06-04 11:00:00', 'Available'),
+(7, '2025-06-05 11:30:00', 'Available'),
+(8, '2025-06-06 12:00:00', 'Available'),
+(9, '2025-06-07 12:30:00', 'Available'),
+(10, '2025-06-08 13:00:00', 'Available'),
+(11, '2025-06-09 13:30:00', 'Available'),
+(12, '2025-06-10 14:00:00', 'Available');
 
 INSERT INTO Package (PackageID, PackageOrderID, PackcageStatus) VALUES
 (1, 1, 'Packed'),
