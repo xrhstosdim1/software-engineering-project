@@ -1,6 +1,7 @@
 drop database if exists project;
 create database project;
 use project;
+
 CREATE TABLE Product
 (
     ProductID INT(10) PRIMARY KEY,
@@ -177,4 +178,15 @@ CREATE TABLE Package
     PackageOrderID INT(10) NOT NULL,
     PackcageStatus ENUM('Packed', 'Unpacked'),
     CONSTRAINT FP_PackageOrderID FOREIGN KEY (PackageOrderID) REFERENCES Order_(OrderID)
+);
+
+create table wishlist 
+(
+    WishlistID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    CustomerName VARCHAR(30) NOT NULL,
+    ProductID INT(10) NOT NULL,
+    CONSTRAINT FK_CustomerWishlist FOREIGN KEY (CustomerName) REFERENCES Customer(CustomerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_ProductWishlist FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
+    ON UPDATE CASCADE ON DELETE CASCADE
 );
