@@ -1,4 +1,5 @@
-use project;
+use CarDeal_SoftEng;
+
 INSERT INTO Product  (ProductID, ProductName, Price, Quantity, Status)  VALUES
 (1, 'BMW X5', 65000.00, 5, 'Available for purchase'),
 (2, 'Mercedes C-Class', 45000.00, 3, 'Available for leasing'),
@@ -24,17 +25,6 @@ INSERT INTO User VALUES
 ('emily_miller', 'Emily', 'Miller', 'emily@email.gr', 'emilypass', 66677788, 'Rhga Fereou', 23),
 ('thomas_clark', 'Thomas', 'Clark', 'thomas@email.gr', 'thomaspass', 99900011, 'Serrwn', 67),
 ('amanda_white', 'Amanda', 'White', 'amanda@email.gr', 'amandapass', 33344455, 'Antonys', 90);
-
-INSERT INTO Order_ (OrderID, OrderDate, CustomerName, ProductID, Quantity, Sub_date, F_date, Status_, MechanicName, Price) VALUES
-(1, '2023-01-15', 'lisa_taylor', 1, 1, '2023-01-10 10:00:00', '2023-01-20', 'Finished', NULL, 65000.00),
-(2, '2023-02-20', 'robert_garcia', 3, 1, '2023-02-21 10:00:00', '2023-02-25', 'Ready for Pickup', NULL, 42000.00),
-(3, '2023-03-05', 'emily_miller', 6, 1, '2023-03-06 10:00:00', '2023-03-10', 'Pending', NULL, 55000.00),
-(4, '2023-04-10', 'thomas_clark', 8, 1, '2023-04-11 10:00:00', '2023-04-15', 'Cancelled', NULL, 23000.00),
-(5, '2023-05-15', 'thomas_clark', 4, 1, '2023-05-16 10:00:00', '2023-05-20', 'Finished', NULL, 28000.00),
-(6, '2023-06-20', 'emily_miller', 9, 1, '2023-06-21 10:00:00', '2023-06-25', 'Ready for Pickup', NULL, 120000.00);
-
-
-
 
 INSERT INTO Customer VALUES ('david_brown'),
 ('lisa_taylor'),
@@ -113,3 +103,10 @@ INSERT INTO Package (PackageID, PackageOrderID, PackcageStatus) VALUES
 (3, 3, 'Unpacked');
 
 
+INSERT INTO Order_ (OrderID, OrderDate, CustomerName, ProductID, Quantity, Sub_date, F_date, Status_, MechanicName, Price) VALUES
+(1, '2023-01-15', 'lisa_taylor', 1, 1, '2023-01-10 10:00:00', '2023-01-20', 'Finished', NULL, 65000.00),
+(2, '2023-02-20', 'robert_garcia', 3, 1, '2023-02-21 10:00:00', '2023-02-25', 'Ready for Pickup', NULL, 42000.00),
+(3, '2023-03-05', 'emily_miller', 6, 1, '2023-03-06 10:00:00', '2023-03-10', 'Pending', NULL, 55000.00),
+(4, '2023-04-10', 'thomas_clark', 8, 1, '2023-04-11 10:00:00', '2023-04-15', 'Cancelled', NULL, 23000.00),
+(5, '2023-05-15', 'thomas_clark', 4, 1, '2023-05-16 10:00:00', '2023-05-20', 'Finished', NULL, 28000.00),
+(6, '2023-06-20', 'emily_miller', 9, 1, '2023-06-21 10:00:00', '2023-06-25', 'Ready for Pickup', NULL, 120000.00);

@@ -1,6 +1,7 @@
-drop database if exists project;
-create database project;
-use project;
+drop database if exists CarDeal_SoftEng;
+create database CarDeal_SoftEng;
+use CarDeal_SoftEng;
+
 CREATE TABLE Product
 (
     ProductID INT(10) PRIMARY KEY,
