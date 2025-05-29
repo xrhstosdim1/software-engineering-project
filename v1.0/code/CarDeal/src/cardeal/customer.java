@@ -52,7 +52,7 @@ PreparedStatement pst=null;
         product_price_txt = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        product_image = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
@@ -300,9 +300,9 @@ PreparedStatement pst=null;
 
         jLabel23.setText("Τιμή");
 
-        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("eikona");
-        jLabel24.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        product_image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        product_image.setText("eikona");
+        product_image.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jLabel26.setText("Αναζήτηση:");
 
@@ -353,7 +353,7 @@ PreparedStatement pst=null;
                     .addGroup(shopLayout.createSequentialGroup()
                         .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(add_to_wishlist, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                            .addComponent(product_image, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                         .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(shopLayout.createSequentialGroup()
                                 .addGap(163, 163, 163)
@@ -398,7 +398,7 @@ PreparedStatement pst=null;
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(shopLayout.createSequentialGroup()
-                                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(product_image, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(add_to_wishlist)))))
                 .addContainerGap(102, Short.MAX_VALUE))
@@ -1452,7 +1452,7 @@ PreparedStatement pst=null;
     private void available_shop_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_available_shop_tableMouseClicked
         int row = available_shop_table.getSelectedRow();
         product_name_txt.setText(available_shop_table.getModel().getValueAt(row, 1).toString());
-        product_price_txt.setText(available_shop_table.getModel().getValueAt(row, 2).toString()); 
+        product_price_txt.setText(available_shop_table.getModel().getValueAt(row, 2).toString());
     }//GEN-LAST:event_available_shop_tableMouseClicked
 
     private void add_to_wishlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_to_wishlistActionPerformed
@@ -1492,7 +1492,7 @@ PreparedStatement pst=null;
         String product_id=(available_shop_table.getModel().getValueAt(row,0).toString()); 
         String product_price=(available_shop_table.getModel().getValueAt(row,2).toString());
         try{
-            String sql = "INSERT INTO Order_ (CustomerName, ProductID, Quantity, Price) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO Order_ (CustomerName, ProductID, Quantity, Price) VALUES (?, ?, ?, ?)";
             pst = conn.prepareStatement(sql);
             pst.setString(1, Session.getUsername());
             pst.setString(2, product_id);
@@ -1582,7 +1582,6 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1623,6 +1622,7 @@ PreparedStatement pst=null;
     private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parent_panel;
     private javax.swing.JButton place_order_btn;
+    private javax.swing.JLabel product_image;
     private javax.swing.JTextField product_name_txt;
     private javax.swing.JTextField product_price_txt;
     private javax.swing.JPanel rantevou;
