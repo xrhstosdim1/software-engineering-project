@@ -50,13 +50,7 @@ CREATE TABLE Admin
   
 );
 
-CREATE TABLE Mechanic
-(
-    MechanicUsername VARCHAR(30) PRIMARY KEY,
-     CONSTRAINT FK_MechanicID FOREIGN KEY (MechanicUsername)   REFERENCES User(Username)
-    ON UPDATE CASCADE ON DELETE CASCADE
-  
-);
+
 
 CREATE TABLE Order_
 (
@@ -123,7 +117,7 @@ CREATE TABLE CarCustomer
     CustomerName VARCHAR(30) NOT NULL,
     CONSTRAINT FA_CustomerName FOREIGN KEY (CustomerName)  REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE
-)
+);
 
 
 
@@ -171,7 +165,7 @@ CREATE TABLE Trade_in_eleuthera
     TradeINID INT(10) PRIMARY KEY AUTO_INCREMENT,
     FreeDates DATETIME UNIQUE NOT NULL,
     Status_ ENUM('Available', 'Unavailable')
-)
+);
 
 
 CREATE TABLE Package
