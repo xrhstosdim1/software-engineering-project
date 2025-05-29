@@ -59,7 +59,7 @@ INSERT INTO Test_Drive VALUES
 (3, '2025-03-15 09:15:00', 'thomas_clark', 'Ford Mustang', 'Confirmed'),
 (4, '2025-04-20 14:00:00', 'emily_miller', 'Volkswagen Golf', 'Confirmed'),
 (5, '2025-05-25 13:45:00', 'robert_garcia', 'Toyota Camry', 'Confirmed'),
-(6, '2025-05-26 13:45:00', NULL, 'Toyota Camry', 'Confirmed');
+(6, '2025-05-26 13:45:00', NULL, 'Toyota Camry', 'Available');
 
 
 INSERT INTO Repairs VALUES 
