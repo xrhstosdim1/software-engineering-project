@@ -1,3 +1,6 @@
+drop database if exists project;
+create database project;
+use project;
 CREATE TABLE Product
 (
     ProductID INT(10) PRIMARY KEY,
