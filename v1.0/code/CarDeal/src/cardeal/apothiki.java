@@ -74,8 +74,8 @@ PreparedStatement pst=null;
         Table_show2 = new javax.swing.JTable();
         diaxeirisi_apothematos = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        search_id_txt = new javax.swing.JTextField();
+        search_btn = new javax.swing.JButton();
         part_name = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         part_id = new javax.swing.JTextField();
@@ -84,7 +84,7 @@ PreparedStatement pst=null;
         jLabel12 = new javax.swing.JLabel();
         part_new_stock = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        prosthiki_stock = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         part_name2 = new javax.swing.JTextField();
         part_id2 = new javax.swing.JTextField();
@@ -456,9 +456,14 @@ PreparedStatement pst=null;
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel15.setText("Διαχείριση αποθέματος");
 
-        jTextField1.setText("Εισάγετε κωδικό ανταλλακτικού");
+        search_id_txt.setText("Εισάγετε κωδικό ανταλλακτικού");
 
-        jButton1.setText("Αναζήτηση");
+        search_btn.setText("Αναζήτηση");
+        search_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_btnActionPerformed(evt);
+            }
+        });
 
         part_name.setEditable(false);
         part_name.setFocusable(false);
@@ -477,10 +482,10 @@ PreparedStatement pst=null;
 
         jLabel16.setText("Προσθήκη ποσότητας");
 
-        jButton2.setText("Προσθήκη stock");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        prosthiki_stock.setText("Προσθήκη stock");
+        prosthiki_stock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                prosthiki_stockActionPerformed(evt);
             }
         });
 
@@ -535,7 +540,7 @@ PreparedStatement pst=null;
                                 .addComponent(part_new_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGap(228, 228, 228)
-                        .addComponent(jButton2)))
+                        .addComponent(prosthiki_stock)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 475, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -561,9 +566,9 @@ PreparedStatement pst=null;
                 .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_apothematosLayout.createSequentialGroup()
                 .addGap(622, 622, 622)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(search_id_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jButton1)
+                .addComponent(search_btn)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_apothematosLayout.createSequentialGroup()
                 .addGap(604, 604, 604)
@@ -577,8 +582,8 @@ PreparedStatement pst=null;
                 .addComponent(jLabel15)
                 .addGap(50, 50, 50)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(search_id_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_btn))
                 .addGap(92, 92, 92)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
@@ -598,7 +603,7 @@ PreparedStatement pst=null;
                             .addComponent(part_new_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16))
                         .addGap(55, 55, 55)
-                        .addComponent(jButton2))
+                        .addComponent(prosthiki_stock))
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(part_name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -829,8 +834,22 @@ PreparedStatement pst=null;
                   JOptionPane.showMessageDialog(null,ex);
  
     }
-    }
+}
  
+ private void updateStockFields(){
+    try{
+        String SelectQ = "SELECT Quantity FROM Product WHERE ProductID = ?";
+        pst = conn.prepareStatement(SelectQ);
+        pst.setString(1, search_id_txt.getText());
+        ResultSet rs = pst.executeQuery();
+        
+        if(rs.next()){ 
+            part_stock.setText(String.valueOf(rs.getInt("Quantity")));
+            part_stock2.setText(String.valueOf(rs.getInt("Quantity")));
+        }        
+    } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);}
+ }
     private void diaxeirisi_parageliwnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diaxeirisi_parageliwnActionPerformed
        parent_panel.removeAll();
        parent_panel.add(diaxeirisi_paraggeliwn);
@@ -856,7 +875,7 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_Logout_buttonMenuKeyPressed
 
     private void Logout_buttonMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_Logout_buttonMenuSelected
-           Login Lg = new Login();
+       Login Lg = new Login();
        Lg.setVisible(true);
        Lg.pack();
        Lg.setLocationRelativeTo(null);
@@ -948,9 +967,40 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_new_message_txtActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void prosthiki_stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosthiki_stockActionPerformed
+        try{
+            String posothta_to_add_str = part_new_stock.getText().trim();
+            int posothta_to_add = Integer.parseInt(posothta_to_add_str);
+
+            if(posothta_to_add <= 0 ){
+                JOptionPane.showMessageDialog(null, "Δεν μπορεί να προστεθεί μηδενική ποσότητα.");
+                return;
+            }
+
+            String SelectQ = "SELECT Quantity FROM Product WHERE ProductID = ?";
+            pst = conn.prepareStatement(SelectQ);
+            pst.setString(1, search_id_txt.getText());
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                int current_quantity = rs.getInt("Quantity");
+                int new_quantity = current_quantity + posothta_to_add;
+                rs.close();
+                pst.close();
+
+                String UpdateQ = "UPDATE Product SET Quantity = ? WHERE ProductID = ?";
+                pst = conn.prepareStatement(UpdateQ);
+                pst.setInt(1, new_quantity);
+                pst.setString(2, search_id_txt.getText());
+
+                pst.executeUpdate();
+                pst.close();
+
+                updateStockFields();
+            }
+        } catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);}     
+    }//GEN-LAST:event_prosthiki_stockActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -978,6 +1028,29 @@ PreparedStatement pst=null;
         JOptionPane.showMessageDialog(null, ex);}
         Update_Table("Messages");
     }//GEN-LAST:event_send_new_message_btnActionPerformed
+
+    private void search_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_btnActionPerformed
+        try{
+            String sql = "SELECT ProductName, Price, Quantity FROM Product WHERE ProductID = ?";
+            pst=conn.prepareStatement(sql);
+            pst.setString(1, search_id_txt.getText());
+            
+            pst.execute();
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                part_name.setText(rs.getString("ProductName"));
+                part_id.setText(search_id_txt.getText());
+                part_stock.setText(rs.getString("Quantity"));
+                
+                part_name2.setText(rs.getString("ProductName"));
+                part_id2.setText(search_id_txt.getText());
+                part_stock2.setText(rs.getString("Quantity"));     
+            }
+            
+        }
+        catch(Exception ex){
+        JOptionPane.showMessageDialog(null, ex);}
+    }//GEN-LAST:event_search_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1033,8 +1106,6 @@ PreparedStatement pst=null;
     private javax.swing.JPanel epexergasia_profile;
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JButton finish_packing_btn;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -1070,7 +1141,6 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
@@ -1090,7 +1160,10 @@ PreparedStatement pst=null;
     private javax.swing.JTextField part_new_stock2;
     private javax.swing.JTextField part_stock;
     private javax.swing.JTextField part_stock2;
+    private javax.swing.JButton prosthiki_stock;
     private javax.swing.JButton save_packing_progress_btn;
+    private javax.swing.JButton search_btn;
+    private javax.swing.JTextField search_id_txt;
     private javax.swing.JButton send_new_message_btn;
     private javax.swing.JMenuItem stock_btn;
     private javax.swing.JTextField telephone_txt;
