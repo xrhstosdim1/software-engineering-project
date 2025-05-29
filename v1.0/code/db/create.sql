@@ -146,7 +146,7 @@ CREATE TABLE Leasing
     ProductID INT(10) NOT NULL,
     Start_date DATE,
     Final_date DATE,
-    Status_ ENUM('Pending', 'Renting', 'Finished', 'Cancelled'),
+    Status_ ENUM('Available', 'Pending', 'Renting', 'Finished', 'Cancelled'),
     Price INT(8),
     CONSTRAINT FZ_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE,
