@@ -50,7 +50,6 @@ PreparedStatement pst=null;
         jLabel18 = new javax.swing.JLabel();
         pelatis_txt = new javax.swing.JTextField();
         new_customer_btn = new javax.swing.JButton();
-        jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -76,22 +75,19 @@ PreparedStatement pst=null;
         jLabel9 = new javax.swing.JLabel();
         trade_in_dash = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
-        vin_txt1 = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        model_txt1 = new javax.swing.JTextField();
         year_txt1 = new javax.swing.JTextField();
-        ipovoli_btn1 = new javax.swing.JButton();
+        deny_btn1 = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
-        add_parts_btn1 = new javax.swing.JTextField();
-        jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
         pelatis_txt1 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
         make_txt1 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        price_txt = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tradein_table = new javax.swing.JTable();
+        accepttrdin_btn = new javax.swing.JButton();
         new_client_dash = new javax.swing.JPanel();
         jLabel23 = new javax.swing.JLabel();
         email_new_txt1 = new javax.swing.JTextField();
@@ -157,7 +153,7 @@ PreparedStatement pst=null;
                 .addComponent(jLabel17)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
 
         parentPanel.add(Welcome, "card2");
@@ -212,8 +208,6 @@ PreparedStatement pst=null;
             }
         });
 
-        jLabel19.setText("Ιστορικό Service");
-
         jLabel20.setText("Στοιχεία οχήματος");
 
         javax.swing.GroupLayout service_dashLayout = new javax.swing.GroupLayout(service_dash);
@@ -256,24 +250,20 @@ PreparedStatement pst=null;
                         .addComponent(new_customer_btn)
                         .addGap(251, 251, 251))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addGap(247, 247, 247)
-                        .addComponent(jLabel19)
-                        .addGap(94, 94, 94))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
                         .addComponent(jLabel16)
-                        .addGap(288, 288, 288))))
+                        .addGap(288, 288, 288))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel20)
+                        .addGap(227, 227, 227))))
         );
         service_dashLayout.setVerticalGroup(
             service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(service_dashLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
-                .addGap(36, 36, 36)
-                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20))
-                .addGap(17, 17, 17)
+                .addGap(1, 1, 1)
+                .addComponent(jLabel20)
+                .addGap(52, 52, 52)
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(make_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,7 +283,7 @@ PreparedStatement pst=null;
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
                     .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -369,7 +359,7 @@ PreparedStatement pst=null;
                 .addGap(42, 42, 42)
                 .addComponent(jLabel14)
                 .addGap(38, 38, 38)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE))
         );
 
         parentPanel.add(messages, "card5");
@@ -486,27 +476,27 @@ PreparedStatement pst=null;
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(save_data)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         parentPanel.add(epexergasia_profile, "card2");
 
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel21.setText("Στοιχεία οχήματος");
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel22.setText("Trade-In");
 
-        ipovoli_btn1.setText("Απόριψη Trade In");
+        deny_btn1.setText("Απόριψη Trade In");
+        deny_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deny_btn1ActionPerformed(evt);
+            }
+        });
 
-        jLabel24.setText("Μάρκα");
-
-        add_parts_btn1.setText("Αποδοχή Trade In");
-
-        jLabel25.setText("VIN");
+        jLabel24.setText("Αυτοκίνητο");
 
         jLabel26.setText("Πελάτης");
-
-        jLabel27.setText("Μοντέλο");
 
         pelatis_txt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,8 +506,6 @@ PreparedStatement pst=null;
 
         jLabel28.setText("Χρονολογία");
 
-        jLabel29.setText("Ιστορικό Service");
-
         make_txt1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 make_txt1ActionPerformed(evt);
@@ -526,6 +514,31 @@ PreparedStatement pst=null;
 
         jLabel30.setText("Ποσό αγοράς");
 
+        tradein_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tradein_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tradein_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(tradein_table);
+
+        accepttrdin_btn.setText("Αποδοχή Trade In");
+        accepttrdin_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accepttrdin_btnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout trade_in_dashLayout = new javax.swing.GroupLayout(trade_in_dash);
         trade_in_dash.setLayout(trade_in_dashLayout);
         trade_in_dashLayout.setHorizontalGroup(
@@ -533,79 +546,65 @@ PreparedStatement pst=null;
             .addGroup(trade_in_dashLayout.createSequentialGroup()
                 .addGap(640, 640, 640)
                 .addComponent(jLabel22)
-                .addContainerGap(687, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 617, Short.MAX_VALUE)
+                .addGap(207, 207, 207)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(trade_in_dashLayout.createSequentialGroup()
                         .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel24)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel27)
                             .addComponent(jLabel28)
                             .addComponent(jLabel26)
                             .addComponent(jLabel30))
                         .addGap(57, 57, 57)
                         .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(year_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                            .addComponent(pelatis_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                            .addComponent(model_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                            .addComponent(vin_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                            .addComponent(make_txt1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                            .addComponent(jTextField1)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
+                            .addComponent(year_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pelatis_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(make_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(trade_in_dashLayout.createSequentialGroup()
                         .addComponent(jLabel21)
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_in_dashLayout.createSequentialGroup()
-                        .addComponent(add_parts_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)))
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(80, 80, 80))
                     .addGroup(trade_in_dashLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(jLabel29))
-                    .addGroup(trade_in_dashLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(ipovoli_btn1)))
-                .addGap(119, 119, 119))
+                        .addGap(63, 63, 63)
+                        .addComponent(accepttrdin_btn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(deny_btn1)))
+                .addGap(228, 228, 228))
         );
         trade_in_dashLayout.setVerticalGroup(
             trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trade_in_dashLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel22)
-                .addGap(100, 100, 100)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel29))
-                .addGap(18, 18, 18)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(make_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel25)
-                    .addComponent(vin_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(model_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel28)
-                    .addComponent(year_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(pelatis_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30))
-                .addGap(29, 29, 29)
-                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(add_parts_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ipovoli_btn1))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addGap(22, 22, 22)
+                .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(trade_in_dashLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel21)
+                        .addGap(58, 58, 58)
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel24)
+                            .addComponent(make_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(year_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel28))
+                        .addGap(18, 18, 18)
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(pelatis_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel26))
+                        .addGap(18, 18, 18)
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel30))
+                        .addGap(77, 77, 77)
+                        .addGroup(trade_in_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deny_btn1)
+                            .addComponent(accepttrdin_btn))
+                        .addContainerGap())
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)))
         );
 
         parentPanel.add(trade_in_dash, "card6");
@@ -759,7 +758,7 @@ PreparedStatement pst=null;
                     .addComponent(new_year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(78, 78, 78)
                 .addComponent(Update_DB1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(216, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         parentPanel.add(new_client_dash, "card7");
@@ -861,23 +860,33 @@ public void close() {
         JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
     }
 }
- private void Update_Table(String tablename){
+   private void Update_Table(String tablename, JTable table_show){
    
         try {
                   String sql = "SELECT * FROM " + tablename ;
                   pst=conn.prepareStatement(sql);
                   rs=pst.executeQuery();
-                    Table_show.setModel(DbUtils.resultSetToTableModel(rs));
+                    table_show.setModel(DbUtils.resultSetToTableModel(rs));
               } catch (SQLException ex) {
                   JOptionPane.showMessageDialog(null,ex);
  
     }
     }
+
     private void trade_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trade_in_btnActionPerformed
        parentPanel.removeAll();
        parentPanel.add(trade_in_dash);
        parentPanel.repaint();
        parentPanel.revalidate();
+      try {
+                  String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' "  ;
+                  pst=conn.prepareStatement(sql);
+                  rs=pst.executeQuery();
+                    tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
+              } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);
+ 
+    }
     }//GEN-LAST:event_trade_in_btnActionPerformed
 
     private void Logout_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_btnActionPerformed
@@ -940,7 +949,7 @@ public void close() {
        parentPanel.add(messages);
        parentPanel.repaint();
        parentPanel.revalidate();
-       Update_Table("Messages");
+       Update_Table("Messages", Table_show);
     }//GEN-LAST:event_minimata_btnActionPerformed
 
     private void edit_profile_btnMenuSelected(javax.swing.event.MenuEvent evt) {//GEN-FIRST:event_edit_profile_btnMenuSelected
@@ -1008,8 +1017,84 @@ public void close() {
         }
         catch(Exception ex){
         JOptionPane.showMessageDialog(null, ex);}
-        Update_Table("Messages");
+        Update_Table("Messages", Table_show);
     }//GEN-LAST:event_send_new_message_btnActionPerformed
+
+    private void tradein_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tradein_tableMouseClicked
+         try{
+            int row = tradein_table.getSelectedRow();
+            String Table_click=(tradein_table.getModel().getValueAt(row,0).toString());
+            String sql = "select * from Trade_In where TradeID='"+Table_click+"' AND  TradeStatus = 'pending'" ;
+            pst= conn.prepareStatement(sql);
+            rs=pst.executeQuery();
+            if(rs.next()){
+                String add1 =rs.getString("CustomerName");
+                pelatis_txt1.setText(add1);
+                String add2 =rs.getString("CarName");
+                make_txt1.setText(add2);
+                String add3 =rs.getString("CarModel");
+                year_txt1.setText(add3);
+           
+               
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+         
+    }//GEN-LAST:event_tradein_tableMouseClicked
+
+    private void accepttrdin_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accepttrdin_btnActionPerformed
+             String price_str = price_txt.getText().trim();
+            int price= Integer.parseInt(price_str);
+        try{
+            int row = tradein_table.getSelectedRow();
+            String Table_click=(tradein_table.getModel().getValueAt(row,0).toString());
+            String sql = "UPDATE Trade_In set Price = ? , TradeStatus ='Approved' where TradeID='"+Table_click+"'" ;
+            pst= conn.prepareStatement(sql);
+            pst.setInt(1, price);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Trade in accepted successfuly!");
+        }
+        
+       catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+            
+        }
+         try {
+                  String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' "  ;
+                  pst=conn.prepareStatement(sql);
+                  rs=pst.executeQuery();
+                    tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
+              } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);
+              }
+            
+    }//GEN-LAST:event_accepttrdin_btnActionPerformed
+
+    private void deny_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deny_btn1ActionPerformed
+    try{
+            int row = tradein_table.getSelectedRow();
+            String Table_click=(tradein_table.getModel().getValueAt(row,0).toString());
+            String sql = "UPDATE Trade_In set TradeStatus='Denied' where TradeID='"+Table_click+"'" ;
+            pst= conn.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Trade in denied successfuly!");
+        }
+        
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+            try {
+                  String sql = "SELECT * FROM Trade_In Where TradeStatus = 'Pending' "  ;
+                  pst=conn.prepareStatement(sql);
+                  rs=pst.executeQuery();
+                    tradein_table.setModel(DbUtils.resultSetToTableModel(rs));
+              } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);
+              }
+    
+    }//GEN-LAST:event_deny_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1051,10 +1136,11 @@ public void close() {
     private javax.swing.JTable Table_show;
     private javax.swing.JButton Update_DB1;
     private javax.swing.JPanel Welcome;
+    private javax.swing.JButton accepttrdin_btn;
     private javax.swing.JTextField add_parts_btn;
-    private javax.swing.JTextField add_parts_btn1;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JTextField ari8mos_txt1;
+    private javax.swing.JButton deny_btn1;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JTextField dief8insi_txt1;
     private javax.swing.JMenu edit_profile_btn;
@@ -1064,7 +1150,6 @@ public void close() {
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JTextField eponimo_txt1;
     private javax.swing.JButton ipovoli_btn;
-    private javax.swing.JButton ipovoli_btn1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1075,18 +1160,14 @@ public void close() {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1110,14 +1191,13 @@ public void close() {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JMenu leitourgies_btn;
     private javax.swing.JTextField make_txt;
     private javax.swing.JTextField make_txt1;
     private javax.swing.JPanel messages;
     private javax.swing.JMenuItem minimata_btn;
     private javax.swing.JTextField model_txt;
-    private javax.swing.JTextField model_txt1;
     private javax.swing.JPanel new_client_dash;
     private javax.swing.JButton new_customer_btn;
     private javax.swing.JTextField new_make_txt;
@@ -1130,6 +1210,7 @@ public void close() {
     private javax.swing.JPanel parentPanel;
     private javax.swing.JTextField pelatis_txt;
     private javax.swing.JTextField pelatis_txt1;
+    private javax.swing.JTextField price_txt;
     private javax.swing.JButton save_data;
     private javax.swing.JButton send_new_message_btn;
     private javax.swing.JMenuItem service_btn;
@@ -1139,8 +1220,8 @@ public void close() {
     private javax.swing.JTextField telephone_txt1;
     private javax.swing.JMenuItem trade_in_btn;
     private javax.swing.JPanel trade_in_dash;
+    private javax.swing.JTable tradein_table;
     private javax.swing.JTextField vin_txt;
-    private javax.swing.JTextField vin_txt1;
     private javax.swing.JTextField year_txt;
     private javax.swing.JTextField year_txt1;
     // End of variables declaration//GEN-END:variables
