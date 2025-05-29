@@ -83,6 +83,7 @@ CREATE TABLE Test_Drive
     TestDriveDate DATETIME UNIQUE NOT NULL,
     CustomerName VARCHAR(30) NOT NULL,
     VehicleName VARCHAR(50) NOT NULL,
+    status ENUM('Pending', 'Confirmed'),
     CONSTRAINT FF_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
