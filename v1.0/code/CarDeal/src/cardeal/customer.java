@@ -80,6 +80,13 @@ PreparedStatement pst=null;
         remove_from_wishlist = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
         rantevou = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        test_drive_table2 = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         testDrive = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -532,15 +539,84 @@ PreparedStatement pst=null;
 
         parent_panel.add(wishlist, "card7");
 
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel15.setText("Ραντεβού για ανταλλαγή οχήματος");
+
+        test_drive_table2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Ημερομηνία", "Ώρα", "Όχημα"
+            }
+        ));
+        jScrollPane5.setViewportView(test_drive_table2);
+
+        jLabel28.setText("Κατάσταση");
+
+        jLabel29.setText("Τιμή");
+
+        jTextField1.setEditable(false);
+        jTextField1.setEnabled(false);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField3.setEditable(false);
+        jTextField3.setEnabled(false);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout rantevouLayout = new javax.swing.GroupLayout(rantevou);
         rantevou.setLayout(rantevouLayout);
         rantevouLayout.setHorizontalGroup(
             rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1420, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rantevouLayout.createSequentialGroup()
+                .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, rantevouLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(181, 181, 181)
+                        .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel29))
+                        .addGap(18, 18, 18)
+                        .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)))
+                    .addGroup(rantevouLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel15)))
+                .addGap(500, 500, 500))
         );
         rantevouLayout.setVerticalGroup(
             rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 638, Short.MAX_VALUE)
+            .addGroup(rantevouLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jLabel15)
+                .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rantevouLayout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                        .addGap(64, 64, 64))
+                    .addGroup(rantevouLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel28)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel29)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         parent_panel.add(rantevou, "card8");
@@ -952,6 +1028,14 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_save_wishlistActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1010,6 +1094,7 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -1022,6 +1107,8 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1034,7 +1121,10 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JMenu leitourgies_axrhsto;
     private javax.swing.JMenuItem my_apps_btn;
     private java.awt.Checkbox newsletter_checkbox;
@@ -1051,6 +1141,7 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem test_drive;
     private javax.swing.JTable test_drive_table;
     private javax.swing.JTable test_drive_table1;
+    private javax.swing.JTable test_drive_table2;
     private javax.swing.JPanel trade_in;
     private javax.swing.JMenuItem trade_in_btn;
     private javax.swing.JPanel wishlist;
