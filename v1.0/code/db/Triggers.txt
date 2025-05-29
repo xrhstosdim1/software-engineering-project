@@ -1,0 +1,14 @@
+DELIMITER $$
+
+CREATE TRIGGER update_order_status
+AFTER UPDATE ON Package
+FOR EACH ROW
+BEGIN
+    IF OLD.PackcageStatus = 'Unpacked' AND NEW.PackcageStatus = 'Packed' THEN
+        UPDATE Order_
+        SET order_status = 'Ready for Pick up'
+        WHERE Order_(OrderID) = Package(PackageOrderID)  AND order_status = 'Pending';
+    END IF;
+END$$
+
+DELIMITER ;
