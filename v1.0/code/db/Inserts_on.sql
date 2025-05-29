@@ -184,7 +184,22 @@ INSERT INTO Leasing (LeasingID, CustomerName, ProductID, Start_date, Final_date,
 (2, 'lisa_taylor', 7, '2023-02-01', '2023-11-30', 'Renting', 4900),
 (3, 'emily_miller', 3, '2023-03-01', '2024-02-29', 'Renting', 5200),
 (4, 'thomas_clark', 5, '2023-04-01', '2024-04-02', 'Cancelled', 4800),
-(5, NULL, 7,'2025-05-01', '2025-05-11', 'Available', 4800);
+(5, NULL, 7,'2025-05-01', '2025-05-11', 'Available', 4800),
+(6,NULL,41,'2025-06-01', '2025-06-11', 'Available', 3800),
+(7,NULL,42,'2025-06-01', '2025-06-11', 'Available', 2300),
+(8,NULL,43,'2025-06-01', '2025-06-11', 'Available', 1200),
+(9,NULL,44,'2025-06-01', '2025-06-11', 'Available', 4200),
+(10,NULL,45,'2025-06-01', '2025-06-11', 'Available', 6800),
+(11,NULL,46,'2025-06-01', '2025-06-11', 'Available', 1500),
+(12,NULL,47,'2025-06-01', '2025-06-11', 'Available', 3000),
+(13,NULL,48,'2025-06-01', '2025-06-11', 'Available', 2500),
+(14,NULL,49,'2025-06-01', '2025-06-11', 'Available', 4000),
+(15,NULL,50,'2025-06-01', '2025-06-11', 'Available', 5000),
+(16,NULL,51,'2025-06-01', '2025-06-11', 'Available', 3500),
+(17,NULL,52,'2025-06-01', '2025-06-11', 'Available', 2700),
+(18,NULL,53,'2025-06-01', '2025-06-11', 'Available', 3200),
+(19,NULL,54,'2025-06-01', '2025-06-11', 'Available', 2900),
+(20,NULL,55,'2025-06-01', '2025-06-11', 'Available', 4100);
 
 
 INSERT INTO Messages (MessageID, MessageText, SenderName) VALUES
