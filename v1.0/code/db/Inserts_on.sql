@@ -1,3 +1,4 @@
+use project;
 INSERT INTO Product  (ProductID, ProductName, Price, Quantity, Status)  VALUES
 (1, 'BMW X5', 65000.00, 5, 'Available for purchase'),
 (2, 'Mercedes C-Class', 45000.00, 3, 'Available for leasing'),
