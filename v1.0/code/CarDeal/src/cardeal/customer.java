@@ -1,5 +1,6 @@
 
 package cardeal;
+import java.util.Date;
 import java.sql.*;
 import javax.swing.*;
 import net.proteanit.sql.DbUtils;
@@ -60,19 +61,20 @@ PreparedStatement pst=null;
         jScrollPane4 = new javax.swing.JScrollPane();
         available_shop_table = new javax.swing.JTable();
         rent = new javax.swing.JPanel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        date_apo_txt = new com.toedter.calendar.JDateChooser();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jButton7 = new javax.swing.JButton();
+        date_ews_txt = new com.toedter.calendar.JDateChooser();
+        search_dates_btn = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        wishlist_table2 = new javax.swing.JTable();
+        leasing_table = new javax.swing.JTable();
         jLabel34 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        car_name_txt = new javax.swing.JTextField();
+        selected_apo_txt = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        submit_rent = new javax.swing.JButton();
+        selected_eos_txt = new javax.swing.JTextField();
+        car_price_txt = new javax.swing.JTextField();
         trade_in = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         test_drive_table3 = new javax.swing.JTable();
@@ -406,6 +408,12 @@ PreparedStatement pst=null;
 
         parent_panel.add(shop, "card4");
 
+        date_apo_txt.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                date_apo_txtPropertyChange(evt);
+            }
+        });
+
         jLabel32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel32.setText("Επιλέξτε ημερομηνία έναρξης ενοικίασης");
         jLabel32.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -414,14 +422,14 @@ PreparedStatement pst=null;
         jLabel33.setText("Επιλέξτε ημερομηνία επιστροφής");
         jLabel33.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jButton7.setText("Αναζήτηση");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        search_dates_btn.setText("Αναζήτηση");
+        search_dates_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                search_dates_btnActionPerformed(evt);
             }
         });
 
-        wishlist_table2.setModel(new javax.swing.table.DefaultTableModel(
+        leasing_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -432,30 +440,38 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane7.setViewportView(wishlist_table2);
+        leasing_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                leasing_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(leasing_table);
 
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("eikona");
         jLabel34.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jTextField7.setEditable(false);
-        jTextField7.setBorder(javax.swing.BorderFactory.createTitledBorder("Πληροφορίες"));
+        car_name_txt.setEditable(false);
+        car_name_txt.setBorder(javax.swing.BorderFactory.createTitledBorder("Όνομα"));
 
-        jTextField9.setEditable(false);
-        jTextField9.setBorder(javax.swing.BorderFactory.createTitledBorder("Όνομα"));
-
-        jTextField10.setEditable(false);
-        jTextField10.setBorder(javax.swing.BorderFactory.createTitledBorder("Τιμή"));
+        selected_apo_txt.setEditable(false);
+        selected_apo_txt.setBorder(javax.swing.BorderFactory.createTitledBorder("Από"));
 
         jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel35.setText("Οχήματα προς ενοικίαση");
 
-        jButton8.setText("Κατοχύρωση οχήματος για ενοικίαση");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        submit_rent.setText("Κατοχύρωση οχήματος για ενοικίαση");
+        submit_rent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                submit_rentActionPerformed(evt);
             }
         });
+
+        selected_eos_txt.setEditable(false);
+        selected_eos_txt.setBorder(javax.swing.BorderFactory.createTitledBorder("Έως"));
+
+        car_price_txt.setEditable(false);
+        car_price_txt.setBorder(javax.swing.BorderFactory.createTitledBorder("Τιμή"));
 
         javax.swing.GroupLayout rentLayout = new javax.swing.GroupLayout(rent);
         rent.setLayout(rentLayout);
@@ -467,14 +483,14 @@ PreparedStatement pst=null;
                         .addGap(46, 46, 46)
                         .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(date_ews_txt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(date_apo_txt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))))
                     .addGroup(rentLayout.createSequentialGroup()
                         .addGap(129, 129, 129)
-                        .addComponent(jButton7)))
+                        .addComponent(search_dates_btn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 577, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -483,12 +499,13 @@ PreparedStatement pst=null;
                         .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
                         .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(car_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(selected_apo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(selected_eos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(car_price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(rentLayout.createSequentialGroup()
                         .addGap(125, 125, 125)
-                        .addComponent(jButton8)))
+                        .addComponent(submit_rent)))
                 .addGap(36, 36, 36))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rentLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -505,23 +522,25 @@ PreparedStatement pst=null;
                             .addGroup(rentLayout.createSequentialGroup()
                                 .addComponent(jLabel32)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(date_apo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel33)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(date_ews_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(30, 30, 30)
-                                .addComponent(jButton7))
-                            .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(rentLayout.createSequentialGroup()
-                                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(39, 39, 39)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(search_dates_btn))
+                            .addGroup(rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, rentLayout.createSequentialGroup()
+                                    .addComponent(car_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(car_price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(selected_apo_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(selected_eos_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(122, 122, 122)
-                        .addComponent(jButton8))
+                        .addComponent(submit_rent))
                     .addGroup(rentLayout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(jLabel35)
@@ -529,8 +548,6 @@ PreparedStatement pst=null;
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
-
-        jTextField7.getAccessibleContext().setAccessibleName("Τιμή");
 
         parent_panel.add(rent, "card5");
 
@@ -1381,8 +1398,7 @@ PreparedStatement pst=null;
             JOptionPane.showMessageDialog(null, "Απεγγραφήκατε με επιτυχία από το Newsletter για το αντικείμενο που επιλέξατε!");
           
                
-        }
-        catch(Exception ex){
+        }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
         } 
       Update_Table( "Wishlist",wishlist_table); 
@@ -1413,13 +1429,56 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+    private void search_dates_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_dates_btnActionPerformed
+        Date fromDate = date_apo_txt.getDate();
+        Date toDate = date_ews_txt.getDate();
+        
+        java.sql.Date sqlFromDate = new java.sql.Date(fromDate.getTime());
+        java.sql.Date sqlToDate = new java.sql.Date(toDate.getTime());
+        
+        try{
+            String sql = "SELECT ProductID, Price, Start_date, Final_date FROM Leasing WHERE Start_date BETWEEN ? AND ? AND Status_ = 'Available'";
+            pst = conn.prepareStatement(sql);
+            pst.setDate(1, sqlFromDate);
+            pst.setDate(2, sqlToDate);
+            rs=pst.executeQuery();
+            
+            leasing_table.setModel(DbUtils.resultSetToTableModel(rs));
+            rs.close();
+            pst.close();
+            
+            if(leasing_table.getRowCount() == 0){
+                JOptionPane.showMessageDialog(null, "Δεν υπάρχουν διαθέσιμα οχήματα για τις επιλεγμένες ημερομηνίες.");
+            }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        } 
+    }//GEN-LAST:event_search_dates_btnActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+    private void submit_rentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_rentActionPerformed
+        int row = leasing_table.getSelectedRow();
+        String product_id=(leasing_table.getModel().getValueAt(row,0).toString()); 
+        String status = "Renting";
+        String customer_name = Session.getUsername();
+        try{
+            int choice = JOptionPane.showConfirmDialog(null, "Θέλετε να κατοχυρώσετε το όχημα για τις συγκεκριμένες ημερομηνίες;", "Επιβεβαίωση", JOptionPane.YES_NO_OPTION);
+            if (choice == JOptionPane.YES_OPTION){
+                String sql = "UPDATE Leasing SET CustomerName = ?, Status_ = ? WHERE LeasingID = ?";
+                pst = conn.prepareStatement(sql);
+                pst.setString(1,customer_name);
+                pst.setString(2, status);
+                pst.setString(3, product_id);
+                int affectedRows = pst.executeUpdate();
+                pst.close();
+            
+                if(affectedRows > 0){
+                    JOptionPane.showMessageDialog(null, "Το όχημα είναι δικό σας για τις επιλεγμένες ημερομηνίες.");
+                }
+            } 
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        } 
+    }//GEN-LAST:event_submit_rentActionPerformed
 
     private void wishlist_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wishlist_tableMouseClicked
         try{
@@ -1434,6 +1493,8 @@ PreparedStatement pst=null;
                 String add2 =rs.getString("Price");
                 wishlist_price_txt.setText(add2); 
             }
+            rs.close();
+            pst.close();
         }
         catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
@@ -1522,11 +1583,38 @@ PreparedStatement pst=null;
             if(affectedRows > 0){
                 JOptionPane.showMessageDialog(null, "Η παραγγελίας σας καταχωρήθηκε επιτυχώς. Θα ενημερωθείτε με μήνυμα για την παραλαβή της.");
             }
-        }
-        catch(Exception ex){
+        }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
         }        
     }//GEN-LAST:event_place_order_btnActionPerformed
+
+    private void date_apo_txtPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_date_apo_txtPropertyChange
+              
+    }//GEN-LAST:event_date_apo_txtPropertyChange
+
+    private void leasing_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leasing_tableMouseClicked
+        int row = leasing_table.getSelectedRow();
+        String product_id=(leasing_table.getModel().getValueAt(row,0).toString()); 
+        String product_price=(leasing_table.getModel().getValueAt(row,1).toString());
+        String start_date = (leasing_table.getModel().getValueAt(row,2).toString());
+        String end_date = (leasing_table.getModel().getValueAt(row,3).toString()); 
+        car_price_txt.setText(product_price);
+        try{
+            String sql = "SELECT ProductName FROM Product WHERE ProductID = ?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, product_id);
+            ResultSet rs = pst.executeQuery();
+            String product_name = "";
+                    if(rs.next()){
+                        product_name = rs.getString("ProductName");
+                        car_name_txt.setText(product_name);
+                        selected_apo_txt.setText(start_date);
+                        selected_eos_txt.setText(end_date);
+                    }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }//GEN-LAST:event_leasing_tableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1571,6 +1659,10 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem agora_btn;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JTable available_shop_table;
+    private javax.swing.JTextField car_name_txt;
+    private javax.swing.JTextField car_price_txt;
+    private com.toedter.calendar.JDateChooser date_apo_txt;
+    private com.toedter.calendar.JDateChooser date_ews_txt;
     private javax.swing.JTable diathesima_table;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JMenu edit_profile_button;
@@ -1581,10 +1673,6 @@ PreparedStatement pst=null;
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1626,14 +1714,12 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTable leasing_table;
     private javax.swing.JMenu leitourgies_axrhsto;
     private javax.swing.JMenuItem my_apps_btn;
     private javax.swing.JCheckBox newsletter_checkbox;
@@ -1647,9 +1733,13 @@ PreparedStatement pst=null;
     private javax.swing.JButton remove_from_wishlist;
     private javax.swing.JPanel rent;
     private javax.swing.JButton save_wishlist;
+    private javax.swing.JButton search_dates_btn;
+    private javax.swing.JTextField selected_apo_txt;
     private javax.swing.JTextField selected_car_name;
     private javax.swing.JTextField selected_date;
+    private javax.swing.JTextField selected_eos_txt;
     private javax.swing.JPanel shop;
+    private javax.swing.JButton submit_rent;
     private javax.swing.JButton submit_testDrive_btn;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JPanel testDrive;
@@ -1663,6 +1753,5 @@ PreparedStatement pst=null;
     private javax.swing.JTextField wishlist_name_txt;
     private javax.swing.JTextField wishlist_price_txt;
     private javax.swing.JTable wishlist_table;
-    private javax.swing.JTable wishlist_table2;
     // End of variables declaration//GEN-END:variables
 }
