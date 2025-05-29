@@ -100,11 +100,13 @@ PreparedStatement pst=null;
         rantevou = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        test_drive_table2 = new javax.swing.JTable();
+        rantevou_table = new javax.swing.JTable();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        status_txt = new javax.swing.JTextField();
+        price_txt = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        comm_txt = new javax.swing.JTextField();
         testDrive = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         epivevaiwsh_stoixeiwn_btn = new javax.swing.JButton();
@@ -783,7 +785,7 @@ PreparedStatement pst=null;
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel15.setText("Τα ραντεβού μου για ανταλλαγή οχήματος");
 
-        test_drive_table2.setModel(new javax.swing.table.DefaultTableModel(
+        rantevou_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -794,30 +796,40 @@ PreparedStatement pst=null;
                 "Ημερομηνία", "Ώρα", "Όχημα"
             }
         ));
-        jScrollPane5.setViewportView(test_drive_table2);
-        if (test_drive_table2.getColumnModel().getColumnCount() > 0) {
-            test_drive_table2.getColumnModel().getColumn(2).setHeaderValue("Όχημα");
+        rantevou_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rantevou_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(rantevou_table);
+        if (rantevou_table.getColumnModel().getColumnCount() > 0) {
+            rantevou_table.getColumnModel().getColumn(2).setHeaderValue("Όχημα");
         }
 
         jLabel28.setText("Κατάσταση");
 
         jLabel29.setText("Τιμή");
 
-        jTextField1.setEditable(false);
-        jTextField1.setEnabled(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        status_txt.setEditable(false);
+        status_txt.setEnabled(false);
+        status_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                status_txtActionPerformed(evt);
             }
         });
 
-        jTextField3.setEditable(false);
-        jTextField3.setEnabled(false);
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        price_txt.setEditable(false);
+        price_txt.setEnabled(false);
+        price_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                price_txtActionPerformed(evt);
             }
         });
+
+        jLabel22.setText("Σχόλια");
+
+        comm_txt.setEditable(false);
+        comm_txt.setEnabled(false);
 
         javax.swing.GroupLayout rantevouLayout = new javax.swing.GroupLayout(rantevou);
         rantevou.setLayout(rantevouLayout);
@@ -829,12 +841,18 @@ PreparedStatement pst=null;
                 .addGap(181, 181, 181)
                 .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel28)
-                    .addComponent(jLabel29))
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel22))
                 .addGap(18, 18, 18)
                 .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                .addGap(500, 500, 500))
+                    .addGroup(rantevouLayout.createSequentialGroup()
+                        .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(status_txt)
+                            .addComponent(price_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                        .addGap(500, 500, 500))
+                    .addGroup(rantevouLayout.createSequentialGroup()
+                        .addComponent(comm_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rantevouLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
@@ -852,11 +870,15 @@ PreparedStatement pst=null;
                 .addGap(102, 102, 102)
                 .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(status_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(comm_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1293,6 +1315,16 @@ PreparedStatement pst=null;
         parent_panel.add(rantevou);
         parent_panel.repaint();
         parent_panel.revalidate();  
+        
+        try {
+             String sql = "SELECT TradeID, CustomerName, TradeDate, CarName FROM Trade_In WHERE CustomerName = ?";
+             pst=conn.prepareStatement(sql);
+             pst.setString(1, Session.getUsername());
+             rs=pst.executeQuery();
+             rantevou_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,ex);
+        }           
     }//GEN-LAST:event_my_apps_btnActionPerformed
 
     private void test_driveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_test_driveActionPerformed
@@ -1405,13 +1437,13 @@ PreparedStatement pst=null;
         }
     }//GEN-LAST:event_save_wishlistActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void status_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_status_txtActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void price_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_price_txtActionPerformed
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
@@ -1616,6 +1648,33 @@ PreparedStatement pst=null;
         }
     }//GEN-LAST:event_leasing_tableMouseClicked
 
+    private void rantevou_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rantevou_tableMouseClicked
+        int row = rantevou_table.getSelectedRow();
+        String trade_id=(rantevou_table.getModel().getValueAt(row,0).toString()); 
+        
+        try{
+            String sql = "SELECT TradeStatus, Price, Description FROM Trade_In WHERE TradeID = ?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, trade_id);
+            ResultSet rs = pst.executeQuery();
+            String desc_ = "";
+            String price_offered = "";
+            String status = "";
+                    if(rs.next()){
+                        desc_ = rs.getString("Description");
+                        price_offered = rs.getString("Price");
+                        status = rs.getString("TradeStatus");
+                        
+                        price_txt.setText(price_offered);
+                        status_txt.setText(status);
+                        comm_txt.setText(desc_);
+                    }
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+    }//GEN-LAST:event_rantevou_tableMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1661,6 +1720,7 @@ PreparedStatement pst=null;
     private javax.swing.JTable available_shop_table;
     private javax.swing.JTextField car_name_txt;
     private javax.swing.JTextField car_price_txt;
+    private javax.swing.JTextField comm_txt;
     private com.toedter.calendar.JDateChooser date_apo_txt;
     private com.toedter.calendar.JDateChooser date_ews_txt;
     private javax.swing.JTable diathesima_table;
@@ -1687,6 +1747,7 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
@@ -1713,9 +1774,7 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
@@ -1726,10 +1785,12 @@ PreparedStatement pst=null;
     private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parent_panel;
     private javax.swing.JButton place_order_btn;
+    private javax.swing.JTextField price_txt;
     private javax.swing.JLabel product_image;
     private javax.swing.JTextField product_name_txt;
     private javax.swing.JTextField product_price_txt;
     private javax.swing.JPanel rantevou;
+    private javax.swing.JTable rantevou_table;
     private javax.swing.JButton remove_from_wishlist;
     private javax.swing.JPanel rent;
     private javax.swing.JButton save_wishlist;
@@ -1739,12 +1800,12 @@ PreparedStatement pst=null;
     private javax.swing.JTextField selected_date;
     private javax.swing.JTextField selected_eos_txt;
     private javax.swing.JPanel shop;
+    private javax.swing.JTextField status_txt;
     private javax.swing.JButton submit_rent;
     private javax.swing.JButton submit_testDrive_btn;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JPanel testDrive;
     private javax.swing.JMenuItem test_drive;
-    private javax.swing.JTable test_drive_table2;
     private javax.swing.JTable test_drive_table3;
     private javax.swing.JPanel trade_in;
     private javax.swing.JMenuItem trade_in_btn;
