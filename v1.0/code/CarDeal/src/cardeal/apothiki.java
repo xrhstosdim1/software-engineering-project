@@ -84,7 +84,7 @@ PreparedStatement pst=null;
         jLabel12 = new javax.swing.JLabel();
         part_new_stock = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        prosthiki_stock = new javax.swing.JButton();
+        prosthiki_stock_btn = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         part_name2 = new javax.swing.JTextField();
         part_id2 = new javax.swing.JTextField();
@@ -93,7 +93,7 @@ PreparedStatement pst=null;
         part_stock2 = new javax.swing.JTextField();
         part_new_stock2 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        afairesh_stock_btn = new javax.swing.JButton();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
@@ -482,10 +482,10 @@ PreparedStatement pst=null;
 
         jLabel16.setText("Προσθήκη ποσότητας");
 
-        prosthiki_stock.setText("Προσθήκη stock");
-        prosthiki_stock.addActionListener(new java.awt.event.ActionListener() {
+        prosthiki_stock_btn.setText("Προσθήκη stock");
+        prosthiki_stock_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                prosthiki_stockActionPerformed(evt);
+                prosthiki_stock_btnActionPerformed(evt);
             }
         });
 
@@ -506,10 +506,10 @@ PreparedStatement pst=null;
 
         jLabel24.setText("Αφαίρεσης ποσότητας");
 
-        jButton4.setText("Αφαίρεση stock");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        afairesh_stock_btn.setText("Αφαίρεση stock");
+        afairesh_stock_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                afairesh_stock_btnActionPerformed(evt);
             }
         });
 
@@ -540,7 +540,7 @@ PreparedStatement pst=null;
                                 .addComponent(part_new_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGap(228, 228, 228)
-                        .addComponent(prosthiki_stock)))
+                        .addComponent(prosthiki_stock_btn)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 475, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -562,7 +562,7 @@ PreparedStatement pst=null;
                             .addComponent(part_new_stock2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGap(99, 99, 99)
-                        .addComponent(jButton4)))
+                        .addComponent(afairesh_stock_btn)))
                 .addGap(97, 97, 97))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_apothematosLayout.createSequentialGroup()
                 .addGap(622, 622, 622)
@@ -603,7 +603,7 @@ PreparedStatement pst=null;
                             .addComponent(part_new_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16))
                         .addGap(55, 55, 55)
-                        .addComponent(prosthiki_stock))
+                        .addComponent(prosthiki_stock_btn))
                     .addGroup(diaxeirisi_apothematosLayout.createSequentialGroup()
                         .addGroup(diaxeirisi_apothematosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(part_name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -621,7 +621,7 @@ PreparedStatement pst=null;
                             .addComponent(part_new_stock2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel24))
                         .addGap(55, 55, 55)
-                        .addComponent(jButton4)))
+                        .addComponent(afairesh_stock_btn)))
                 .addContainerGap(149, Short.MAX_VALUE))
         );
 
@@ -967,7 +967,7 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_new_message_txtActionPerformed
 
-    private void prosthiki_stockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosthiki_stockActionPerformed
+    private void prosthiki_stock_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosthiki_stock_btnActionPerformed
         try{
             String posothta_to_add_str = part_new_stock.getText().trim();
             int posothta_to_add = Integer.parseInt(posothta_to_add_str);
@@ -1000,11 +1000,42 @@ PreparedStatement pst=null;
             }
         } catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);}     
-    }//GEN-LAST:event_prosthiki_stockActionPerformed
+    }//GEN-LAST:event_prosthiki_stock_btnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void afairesh_stock_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afairesh_stock_btnActionPerformed
+        try{
+            String posothta_to_add_str = part_new_stock.getText().trim();
+            int posothta_to_remove = Integer.parseInt(posothta_to_add_str);
+
+            if(posothta_to_remove <= 0 ){
+                JOptionPane.showMessageDialog(null, "Δεν μπορεί να αφαιρεθεί μηδενική ποσότητα.");
+                return;
+            }
+
+            String SelectQ = "SELECT Quantity FROM Product WHERE ProductID = ?";
+            pst = conn.prepareStatement(SelectQ);
+            pst.setString(1, search_id_txt.getText());
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                int current_quantity = rs.getInt("Quantity");
+                int new_quantity = current_quantity - posothta_to_remove;
+                rs.close();
+                pst.close();
+
+                String UpdateQ = "UPDATE Product SET Quantity = ? WHERE ProductID = ?";
+                pst = conn.prepareStatement(UpdateQ);
+                pst.setInt(1, new_quantity);
+                pst.setString(2, search_id_txt.getText());
+
+                pst.executeUpdate();
+                pst.close();
+
+                updateStockFields();
+            }
+        } catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);}  
+    }//GEN-LAST:event_afairesh_stock_btnActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
@@ -1094,6 +1125,7 @@ PreparedStatement pst=null;
     private javax.swing.JTable Table_show1;
     private javax.swing.JTable Table_show2;
     private javax.swing.JButton Update_DB;
+    private javax.swing.JButton afairesh_stock_btn;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JPanel default_loggedIn;
     private javax.swing.JPanel diaxeirisi_apothematos;
@@ -1107,7 +1139,6 @@ PreparedStatement pst=null;
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JButton finish_packing_btn;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1160,7 +1191,7 @@ PreparedStatement pst=null;
     private javax.swing.JTextField part_new_stock2;
     private javax.swing.JTextField part_stock;
     private javax.swing.JTextField part_stock2;
-    private javax.swing.JButton prosthiki_stock;
+    private javax.swing.JButton prosthiki_stock_btn;
     private javax.swing.JButton save_packing_progress_btn;
     private javax.swing.JButton search_btn;
     private javax.swing.JTextField search_id_txt;
