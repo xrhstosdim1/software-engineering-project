@@ -185,7 +185,7 @@ create table Wishlist
     WishlistID INT(10) PRIMARY KEY AUTO_INCREMENT,
     CustomerName VARCHAR(30) NOT NULL,
     ProductID INT(10) NOT NULL,
-    NewLetter BOOLEAN,
+    NewsLetter BOOLEAN,
     CONSTRAINT FK_CustomerWishlist FOREIGN KEY (CustomerName) REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FK_ProductWishlist FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
