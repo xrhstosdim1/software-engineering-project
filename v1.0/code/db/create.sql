@@ -193,3 +193,10 @@ create table Wishlist
     CONSTRAINT FK_ProductWishlist FOREIGN KEY (ProductID) REFERENCES Product(ProductID)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+
+CREATE TABLE Rating (
+RatingID INT(10) PRIMARY KEY AUTO_INCREMENT,
+RatinhgValue INT(2) NOT NULL
+
+);
