@@ -77,14 +77,16 @@ PreparedStatement pst=null;
         car_price_txt = new javax.swing.JTextField();
         trade_in = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        test_drive_table3 = new javax.swing.JTable();
+        tradein_cl_tbl = new javax.swing.JTable();
         jLabel27 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        desc_txt = new javax.swing.JTextField();
+        date_time_txt = new javax.swing.JTextField();
+        kleise_rantevou = new javax.swing.JButton();
+        model_txt = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        year_txt = new javax.swing.JTextField();
         wishlist = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         wishlist_name_txt = new javax.swing.JTextField();
@@ -162,7 +164,7 @@ PreparedStatement pst=null;
                 .addComponent(jLabel17)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         parent_panel.add(Welcome, "card2");
@@ -279,7 +281,7 @@ PreparedStatement pst=null;
                     .addComponent(telephone_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(Update_DB)
-                .addContainerGap(257, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
         parent_panel.add(epexergasia_profile, "card2");
@@ -405,7 +407,7 @@ PreparedStatement pst=null;
                                 .addComponent(product_image, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(add_to_wishlist)))))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
 
         parent_panel.add(shop, "card4");
@@ -548,12 +550,12 @@ PreparedStatement pst=null;
                         .addComponent(jLabel35)
                         .addGap(47, 47, 47)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         parent_panel.add(rent, "card5");
 
-        test_drive_table3.setModel(new javax.swing.table.DefaultTableModel(
+        tradein_cl_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -564,46 +566,45 @@ PreparedStatement pst=null;
                 "Ημερομηνία", "Ώρα"
             }
         ));
-        jScrollPane6.setViewportView(test_drive_table3);
+        tradein_cl_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tradein_cl_tblMouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(tradein_cl_tbl);
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel27.setText("Ραντεβού για ανταλλαγή οχήματος");
 
-        jLabel30.setText("Επιλεγμένη ημερομηνία");
+        jLabel30.setText("Επιλεγμένη ημερομηνία και ώρα");
 
-        jLabel31.setText("Επιλεγμένη ώρα");
-
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        jTextField4.setText("Πληκτρολογήστε...");
-        jTextField4.setBorder(javax.swing.BorderFactory.createTitledBorder("Πληροφορίες για τον μηχανικό"));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        desc_txt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        desc_txt.setText("Πληκτρολογήστε...");
+        desc_txt.setBorder(javax.swing.BorderFactory.createTitledBorder("Πληροφορίες για τον μηχανικό"));
+        desc_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                desc_txtActionPerformed(evt);
             }
         });
 
-        jTextField5.setEditable(false);
-        jTextField5.setEnabled(false);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        date_time_txt.setEditable(false);
+        date_time_txt.setEnabled(false);
+        date_time_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                date_time_txtActionPerformed(evt);
             }
         });
 
-        jTextField6.setEditable(false);
-        jTextField6.setEnabled(false);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        kleise_rantevou.setText("Επιβεβαίωση ραντεβού");
+        kleise_rantevou.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                kleise_rantevouActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Επιβεβαίωση ραντεβού");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
+        jLabel24.setText("Όχημα");
+
+        jLabel36.setText("Μοντέλο (έτος) ");
 
         javax.swing.GroupLayout trade_inLayout = new javax.swing.GroupLayout(trade_in);
         trade_in.setLayout(trade_inLayout);
@@ -615,47 +616,59 @@ PreparedStatement pst=null;
                 .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(trade_inLayout.createSequentialGroup()
                         .addGap(312, 312, 312)
-                        .addComponent(jButton6))
-                    .addGroup(trade_inLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(trade_inLayout.createSequentialGroup()
-                                .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(kleise_rantevou))
+                    .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(trade_inLayout.createSequentialGroup()
+                            .addGap(110, 110, 110)
+                            .addComponent(desc_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(trade_inLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                            .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(trade_inLayout.createSequentialGroup()
                                     .addComponent(jLabel30)
-                                    .addComponent(jLabel31))
-                                .addGap(18, 18, 18)
-                                .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(270, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_inLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel27)
-                .addGap(452, 452, 452))
+                                    .addGap(18, 18, 18)
+                                    .addComponent(date_time_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel27))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                            .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_inLayout.createSequentialGroup()
+                                    .addComponent(jLabel24)
+                                    .addGap(33, 33, 33))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, trade_inLayout.createSequentialGroup()
+                                    .addComponent(jLabel36)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                            .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(model_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         trade_inLayout.setVerticalGroup(
             trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trade_inLayout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel27)
+                .addGap(71, 71, 71)
                 .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(trade_inLayout.createSequentialGroup()
-                        .addGap(71, 71, 71)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE))
-                    .addGroup(trade_inLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
-                        .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel30)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel31)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(35, 35, 35)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6)))
+                        .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(trade_inLayout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel30)
+                                    .addComponent(date_time_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(trade_inLayout.createSequentialGroup()
+                                .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(model_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel24))
+                                .addGap(18, 18, 18)
+                                .addGroup(trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(year_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel36))))
+                        .addGap(72, 72, 72)
+                        .addComponent(desc_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addComponent(kleise_rantevou))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(64, 64, 64))
         );
 
@@ -756,7 +769,7 @@ PreparedStatement pst=null;
             .addGroup(wishlistLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(wishlistLayout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -768,7 +781,7 @@ PreparedStatement pst=null;
                         .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(wishlist_price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                         .addComponent(newsletter_checkbox)
                         .addGap(29, 29, 29)
                         .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -862,7 +875,7 @@ PreparedStatement pst=null;
             rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rantevouLayout.createSequentialGroup()
                 .addGap(178, 178, 178)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
                 .addGap(64, 64, 64))
             .addGroup(rantevouLayout.createSequentialGroup()
                 .addGap(74, 74, 74)
@@ -980,7 +993,7 @@ PreparedStatement pst=null;
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(18, 18, 18)
                 .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -1212,7 +1225,15 @@ PreparedStatement pst=null;
         parent_panel.removeAll();
         parent_panel.add(trade_in);
         parent_panel.repaint();
-        parent_panel.revalidate();     
+        parent_panel.revalidate();
+          try {
+             String sql = "SELECT * FROM Trade_in_eleuthera WHERE Status_ = 'Available' "  ;
+             pst=conn.prepareStatement(sql);
+             rs=pst.executeQuery();
+             tradein_cl_tbl.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,ex);
+        }  
     }//GEN-LAST:event_trade_in_btnActionPerformed
 
     private void leitourgies_axrhstoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leitourgies_axrhstoActionPerformed
@@ -1445,21 +1466,48 @@ PreparedStatement pst=null;
         // TODO add your handling code here:
     }//GEN-LAST:event_price_txtActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void desc_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_desc_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_desc_txtActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void date_time_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_date_time_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_date_time_txtActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void kleise_rantevouActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kleise_rantevouActionPerformed
+    String username = Session.getUsername();
+        if (model_txt.getText().trim().isEmpty() && year_txt.getText().trim().isEmpty() && desc_txt.getText().trim().isEmpty() ) {
+    JOptionPane.showMessageDialog(rootPane, "Not enough details", "Date failed to book", 2);
+}
+   else{
+    try{
+            String carname = model_txt.getText();
+            String carmodel = year_txt.getText();
+            String desc = desc_txt.getText();
+            int row = tradein_cl_tbl.getSelectedRow();
+            String table_click2=(tradein_cl_tbl.getModel().getValueAt(row,0).toString());
+            String date_selected=(tradein_cl_tbl.getModel().getValueAt(row,1).toString());
+            String sql = "UPDATE   Trade_in_eleuthera set Status_ = 'Unavailable'  where TradeINID = '"+table_click2+"' " ;
+            pst= conn.prepareStatement(sql);
+            pst.execute();
+            String sql2 = "INSERT INTO Trade_In (CustomerName, TradeDate, carName, CarModel, Description, Price) VALUES (?, ?, ?, ?, ?, NULL)";
+             pst= conn.prepareStatement(sql2);
+             pst.setString(1,username);
+             pst.setString(2,date_selected);
+             pst.setString(3, carname);
+             pst.setString(4, carmodel);
+             pst.setString(5, desc);
+             pst.execute();
+   
+            JOptionPane.showMessageDialog(null, "Κλείσατε με επιτυχία την ημερομηνία που επιλέξατε!");
+          
+               
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+   }
+   }
+    }//GEN-LAST:event_kleise_rantevouActionPerformed
 
     private void search_dates_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_dates_btnActionPerformed
         Date fromDate = date_apo_txt.getDate();
@@ -1675,6 +1723,13 @@ PreparedStatement pst=null;
         
     }//GEN-LAST:event_rantevou_tableMouseClicked
 
+    private void tradein_cl_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tradein_cl_tblMouseClicked
+       int row = tradein_cl_tbl.getSelectedRow();
+       String rantevou=(tradein_cl_tbl.getModel().getValueAt(row,1).toString());
+       date_time_txt.setText(rantevou);
+      
+    }//GEN-LAST:event_tradein_cl_tblMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1723,6 +1778,8 @@ PreparedStatement pst=null;
     private javax.swing.JTextField comm_txt;
     private com.toedter.calendar.JDateChooser date_apo_txt;
     private com.toedter.calendar.JDateChooser date_ews_txt;
+    private javax.swing.JTextField date_time_txt;
+    private javax.swing.JTextField desc_txt;
     private javax.swing.JTable diathesima_table;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JMenu edit_profile_button;
@@ -1732,7 +1789,6 @@ PreparedStatement pst=null;
     private javax.swing.JButton epivevaiwsh_stoixeiwn_btn;
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1749,6 +1805,7 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -1756,11 +1813,11 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1775,11 +1832,10 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JButton kleise_rantevou;
     private javax.swing.JTable leasing_table;
     private javax.swing.JMenu leitourgies_axrhsto;
+    private javax.swing.JTextField model_txt;
     private javax.swing.JMenuItem my_apps_btn;
     private javax.swing.JCheckBox newsletter_checkbox;
     private javax.swing.JTextField onoma_txt;
@@ -1806,13 +1862,14 @@ PreparedStatement pst=null;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JPanel testDrive;
     private javax.swing.JMenuItem test_drive;
-    private javax.swing.JTable test_drive_table3;
     private javax.swing.JPanel trade_in;
     private javax.swing.JMenuItem trade_in_btn;
+    private javax.swing.JTable tradein_cl_tbl;
     private javax.swing.JPanel wishlist;
     private javax.swing.JMenuItem wishlist_btn;
     private javax.swing.JTextField wishlist_name_txt;
     private javax.swing.JTextField wishlist_price_txt;
     private javax.swing.JTable wishlist_table;
+    private javax.swing.JTextField year_txt;
     // End of variables declaration//GEN-END:variables
 }

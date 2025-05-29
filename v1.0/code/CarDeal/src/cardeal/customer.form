@@ -157,7 +157,7 @@
                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="219" max="32767" attributes="0"/>
+                      <EmptySpace pref="236" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -284,7 +284,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="Update_DB" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="257" max="32767" attributes="0"/>
+                      <EmptySpace pref="274" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -453,7 +453,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="102" max="32767" attributes="0"/>
+                      <EmptySpace pref="119" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -653,7 +653,7 @@
                               <Component id="jScrollPane7" min="-2" pref="442" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="81" max="32767" attributes="0"/>
+                      <EmptySpace pref="98" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -801,32 +801,42 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <Component id="kleise_rantevou" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField4" min="-2" pref="541" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel30" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="desc_txt" min="-2" pref="541" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace pref="50" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="date_time_txt" min="-2" pref="204" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jTextField6" min="-2" pref="135" max="-2" attributes="0"/>
-                                          <Component id="jTextField5" min="-2" pref="135" max="-2" attributes="0"/>
+                                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="model_txt" min="-2" pref="147" max="-2" attributes="0"/>
+                                      <Component id="year_txt" min="-2" pref="147" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="270" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="452" max="-2" attributes="0"/>
+                      <EmptySpace pref="214" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -835,27 +845,35 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                       <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="jScrollPane6" pref="396" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="date_time_txt" alignment="3" min="-2" pref="64" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="model_txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="year_txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" pref="240" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="desc_txt" min="-2" pref="240" max="-2" attributes="0"/>
+                              <EmptySpace pref="9" max="32767" attributes="0"/>
+                              <Component id="kleise_rantevou" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jScrollPane6" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
@@ -870,7 +888,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="test_drive_table3">
+                <Component class="javax.swing.JTable" name="tradein_cl_tbl">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="2" rowCount="4">
@@ -896,6 +914,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tradein_cl_tblMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -909,15 +930,10 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel30">
               <Properties>
-                <Property name="text" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3bb;&#x3b5;&#x3b3;&#x3bc;&#x3ad;&#x3bd;&#x3b7; &#x3b7;&#x3bc;&#x3b5;&#x3c1;&#x3bf;&#x3bc;&#x3b7;&#x3bd;&#x3af;&#x3b1;"/>
+                <Property name="text" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3bb;&#x3b5;&#x3b3;&#x3bc;&#x3ad;&#x3bd;&#x3b7; &#x3b7;&#x3bc;&#x3b5;&#x3c1;&#x3bf;&#x3bc;&#x3b7;&#x3bd;&#x3af;&#x3b1; &#x3ba;&#x3b1;&#x3b9; &#x3ce;&#x3c1;&#x3b1;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel31">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3bb;&#x3b5;&#x3b3;&#x3bc;&#x3ad;&#x3bd;&#x3b7; &#x3ce;&#x3c1;&#x3b1;"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField4">
+            <Component class="javax.swing.JTextField" name="desc_txt">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" value="&#x3a0;&#x3bb;&#x3b7;&#x3ba;&#x3c4;&#x3c1;&#x3bf;&#x3bb;&#x3bf;&#x3b3;&#x3ae;&#x3c3;&#x3c4;&#x3b5;..."/>
@@ -928,34 +944,39 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="desc_txtActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField5">
+            <Component class="javax.swing.JTextField" name="date_time_txt">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="date_time_txtActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField6">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="enabled" type="boolean" value="false"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton6">
+            <Component class="javax.swing.JButton" name="kleise_rantevou">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x395;&#x3c0;&#x3b9;&#x3b2;&#x3b5;&#x3b2;&#x3b1;&#x3af;&#x3c9;&#x3c3;&#x3b7; &#x3c1;&#x3b1;&#x3bd;&#x3c4;&#x3b5;&#x3b2;&#x3bf;&#x3cd;"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kleise_rantevouActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="model_txt">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x38c;&#x3c7;&#x3b7;&#x3bc;&#x3b1;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel36">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x39c;&#x3bf;&#x3bd;&#x3c4;&#x3ad;&#x3bb;&#x3bf; (&#x3ad;&#x3c4;&#x3bf;&#x3c2;) "/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="year_txt">
             </Component>
           </SubComponents>
         </Container>
@@ -1015,7 +1036,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="41" max="32767" attributes="0"/>
+                      <EmptySpace pref="50" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jLabel25" min="-2" pref="200" max="-2" attributes="0"/>
@@ -1029,7 +1050,7 @@
                                   <Component id="wishlist_price_txt" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="106" max="32767" attributes="0"/>
+                              <EmptySpace pref="114" max="32767" attributes="0"/>
                               <Component id="newsletter_checkbox" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -1184,7 +1205,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
-                      <Component id="jScrollPane5" pref="396" max="32767" attributes="0"/>
+                      <Component id="jScrollPane5" pref="413" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -1365,7 +1386,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                      <EmptySpace pref="96" max="32767" attributes="0"/>
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
