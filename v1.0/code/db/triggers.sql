@@ -13,3 +13,35 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+
+
+DELIMITER $$
+
+CREATE TRIGGER check_leasing_if_finished1
+BEFORE UPDATE ON Leasing
+FOR EACH ROW
+BEGIN
+    IF NEW.Final_date < CURDATE() THEN
+        SET NEW.Status_ = 'Finished';
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+DELIMITER $$
+
+CREATE TRIGGER check_leasing_if_finished2
+BEFORE UPDATE ON Leasing
+FOR EACH ROW
+BEGIN
+    IF NEW.Final_date < CURDATE() THEN
+        SET NEW.Status_ = 'Finished';
+    END IF;
+END$$
+
+DELIMITER ;
+
+
