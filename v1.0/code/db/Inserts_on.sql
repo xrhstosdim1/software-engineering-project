@@ -80,6 +80,13 @@ INSERT INTO ServiceHistory (ServiceID, CarCostumerID, ServiceType, ServiceDate, 
 (3, 3, 'Tire Rotation', '2023-03-10', 'Rotated tires for even wear'),
 (4, 4, 'Battery Replacement', '2023-04-05', 'Replaced old battery with new one');
 
+INSERT INTO Order_ (OrderID, OrderDate, CustomerName, ProductID, Quantity, Sub_date, F_date, Status_, MechanicName, Price) VALUES
+(1, '2023-01-15', 'lisa_taylor', 1, 1, '2023-01-10 10:00:00', '2023-01-20', 'Finished', NULL, 65000.00),
+(2, '2023-02-20', 'robert_garcia', 3, 1, '2023-02-21 10:00:00', '2023-02-25', 'Ready for Pickup', NULL, 42000.00),
+(3, '2023-03-05', 'emily_miller', 6, 1, '2023-03-06 10:00:00', '2023-03-10', 'Pending', NULL, 55000.00),
+(4, '2023-04-10', 'thomas_clark', 8, 1, '2023-04-11 10:00:00', '2023-04-15', 'Cancelled', NULL, 23000.00),
+(5, '2023-05-15', 'thomas_clark', 4, 1, '2023-05-16 10:00:00', '2023-05-20', 'Finished', NULL, 28000.00),
+(6, '2023-06-20', 'emily_miller', 9, 1, '2023-06-21 10:00:00', '2023-06-25', 'Ready for Pickup', NULL, 120000.00);
 
 
 INSERT INTO Leasing (LeasingID, CustomerName, ProductID, Start_date, Final_date, Status_, Price) VALUES
@@ -103,10 +110,3 @@ INSERT INTO Package (PackageID, PackageOrderID, PackcageStatus) VALUES
 (3, 3, 'Unpacked');
 
 
-INSERT INTO Order_ (OrderID, OrderDate, CustomerName, ProductID, Quantity, Sub_date, F_date, Status_, MechanicName, Price) VALUES
-(1, '2023-01-15', 'lisa_taylor', 1, 1, '2023-01-10 10:00:00', '2023-01-20', 'Finished', NULL, 65000.00),
-(2, '2023-02-20', 'robert_garcia', 3, 1, '2023-02-21 10:00:00', '2023-02-25', 'Ready for Pickup', NULL, 42000.00),
-(3, '2023-03-05', 'emily_miller', 6, 1, '2023-03-06 10:00:00', '2023-03-10', 'Pending', NULL, 55000.00),
-(4, '2023-04-10', 'thomas_clark', 8, 1, '2023-04-11 10:00:00', '2023-04-15', 'Cancelled', NULL, 23000.00),
-(5, '2023-05-15', 'thomas_clark', 4, 1, '2023-05-16 10:00:00', '2023-05-20', 'Finished', NULL, 28000.00),
-(6, '2023-06-20', 'emily_miller', 9, 1, '2023-06-21 10:00:00', '2023-06-25', 'Ready for Pickup', NULL, 120000.00);
