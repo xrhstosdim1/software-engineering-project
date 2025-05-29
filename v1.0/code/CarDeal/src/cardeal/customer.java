@@ -47,6 +47,23 @@ PreparedStatement pst=null;
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        shop = new javax.swing.JPanel();
+        rent = new javax.swing.JPanel();
+        trade_in = new javax.swing.JPanel();
+        wishlist = new javax.swing.JPanel();
+        rantevou = new javax.swing.JPanel();
+        testDrive = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        test_drive_table = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        test_drive_table1 = new javax.swing.JTable();
+        selected_car_name = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         leitourgies_axrhsto = new javax.swing.JMenu();
         agora_btn = new javax.swing.JMenuItem();
@@ -54,12 +71,14 @@ PreparedStatement pst=null;
         trade_in_btn = new javax.swing.JMenuItem();
         wishlist_btn = new javax.swing.JMenuItem();
         my_apps_btn = new javax.swing.JMenuItem();
+        test_drive = new javax.swing.JMenuItem();
         edit_profile_button = new javax.swing.JMenu();
         Logout_button = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CarDeal by P.B. C. D. A. G. & G. L.");
         setPreferredSize(new java.awt.Dimension(1417, 643));
+        setResizable(false);
 
         parent_panel.setLayout(new java.awt.CardLayout());
 
@@ -163,7 +182,7 @@ PreparedStatement pst=null;
                     .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(telephone_txt)
                     .addComponent(dief8insi_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 445, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
                 .addComponent(jLabel2))
             .addGroup(epexergasia_profileLayout.createSequentialGroup()
                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,6 +229,184 @@ PreparedStatement pst=null;
         );
 
         parent_panel.add(epexergasia_profile, "card2");
+
+        javax.swing.GroupLayout shopLayout = new javax.swing.GroupLayout(shop);
+        shop.setLayout(shopLayout);
+        shopLayout.setHorizontalGroup(
+            shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1417, Short.MAX_VALUE)
+        );
+        shopLayout.setVerticalGroup(
+            shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        parent_panel.add(shop, "card4");
+
+        javax.swing.GroupLayout rentLayout = new javax.swing.GroupLayout(rent);
+        rent.setLayout(rentLayout);
+        rentLayout.setHorizontalGroup(
+            rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1417, Short.MAX_VALUE)
+        );
+        rentLayout.setVerticalGroup(
+            rentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        parent_panel.add(rent, "card5");
+
+        javax.swing.GroupLayout trade_inLayout = new javax.swing.GroupLayout(trade_in);
+        trade_in.setLayout(trade_inLayout);
+        trade_inLayout.setHorizontalGroup(
+            trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1417, Short.MAX_VALUE)
+        );
+        trade_inLayout.setVerticalGroup(
+            trade_inLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        parent_panel.add(trade_in, "card6");
+
+        javax.swing.GroupLayout wishlistLayout = new javax.swing.GroupLayout(wishlist);
+        wishlist.setLayout(wishlistLayout);
+        wishlistLayout.setHorizontalGroup(
+            wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1417, Short.MAX_VALUE)
+        );
+        wishlistLayout.setVerticalGroup(
+            wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        parent_panel.add(wishlist, "card7");
+
+        javax.swing.GroupLayout rantevouLayout = new javax.swing.GroupLayout(rantevou);
+        rantevou.setLayout(rantevouLayout);
+        rantevouLayout.setHorizontalGroup(
+            rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1417, Short.MAX_VALUE)
+        );
+        rantevouLayout.setVerticalGroup(
+            rantevouLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 620, Short.MAX_VALUE)
+        );
+
+        parent_panel.add(rantevou, "card8");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel10.setText("Test drive");
+
+        jButton1.setText("Επιβεβαίωση στοιχείων");
+
+        jButton2.setText("Επιβεβαίωση κράτησης");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Επιλογή ημερομηνίας");
+
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("eikona");
+
+        jLabel14.setText("Διαθέσιμα οχήματα");
+
+        test_drive_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Ημερομηνία", "Ώρα"
+            }
+        ));
+        jScrollPane1.setViewportView(test_drive_table);
+
+        test_drive_table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Μάρκα", "Μοντέλο", "Χρονολογία"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(test_drive_table1);
+
+        selected_car_name.setEditable(false);
+        selected_car_name.setEnabled(false);
+
+        javax.swing.GroupLayout testDriveLayout = new javax.swing.GroupLayout(testDrive);
+        testDrive.setLayout(testDriveLayout);
+        testDriveLayout.setHorizontalGroup(
+            testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(testDriveLayout.createSequentialGroup()
+                .addGap(314, 314, 314)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addGap(99, 99, 99))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(selected_car_name, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(94, 94, 94)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(628, 628, 628))
+        );
+        testDriveLayout.setVerticalGroup(
+            testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
+                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(testDriveLayout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(selected_car_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(25, 25, 25))
+                    .addGroup(testDriveLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel12))
+                        .addGap(18, 18, 18)
+                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+                .addGap(37, 37, 37))
+        );
+
+        parent_panel.add(testDrive, "card9");
 
         leitourgies_axrhsto.setText("Λειτουργίες");
         leitourgies_axrhsto.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +462,20 @@ PreparedStatement pst=null;
         leitourgies_axrhsto.add(wishlist_btn);
 
         my_apps_btn.setText("Τα ραντεβού μου");
+        my_apps_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                my_apps_btnActionPerformed(evt);
+            }
+        });
         leitourgies_axrhsto.add(my_apps_btn);
+
+        test_drive.setText("Test drive");
+        test_drive.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                test_driveActionPerformed(evt);
+            }
+        });
+        leitourgies_axrhsto.add(test_drive);
 
         jMenuBar1.add(leitourgies_axrhsto);
 
@@ -361,15 +571,24 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_agora_btnMouseClicked
 
     private void agora_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agora_btnActionPerformed
-      
+        parent_panel.removeAll();
+        parent_panel.add(shop);
+        parent_panel.repaint();
+        parent_panel.revalidate();  
     }//GEN-LAST:event_agora_btnActionPerformed
 
     private void enoikiasi_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enoikiasi_btnActionPerformed
-    
+        parent_panel.removeAll();
+        parent_panel.add(rent);
+        parent_panel.repaint();
+        parent_panel.revalidate();      
     }//GEN-LAST:event_enoikiasi_btnActionPerformed
 
     private void trade_in_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trade_in_btnActionPerformed
-   
+        parent_panel.removeAll();
+        parent_panel.add(trade_in);
+        parent_panel.repaint();
+        parent_panel.revalidate();     
     }//GEN-LAST:event_trade_in_btnActionPerformed
 
     private void leitourgies_axrhstoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leitourgies_axrhstoActionPerformed
@@ -451,8 +670,29 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_epexergasia_profileComponentAdded
 
     private void wishlist_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wishlist_btnActionPerformed
-        // TODO add your handling code here:
+        parent_panel.removeAll();
+        parent_panel.add(wishlist);
+        parent_panel.repaint();
+        parent_panel.revalidate();  
     }//GEN-LAST:event_wishlist_btnActionPerformed
+
+    private void my_apps_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_my_apps_btnActionPerformed
+        parent_panel.removeAll();
+        parent_panel.add(rantevou);
+        parent_panel.repaint();
+        parent_panel.revalidate();  
+    }//GEN-LAST:event_my_apps_btnActionPerformed
+
+    private void test_driveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_test_driveActionPerformed
+        parent_panel.removeAll();
+        parent_panel.add(testDrive);
+        parent_panel.repaint();
+        parent_panel.revalidate();
+    }//GEN-LAST:event_test_driveActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -501,7 +741,13 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem enoikiasi_btn;
     private javax.swing.JPanel epexergasia_profile;
     private javax.swing.JTextField eponimo_txt;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -512,12 +758,24 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JMenu leitourgies_axrhsto;
     private javax.swing.JMenuItem my_apps_btn;
     private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parent_panel;
+    private javax.swing.JPanel rantevou;
+    private javax.swing.JPanel rent;
+    private javax.swing.JTextField selected_car_name;
+    private javax.swing.JPanel shop;
     private javax.swing.JTextField telephone_txt;
+    private javax.swing.JPanel testDrive;
+    private javax.swing.JMenuItem test_drive;
+    private javax.swing.JTable test_drive_table;
+    private javax.swing.JTable test_drive_table1;
+    private javax.swing.JPanel trade_in;
     private javax.swing.JMenuItem trade_in_btn;
+    private javax.swing.JPanel wishlist;
     private javax.swing.JMenuItem wishlist_btn;
     // End of variables declaration//GEN-END:variables
 }
