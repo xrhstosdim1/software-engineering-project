@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package cardeal;
 import java.sql.*;
 import javax.swing.*;
+import net.proteanit.sql.DbUtils;
 
 public class customer extends javax.swing.JFrame {
 Connection conn=null;
@@ -90,17 +88,15 @@ PreparedStatement pst=null;
         wishlist = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         wishlist_name_txt = new javax.swing.JTextField();
-        newsletter_checkbox = new java.awt.Checkbox();
         save_wishlist = new javax.swing.JButton();
-        wishlist_info_txt = new javax.swing.JTextField();
         wishlist_price_txt = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         wishlist_table = new javax.swing.JTable();
         remove_from_wishlist = new javax.swing.JButton();
         jLabel25 = new javax.swing.JLabel();
+        newsletter_checkbox = new javax.swing.JCheckBox();
         rantevou = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -134,7 +130,6 @@ PreparedStatement pst=null;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CarDeal by P.B. C. D. A. G. & G. L.");
-        setPreferredSize(new java.awt.Dimension(1417, 643));
         setResizable(false);
 
         parent_panel.setLayout(new java.awt.CardLayout());
@@ -655,8 +650,6 @@ PreparedStatement pst=null;
         wishlist_name_txt.setEditable(false);
         wishlist_name_txt.setEnabled(false);
 
-        newsletter_checkbox.setLabel("Αποστολή μηνυμάτων για το συγκεκριμένο προϊόν");
-
         save_wishlist.setText("Αποθήκευση");
         save_wishlist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -664,15 +657,10 @@ PreparedStatement pst=null;
             }
         });
 
-        wishlist_info_txt.setEditable(false);
-        wishlist_info_txt.setEnabled(false);
-
         wishlist_price_txt.setEditable(false);
         wishlist_price_txt.setEnabled(false);
 
         jLabel16.setText("Όνομα");
-
-        jLabel18.setText("Πληροφορίες");
 
         jLabel19.setText("Τιμή");
 
@@ -687,6 +675,11 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        wishlist_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                wishlist_tableMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(wishlist_table);
 
         remove_from_wishlist.setText("Αφαίρεση από τα αγαπημένα");
@@ -699,6 +692,13 @@ PreparedStatement pst=null;
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("eikona");
         jLabel25.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        newsletter_checkbox.setText("Αποστολή μηνυμάτων για το συγκεκριμένο προϊόν");
+        newsletter_checkbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newsletter_checkboxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout wishlistLayout = new javax.swing.GroupLayout(wishlist);
         wishlist.setLayout(wishlistLayout);
@@ -718,30 +718,28 @@ PreparedStatement pst=null;
                             .addGroup(wishlistLayout.createSequentialGroup()
                                 .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel19)
-                                    .addComponent(jLabel18)
                                     .addComponent(jLabel16))
                                 .addGap(25, 25, 25)
                                 .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(wishlist_info_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(wishlist_price_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(wishlist_name_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(171, 171, 171))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, wishlistLayout.createSequentialGroup()
-                        .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(wishlistLayout.createSequentialGroup()
-                                .addComponent(remove_from_wishlist)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(save_wishlist))
-                            .addComponent(newsletter_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(119, 119, 119))))
+                        .addComponent(remove_from_wishlist)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(save_wishlist)
+                        .addGap(119, 119, 119))
+                    .addGroup(wishlistLayout.createSequentialGroup()
+                        .addComponent(newsletter_checkbox)
+                        .addContainerGap())))
         );
         wishlistLayout.setVerticalGroup(
             wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(wishlistLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(wishlistLayout.createSequentialGroup()
                         .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -751,15 +749,11 @@ PreparedStatement pst=null;
                             .addComponent(jLabel16))
                         .addGap(18, 18, 18)
                         .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(wishlist_info_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18))
-                        .addGap(18, 18, 18)
-                        .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(wishlist_price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel19))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                        .addComponent(newsletter_checkbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                        .addComponent(newsletter_checkbox)
+                        .addGap(29, 29, 29)
                         .addGroup(wishlistLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(save_wishlist)
                             .addComponent(remove_from_wishlist))
@@ -1120,6 +1114,18 @@ PreparedStatement pst=null;
         JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
     }
 }
+   private void Update_Table(String tablename, JTable table_show){
+   
+        try {
+                  String sql = "SELECT * FROM " + tablename ;
+                  pst=conn.prepareStatement(sql);
+                  rs=pst.executeQuery();
+                    table_show.setModel(DbUtils.resultSetToTableModel(rs));
+              } catch (SQLException ex) {
+                  JOptionPane.showMessageDialog(null,ex);
+ 
+    }
+    }
     private void agora_btnMenuKeyPressed(javax.swing.event.MenuKeyEvent evt) {//GEN-FIRST:event_agora_btnMenuKeyPressed
 
     }//GEN-LAST:event_agora_btnMenuKeyPressed
@@ -1232,6 +1238,7 @@ PreparedStatement pst=null;
         parent_panel.add(wishlist);
         parent_panel.repaint();
         parent_panel.revalidate();  
+        Update_Table("Wishlist" , wishlist_table);
     }//GEN-LAST:event_wishlist_btnActionPerformed
 
     private void my_apps_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_my_apps_btnActionPerformed
@@ -1253,11 +1260,63 @@ PreparedStatement pst=null;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void remove_from_wishlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_from_wishlistActionPerformed
-        // TODO add your handling code here:
+     try{
+            int row = wishlist_table.getSelectedRow();
+            String table_click2=(wishlist_table.getModel().getValueAt(row,0).toString());
+            String sql = "DELETE  from Wishlist where WishlistId = '"+table_click2+"' " ;
+            pst= conn.prepareStatement(sql);
+            pst.execute();
+           
+                String add1 = "";
+                wishlist_name_txt.setText(add1);
+                String add2 ="";
+                wishlist_price_txt.setText(add2);
+                JOptionPane.showMessageDialog(null, "Το αντικείμενο που επιλέξατε αφαιρέθηκε επιτυχώς από το wishlist!");
+          
+               
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        } 
+      Update_Table( "Wishlist",wishlist_table); 
+     
     }//GEN-LAST:event_remove_from_wishlistActionPerformed
 
     private void save_wishlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_wishlistActionPerformed
-        // TODO add your handling code here:
+        if (newsletter_checkbox.isSelected()){
+            try{
+            int row = wishlist_table.getSelectedRow();
+            String table_click2=(wishlist_table.getModel().getValueAt(row,0).toString());
+            String sql = "UPDATE   Wishlist set NewsLetter = true  where WishlistId = '"+table_click2+"' " ;
+            pst= conn.prepareStatement(sql);
+            pst.execute();
+   
+            JOptionPane.showMessageDialog(null, "Εγγραφήκατε με επιτυχία στο Newsletter για το αντικείμενο που επιλέξατε!");
+          
+               
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        } 
+      Update_Table( "Wishlist",wishlist_table); 
+        }
+        else if (!newsletter_checkbox.isSelected()){
+             try{
+            int row = wishlist_table.getSelectedRow();
+            String table_click2=(wishlist_table.getModel().getValueAt(row,0).toString());
+            String sql = "UPDATE   Wishlist set NewsLetter = false  where WishlistId = '"+table_click2+"' " ;
+            pst= conn.prepareStatement(sql);
+            pst.execute();
+   
+            JOptionPane.showMessageDialog(null, "Απεγγραφήκατε με επιτυχία από το Newsletter για το αντικείμενο που επιλέξατε!");
+          
+               
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        } 
+      Update_Table( "Wishlist",wishlist_table); 
+        }
     }//GEN-LAST:event_save_wishlistActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -1291,6 +1350,31 @@ PreparedStatement pst=null;
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void wishlist_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wishlist_tableMouseClicked
+        try{
+            int row = wishlist_table.getSelectedRow();
+            String Table_click=(wishlist_table.getModel().getValueAt(row,2).toString());
+            String sql = "select * from Product where ProductID='"+Table_click+"'" ;
+            pst= conn.prepareStatement(sql);
+            rs=pst.executeQuery();
+            if(rs.next()){
+                String add1 =rs.getString("ProductName");
+                wishlist_name_txt.setText(add1);
+                String add2 =rs.getString("Price");
+                wishlist_price_txt.setText(add2);
+           
+               
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }//GEN-LAST:event_wishlist_tableMouseClicked
+
+    private void newsletter_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newsletter_checkboxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newsletter_checkboxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1358,7 +1442,6 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1403,7 +1486,7 @@ PreparedStatement pst=null;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JMenu leitourgies_axrhsto;
     private javax.swing.JMenuItem my_apps_btn;
-    private java.awt.Checkbox newsletter_checkbox;
+    private javax.swing.JCheckBox newsletter_checkbox;
     private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parent_panel;
     private javax.swing.JPanel rantevou;
@@ -1423,7 +1506,6 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem trade_in_btn;
     private javax.swing.JPanel wishlist;
     private javax.swing.JMenuItem wishlist_btn;
-    private javax.swing.JTextField wishlist_info_txt;
     private javax.swing.JTextField wishlist_info_txt1;
     private javax.swing.JTextField wishlist_info_txt2;
     private javax.swing.JTextField wishlist_name_txt;
