@@ -1,6 +1,6 @@
-drop database if exists project;
-create database project;
-use project;
+drop database if exists CarDeal_SoftEng;
+create database CarDeal_SoftEng;
+use CarDeal_SoftEng;
 
 CREATE TABLE Product
 (
@@ -83,7 +83,7 @@ CREATE TABLE Test_Drive
     TestDriveDate DATETIME UNIQUE NOT NULL,
     CustomerName VARCHAR(30) NOT NULL,
     VehicleName VARCHAR(50) NOT NULL,
-    status ENUM('Available', Pending', 'Confirmed'),
+    status ENUM('Available', 'Pending', 'Confirmed'),
     CONSTRAINT FF_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
