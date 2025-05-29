@@ -6,7 +6,7 @@ CREATE TABLE Product
 (
     ProductID INT(10) PRIMARY KEY,
     ProductName VARCHAR(100) UNIQUE,
-    Price DECIMAL(10, 2),
+    Price INT(8),
     Quantity INT(4) UNSIGNED,
     Status ENUM('Available for purchase','Available for leasing'),
     Image_path VARCHAR(150)
@@ -67,7 +67,7 @@ CREATE TABLE Order_
     F_date DATETIME,
     Status_ ENUM('Pending', 'Ready for Pickup', 'Finished', 'Cancelled'),
     MechanicName VARCHAR(30),
-    Price DECIMAL(10, 2),
+    Price INT(8),
     CONSTRAINT FP_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FP_MechanicID FOREIGN KEY (MechanicName)   REFERENCES Mechanic(MechanicUsername)
@@ -109,7 +109,8 @@ CREATE TABLE Trade_In
     CarName VARCHAR(50),
     CarModel VARCHAR(50),
     Description TEXT,	
-    Price DECIMAL(10, 2),
+    Price INT(8),
+    TradeStatus ENUM('Pending', 'Approved', 'Denied') DEFAULT 'Pending',
     CONSTRAINT FX_CustomerID3 FOREIGN KEY (CustomerName)  REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE
    
@@ -146,7 +147,7 @@ CREATE TABLE Leasing
     Start_date DATE,
     Final_date DATE,
     Status_ ENUM('Pending', 'Renting', 'Finished', 'Cancelled'),
-    Price DECIMAL(10, 2),
+    Price INT(8),
     CONSTRAINT FZ_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FZ_ProductID FOREIGN KEY (ProductID)   REFERENCES Product(ProductID)
