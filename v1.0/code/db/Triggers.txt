@@ -6,8 +6,9 @@ FOR EACH ROW
 BEGIN
     IF OLD.PackcageStatus = 'Unpacked' AND NEW.PackcageStatus = 'Packed' THEN
         UPDATE Order_
-        SET order_status = 'Ready for Pick up'
-        WHERE Order_(OrderID) = Package(PackageOrderID)  AND order_status = 'Pending';
+        SET Status_ = 'Ready for Pickup'
+        WHERE OrderID = NEW.PackageOrderID
+          AND Status_ = 'Pending';
     END IF;
 END$$
 
