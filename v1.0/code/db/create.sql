@@ -1,6 +1,6 @@
-drop database if exists CarDeal_SoftEng;
-create database CarDeal_SoftEng;
-use CarDeal_SoftEng;
+drop database if exists project;
+create database project;
+use project;
 
 CREATE TABLE Product
 (
@@ -81,7 +81,7 @@ CREATE TABLE Test_Drive
 (
     TestDriveID INT(10) PRIMARY KEY AUTO_INCREMENT,
     TestDriveDate DATETIME UNIQUE NOT NULL,
-    CustomerName VARCHAR(30) NOT NULL,
+    CustomerName VARCHAR(30),
     VehicleName VARCHAR(50) NOT NULL,
     status ENUM('Available', 'Pending', 'Confirmed'),
     CONSTRAINT FF_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
