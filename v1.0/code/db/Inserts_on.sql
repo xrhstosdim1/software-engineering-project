@@ -1,4 +1,4 @@
-use CarDeal_SoftEng;
+use project;
 
 INSERT INTO Product  (ProductID, ProductName, Price, Quantity, Status)  VALUES
 (1, 'BMW X5', 65000.00, 5, 'Available for purchase'),
@@ -54,11 +54,11 @@ INSERT INTO Order_ (OrderID, OrderDate, CustomerName, ProductID, Quantity, Sub_d
 
 
 INSERT INTO Test_Drive VALUES 
-(1, '2023-01-05 10:00:00', 'emily_miller', 'BMW X5'),
-(2, '2025-02-10 11:30:00', 'lisa_taylor', 'Audi A4'),
-(3, '2025-03-15 09:15:00', 'thomas_clark', 'Ford Mustang'),
-(4, '2025-04-20 14:00:00', 'emily_miller', 'Volkswagen Golf'),
-(5, '2025-05-25 13:45:00', 'robert_garcia', 'Toyota Camry'),
+(1, '2023-01-05 10:00:00', 'emily_miller', 'BMW X5', 'Confirmed'),
+(2, '2025-02-10 11:30:00', 'lisa_taylor', 'Audi A4', 'Confirmed'),
+(3, '2025-03-15 09:15:00', 'thomas_clark', 'Ford Mustang', 'Confirmed'),
+(4, '2025-04-20 14:00:00', 'emily_miller', 'Volkswagen Golf', 'Confirmed'),
+(5, '2025-05-25 13:45:00', 'robert_garcia', 'Toyota Camry', 'Confirmed'),
 (6, '2025-05-26 13:45:00', NULL, 'Toyota Camry');
 
 
