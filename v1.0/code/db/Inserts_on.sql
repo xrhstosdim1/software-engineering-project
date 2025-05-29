@@ -184,7 +184,7 @@ INSERT INTO Leasing (LeasingID, CustomerName, ProductID, Start_date, Final_date,
 (2, 'lisa_taylor', 7, '2023-02-01', '2023-11-30', 'Renting', 4900),
 (3, 'emily_miller', 3, '2023-03-01', '2024-02-29', 'Renting', 5200),
 (4, 'thomas_clark', 5, '2023-04-01', '2024-04-02', 'Cancelled', 4800),
-(5, NULL, 7,2025-05-01, 2025-05-11, 'Available', 4800);
+(5, NULL, 7,'2025-05-01', '2025-05-11', 'Available', 4800);
 
 
 INSERT INTO Messages (MessageID, MessageText, SenderName) VALUES
