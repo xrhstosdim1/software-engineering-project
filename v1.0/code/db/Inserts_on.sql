@@ -10,7 +10,37 @@ INSERT INTO Product  (ProductID, ProductName, Price, Quantity, Status)  VALUES
 (7, 'Honda Civic', 22000, 0, 'Available for purchase'),
 (8, 'Chevrolet Malibu', 25000, 4, 'Available for leasing'),
 (9, 'Nissan Altima', 23000, 7, 'Available for purchase'),
-(10, 'Hyundai Sonata', 24000, 9, 'Available for leasing');
+(10, 'Hyundai Sonata', 24000, 9, 'Available for leasing'),
+(11, 'Brake Pads Set', 120, 25, 'Available for purchase'),
+(12, 'Engine Oil 5W-30 - 5L', 45, 50, 'Available for purchase'),
+(13, 'Air Filter', 30, 40, 'Available for purchase'),
+(14, 'Fuel Pump', 180, 15, 'Available for purchase'),
+(15, 'Spark Plug Set (4 pcs)', 60, 30, 'Available for purchase'),
+(16, 'Battery 12V 60Ah', 110, 20, 'Available for purchase'),
+(17, 'Front Bumper - Toyota Corolla', 250, 5, 'Available for purchase'),
+(18, 'Headlight - Honda Civic (Left)', 180, 8, 'Available for purchase'),
+(19, 'Rearview Mirror - BMW X5 (Right)', 90, 12, 'Available for purchase'),
+(20, 'Alternator - Ford Focus', 300, 7, 'Available for purchase'),
+(21, 'Radiator - Nissan Altima', 270, 6, 'Available for purchase'),
+(22, 'Clutch Kit - Audi A4', 400, 4, 'Available for purchase'),
+(23, 'Transmission Fluid 1L', 35, 60, 'Available for purchase'),
+(24, 'Wiper Blade Set', 25, 50, 'Available for purchase'),
+(25, 'Oil Filter', 20, 45, 'Available for purchase'),
+(26, 'Cabin Air Filter', 22, 35, 'Available for purchase'),
+(27, 'Shock Absorber - Front Left', 140, 10, 'Available for purchase'),
+(28, 'Serpentine Belt', 55, 18, 'Available for purchase'),
+(29, 'Timing Chain Kit', 480, 3, 'Available for purchase'),
+(30, 'Wheel Bearing Assembly', 130, 11, 'Available for purchase'),
+(31, 'Brake Disc (Front)', 85, 16, 'Available for purchase'),
+(32, 'Throttle Body', 310, 5, 'Available for purchase'),
+(33, 'Power Steering Pump', 265, 6, 'Available for purchase'),
+(34, 'Muffler Exhaust', 195, 9, 'Available for purchase'),
+(35, 'Tail Light - Mercedes C-Class (Right)', 150, 7, 'Available for purchase'),
+(36, 'Oxygen Sensor', 70, 20, 'Available for purchase'),
+(37, 'Front Grille - Hyundai Sonata', 210, 5, 'Available for purchase'),
+(38, 'Fuse Box Assembly', 90, 12, 'Available for purchase'),
+(39, 'Control Arm - Rear Right', 165, 8, 'Available for purchase'),
+(40, 'Starter Motor', 280, 4, 'Available for purchase');
 
 
 
@@ -39,7 +69,15 @@ INSERT INTO Customer VALUES ('david_brown'),
 ('lisa_taylor'),
 ('robert_garcia'),
 ('emily_miller'),
-('thomas_clark');
+('thomas_clark'),
+('KingVon'),
+('Mparios'),
+('AlbanianKing'),
+('Diabito'),
+('Xazas'),
+('Giannjs'),
+('Gatoulhs');
+
 
 
 INSERT INTO Mechanic VALUES ('MechJones'),
@@ -105,11 +143,23 @@ INSERT INTO Leasing (LeasingID, CustomerName, ProductID, Start_date, Final_date,
 (1, 'robert_garcia', 2, '2023-01-01', '2023-12-31', 'Finished', 4500),
 (2, 'lisa_taylor', 7, '2023-02-01', '2023-11-30', 'Renting', 4900),
 (3, 'emily_miller', 3, '2023-03-01', '2024-02-29', 'Renting', 5200),
-(4, 'thomas_clark', 5, '2023-04-01', '2024-04-02', 'Cancelled', 4800);
+(4, 'thomas_clark', 5, '2023-04-01', '2024-04-02', 'Cancelled', 4800),
+(5, NULL, 7,NULL, NULL, 'Available', 4800);
 
 
 INSERT INTO Messages (MessageID, MessageText, SenderName) VALUES
-(1, 'Do we have any electric vehicles in stock?', 'MechJones');
+(1, 'Do we have any electric vehicles in stock?', 'MechJones'),
+(2, 'I am stack help me!', 'MechJones'),
+(3, 'Get a load of this guy!:)','MechaSarah'),
+(4, 'Meeting in 10 minutes', 'AdminJoe'),
+(5, 'I need a coffee break!', 'AdminJane'),
+(6, 'Let\'s review the project status', 'MechJones'),
+(7, 'Can you send me the latest report?', 'MechaSarah'),
+(8, 'I will be out of office tomorrow', 'MechJones'),
+(9, 'Don\'t forget the team lunch!', 'AdminJane'),
+(10, 'We need to finalize the budget', 'AdminJoe');
+
+
 
 
 INSERT INTO Trade_in_eleuthera (TradeINID, FreeDates, Status_) VALUES
