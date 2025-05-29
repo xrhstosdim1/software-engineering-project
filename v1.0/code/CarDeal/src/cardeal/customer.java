@@ -1258,8 +1258,17 @@ PreparedStatement pst=null;
         parent_panel.removeAll();
         parent_panel.add(wishlist);
         parent_panel.repaint();
-        parent_panel.revalidate();  
-        Update_Table("Wishlist" , wishlist_table);
+        parent_panel.revalidate();
+        String username = Session.getUsername();
+         try {
+             String sql = "SELECT * FROM wishlist WHERE  CustomerName = ? "  ;
+             pst=conn.prepareStatement(sql);
+             pst.setString(1, username);
+             rs=pst.executeQuery();
+             wishlist_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,ex);
+        }
     }//GEN-LAST:event_wishlist_btnActionPerformed
 
     private void my_apps_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_my_apps_btnActionPerformed
@@ -1330,7 +1339,16 @@ PreparedStatement pst=null;
         catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
         } 
-      Update_Table( "Wishlist",wishlist_table); 
+     String username = Session.getUsername();
+           try {
+             String sql = "SELECT * FROM wishlist WHERE  CustomerName = ? "  ;
+             pst=conn.prepareStatement(sql);
+             pst.setString(1, username);
+             rs=pst.executeQuery();
+             wishlist_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,ex);
+        } 
      
     }//GEN-LAST:event_remove_from_wishlistActionPerformed
 
