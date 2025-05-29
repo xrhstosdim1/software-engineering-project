@@ -180,7 +180,7 @@ CREATE TABLE Package
     CONSTRAINT FP_PackageOrderID FOREIGN KEY (PackageOrderID) REFERENCES Order_(OrderID)
 );
 
-create table wishlist 
+create table Wishlist 
 (
     WishlistID INT(10) PRIMARY KEY AUTO_INCREMENT,
     CustomerName VARCHAR(30) NOT NULL,
