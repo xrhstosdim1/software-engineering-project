@@ -68,6 +68,10 @@ PreparedStatement pst=null;
         finish_packing_btn = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Table_show1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Table_show2 = new javax.swing.JTable();
         diaxeirisi_apothematos = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -302,8 +306,7 @@ PreparedStatement pst=null;
 
         jLabel26.setText("Παραγγελίες");
 
-        save_packing_progress_btn.setText("Αποθήκευση");
-        save_packing_progress_btn.setEnabled(false);
+        save_packing_progress_btn.setText("Συσκευασία επιλεγμένων προϊόντων");
         save_packing_progress_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save_packing_progress_btnActionPerformed(evt);
@@ -319,59 +322,97 @@ PreparedStatement pst=null;
 
         jLabel29.setText("Προιόντα");
 
+        Table_show1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(Table_show1);
+
+        Table_show2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(Table_show2);
+
         javax.swing.GroupLayout diaxeirisi_paraggeliwnLayout = new javax.swing.GroupLayout(diaxeirisi_paraggeliwn);
         diaxeirisi_paraggeliwn.setLayout(diaxeirisi_paraggeliwnLayout);
         diaxeirisi_paraggeliwnLayout.setHorizontalGroup(
             diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                .addGap(535, 535, 535)
-                .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                .addGap(173, 173, 173)
-                .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 472, Short.MAX_VALUE)
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jLabel26))
+                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(56, 56, 56)
-                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel25)
-                                    .addComponent(jLabel18))
-                                .addGap(18, 18, 18))
-                            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel28)
-                                .addGap(18, 18, 18)))
-                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)))
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(56, 56, 56)
+                                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel25)
+                                            .addComponent(jLabel18))
+                                        .addGap(18, 18, 18))
+                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel28)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField7)
+                                    .addComponent(jTextField4)
+                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                .addGap(98, 98, 98))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(finish_packing_btn)
-                        .addGap(18, 18, 18)
-                        .addComponent(save_packing_progress_btn)))
-                .addGap(98, 98, 98))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel29)
-                .addGap(330, 330, 330))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addGap(321, 321, 321))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addComponent(jButton3)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(finish_packing_btn)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(save_packing_progress_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(39, 39, 39))))))
         );
         diaxeirisi_paraggeliwnLayout.setVerticalGroup(
             diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addComponent(jLabel13)
                 .addGap(36, 36, 36)
@@ -382,25 +423,32 @@ PreparedStatement pst=null;
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
                 .addGap(18, 18, 18)
-                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel25)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel18)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 319, Short.MAX_VALUE)
-                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(save_packing_progress_btn)
-                    .addComponent(finish_packing_btn)
-                    .addComponent(jButton3))
-                .addGap(27, 27, 27))
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel20)
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel18)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel29)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(save_packing_progress_btn)
+                            .addComponent(finish_packing_btn)
+                            .addComponent(jButton3))
+                        .addGap(27, 27, 27))
+                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
 
         parent_panel.add(diaxeirisi_paraggeliwn, "card4");
@@ -970,6 +1018,8 @@ PreparedStatement pst=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Logout_button;
     private javax.swing.JTable Table_show;
+    private javax.swing.JTable Table_show1;
+    private javax.swing.JTable Table_show2;
     private javax.swing.JButton Update_DB;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JPanel default_loggedIn;
@@ -1018,6 +1068,8 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
