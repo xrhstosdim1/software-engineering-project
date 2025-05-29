@@ -2,15 +2,15 @@ use project;
 
 INSERT INTO Product  (ProductID, ProductName, Price, Quantity, Status)  VALUES
 (1, 'BMW X5', 65000.00, 5, 'Available for purchase'),
-(2, 'Mercedes C-Class', 45000.00, 3, 'Available for leasing'),
-(3, 'Audi A4', 40000.00, 0, 'Available for purchase'),
-(4, 'Tesla Model S', 80000.00, 1, 'Available for leasing'),
+(2, 'Mercedes C-Class', 45000, 3, 'Available for leasing'),
+(3, 'Audi A4', 40000, 0, 'Available for purchase'),
+(4, 'Tesla Model S', 80000, 1, 'Available for leasing'),
 (5, 'Ford Focus', 20000.00, 10, 'Available for purchase'),
-(6, 'Toyota Corolla', 18000.00, 8, 'Available for leasing'),
-(7, 'Honda Civic', 22000.00, 0, 'Available for purchase'),
-(8, 'Chevrolet Malibu', 25000.00, 4, 'Available for leasing'),
-(9, 'Nissan Altima', 23000.00, 7, 'Available for purchase'),
-(10, 'Hyundai Sonata', 24000.00, 9, 'Available for leasing');
+(6, 'Toyota Corolla', 18000, 8, 'Available for leasing'),
+(7, 'Honda Civic', 22000, 0, 'Available for purchase'),
+(8, 'Chevrolet Malibu', 25000, 4, 'Available for leasing'),
+(9, 'Nissan Altima', 23000, 7, 'Available for purchase'),
+(10, 'Hyundai Sonata', 24000, 9, 'Available for leasing');
 
 
 
@@ -45,12 +45,12 @@ INSERT INTO Admin VALUES ('AdminJoe'),
 
 
 INSERT INTO Order_ (OrderID, OrderDate, CustomerName, ProductID, Quantity, Sub_date, F_date, Status_, MechanicName, Price) VALUES
-(1, '2023-01-15', 'lisa_taylor', 1, 1, '2023-01-10 10:00:00', '2023-01-20', 'Finished', NULL, 65000.00),
-(2, '2023-02-20', 'robert_garcia', 3, 1, '2023-02-21 10:00:00', '2023-02-25', 'Ready for Pickup', NULL, 42000.00),
-(3, '2023-03-05', 'emily_miller', 6, 1, '2023-03-06 10:00:00', '2023-03-10', 'Pending', NULL, 55000.00),
-(4, '2023-04-10', 'thomas_clark', 8, 1, '2023-04-11 10:00:00', '2023-04-15', 'Cancelled', NULL, 23000.00),
-(5, '2023-05-15', 'thomas_clark', 4, 1, '2023-05-16 10:00:00', '2023-05-20', 'Finished', NULL, 28000.00),
-(6, '2023-06-20', 'emily_miller', 9, 1, '2023-06-21 10:00:00', '2023-06-25', 'Ready for Pickup', NULL, 120000.00);
+(1, '2023-01-15', 'lisa_taylor', 1, 1, '2023-01-10 10:00:00', '2023-01-20', 'Finished', NULL, 65000),
+(2, '2023-02-20', 'robert_garcia', 3, 1, '2023-02-21 10:00:00', '2023-02-25', 'Ready for Pickup', NULL, 42000),
+(3, '2023-03-05', 'emily_miller', 6, 1, '2023-03-06 10:00:00', '2023-03-10', 'Pending', NULL, 55000),
+(4, '2023-04-10', 'thomas_clark', 8, 1, '2023-04-11 10:00:00', '2023-04-15', 'Cancelled', NULL, 23000),
+(5, '2023-05-15', 'thomas_clark', 4, 1, '2023-05-16 10:00:00', '2023-05-20', 'Finished', NULL, 28000),
+(6, '2023-06-20', 'emily_miller', 9, 1, '2023-06-21 10:00:00', '2023-06-25', 'Ready for Pickup', NULL, 120000);
 
 
 INSERT INTO Test_Drive VALUES 
@@ -95,10 +95,10 @@ INSERT INTO ServiceHistory (ServiceID, CarCostumerID, ServiceType, ServiceDate, 
 
 
 INSERT INTO Leasing (LeasingID, CustomerName, ProductID, Start_date, Final_date, Status_, Price) VALUES
-(1, 'robert_garcia', 2, '2023-01-01', '2023-12-31', 'Finished', 4500.00),
-(2, 'lisa_taylor', 7, '2023-02-01', '2023-11-30', 'Renting', 4900.00),
-(3, 'emily_miller', 3, '2023-03-01', '2024-02-29', 'Renting', 5200.00),
-(4, 'thomas_clark', 5, '2023-04-01', '2024-04-02', 'Cancelled', 4800.00);
+(1, 'robert_garcia', 2, '2023-01-01', '2023-12-31', 'Finished', 4500),
+(2, 'lisa_taylor', 7, '2023-02-01', '2023-11-30', 'Renting', 4900),
+(3, 'emily_miller', 3, '2023-03-01', '2024-02-29', 'Renting', 5200),
+(4, 'thomas_clark', 5, '2023-04-01', '2024-04-02', 'Cancelled', 4800);
 
 
 INSERT INTO Messages (MessageID, MessageText, SenderName) VALUES
