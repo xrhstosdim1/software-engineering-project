@@ -107,15 +107,15 @@ PreparedStatement pst=null;
         jTextField3 = new javax.swing.JTextField();
         testDrive = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
+        epivevaiwsh_stoixeiwn_btn = new javax.swing.JButton();
+        submit_testDrive_btn = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        test_drive_table = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        test_drive_table1 = new javax.swing.JTable();
+        diathesima_table = new javax.swing.JTable();
+        selected_date = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         selected_car_name = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         leitourgies_axrhsto = new javax.swing.JMenu();
@@ -850,36 +850,27 @@ PreparedStatement pst=null;
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("Test drive");
 
-        jButton1.setText("Επιβεβαίωση στοιχείων");
-
-        jButton2.setText("Επιβεβαίωση κράτησης");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        epivevaiwsh_stoixeiwn_btn.setText("Επιβεβαίωση στοιχείων");
+        epivevaiwsh_stoixeiwn_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                epivevaiwsh_stoixeiwn_btnActionPerformed(evt);
             }
         });
 
-        jLabel12.setText("Επιλογή ημερομηνίας");
+        submit_testDrive_btn.setText("Επιβεβαίωση κράτησης");
+        submit_testDrive_btn.setEnabled(false);
+        submit_testDrive_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit_testDrive_btnActionPerformed(evt);
+            }
+        });
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("eikona");
 
         jLabel14.setText("Διαθέσιμα οχήματα");
 
-        test_drive_table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Ημερομηνία", "Ώρα"
-            }
-        ));
-        jScrollPane1.setViewportView(test_drive_table);
-
-        test_drive_table1.setModel(new javax.swing.table.DefaultTableModel(
+        diathesima_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -887,21 +878,27 @@ PreparedStatement pst=null;
                 {null, null, null}
             },
             new String [] {
-                "Μάρκα", "Μοντέλο", "Χρονολογία"
+                "ID", "Name", "Datetime"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        ));
+        diathesima_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                diathesima_tableMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(test_drive_table1);
+        jScrollPane2.setViewportView(diathesima_table);
+
+        selected_date.setEditable(false);
+        selected_date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        selected_date.setFocusable(false);
+
+        jLabel12.setText("Επιλεγμένο όχημα");
+
+        jLabel18.setText("Επιλεγμένη ημερομηνία");
 
         selected_car_name.setEditable(false);
-        selected_car_name.setEnabled(false);
+        selected_car_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        selected_car_name.setFocusable(false);
 
         javax.swing.GroupLayout testDriveLayout = new javax.swing.GroupLayout(testDrive);
         testDrive.setLayout(testDriveLayout);
@@ -910,21 +907,32 @@ PreparedStatement pst=null;
             .addGroup(testDriveLayout.createSequentialGroup()
                 .addGap(314, 314, 314)
                 .addComponent(jLabel14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addGap(99, 99, 99))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(selected_car_name, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(94, 94, 94)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(submit_testDrive_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(epivevaiwsh_stoixeiwn_btn))
+                        .addGap(169, 169, 169))
+                    .addGroup(testDriveLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(testDriveLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel12)
+                                .addGap(18, 18, 18)
+                                .addComponent(selected_car_name, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(testDriveLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(18, 18, 18)
+                                .addComponent(selected_date, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel10)
@@ -933,29 +941,34 @@ PreparedStatement pst=null;
         testDriveLayout.setVerticalGroup(
             testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
-                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(60, 60, 60)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(testDriveLayout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(selected_car_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(25, 25, 25))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))
                     .addGroup(testDriveLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel12))
-                        .addGap(18, 18, 18)
-                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
-                .addGap(37, 37, 37))
+                        .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(testDriveLayout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, testDriveLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel12)
+                                    .addComponent(selected_car_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(58, 58, 58)
+                                .addGroup(testDriveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel18)
+                                    .addComponent(selected_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(70, 70, 70)
+                                .addComponent(epivevaiwsh_stoixeiwn_btn)
+                                .addGap(87, 87, 87)))
+                        .addComponent(submit_testDrive_btn)
+                        .addGap(108, 108, 108))))
         );
 
         parent_panel.add(testDrive, "card9");
@@ -1117,14 +1130,13 @@ PreparedStatement pst=null;
    private void Update_Table(String tablename, JTable table_show){
    
         try {
-                  String sql = "SELECT * FROM " + tablename ;
-                  pst=conn.prepareStatement(sql);
-                  rs=pst.executeQuery();
-                    table_show.setModel(DbUtils.resultSetToTableModel(rs));
-              } catch (SQLException ex) {
-                  JOptionPane.showMessageDialog(null,ex);
- 
-    }
+             String sql = "SELECT * FROM " + tablename ;
+             pst=conn.prepareStatement(sql);
+             rs=pst.executeQuery();
+             table_show.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+             JOptionPane.showMessageDialog(null,ex);
+        }    
     }
     private void agora_btnMenuKeyPressed(javax.swing.event.MenuKeyEvent evt) {//GEN-FIRST:event_agora_btnMenuKeyPressed
 
@@ -1253,11 +1265,42 @@ PreparedStatement pst=null;
         parent_panel.add(testDrive);
         parent_panel.repaint();
         parent_panel.revalidate();
+        
+        try {
+            String sql = "SELECT TestDriveID, VehicleName, TestDriveDate FROM Test_Drive WHERE status = 'Available'";
+            pst=conn.prepareStatement(sql);
+            rs=pst.executeQuery();
+            diathesima_table.setModel(DbUtils.resultSetToTableModel(rs));            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,ex);
+        }  
     }//GEN-LAST:event_test_driveActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void submit_testDrive_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_testDrive_btnActionPerformed
+        int row = diathesima_table.getSelectedRow();
+        
+        if (row == -1){
+            JOptionPane.showMessageDialog(null, "Επιλέξτε όχημα και ημερομηνία.");
+        }
+        
+        String testdrive_id = (diathesima_table.getModel().getValueAt(row, 0).toString());
+        String username = Session.getUsername();
+        try{
+            String sql = "UPDATE Test_Drive SET CustomerName = ?, status = 'Confirmed' WHERE TestDriveID = ?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, username);
+            pst.setString(2, testdrive_id);
+                
+            int affecedRows = pst.executeUpdate();
+                
+            if(affecedRows > 0){
+                JOptionPane.showMessageDialog(null, "Η κράτηση επιβεβαιώθηκε.");
+            }
+            pst.close();
+        }catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,ex);
+        }
+    }//GEN-LAST:event_submit_testDrive_btnActionPerformed
 
     private void remove_from_wishlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_from_wishlistActionPerformed
      try{
@@ -1362,9 +1405,7 @@ PreparedStatement pst=null;
                 String add1 =rs.getString("ProductName");
                 wishlist_name_txt.setText(add1);
                 String add2 =rs.getString("Price");
-                wishlist_price_txt.setText(add2);
-           
-               
+                wishlist_price_txt.setText(add2); 
             }
         }
         catch(Exception ex){
@@ -1375,6 +1416,29 @@ PreparedStatement pst=null;
     private void newsletter_checkboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newsletter_checkboxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_newsletter_checkboxActionPerformed
+
+    private void diathesima_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_diathesima_tableMouseClicked
+        int row = diathesima_table.getSelectedRow();
+        selected_car_name.setText(diathesima_table.getModel().getValueAt(row, 1).toString());
+        selected_date.setText(diathesima_table.getModel().getValueAt(row, 2).toString());
+    }//GEN-LAST:event_diathesima_tableMouseClicked
+
+    private void epivevaiwsh_stoixeiwn_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_epivevaiwsh_stoixeiwn_btnActionPerformed
+        var yesOrNo = JOptionPane.showConfirmDialog(null, "Θέλετε να αλλάξετε τα αποθηκευμένα στοιχεία επικοινωνίας σας;");
+        if (yesOrNo == 0) {
+            parent_panel.removeAll();
+            parent_panel.add(epexergasia_profile);
+            parent_panel.repaint();
+            parent_panel.revalidate();
+            String username = Session.getUsername();
+            loadUserProfile();
+        }
+        if (yesOrNo == 1) { 
+            epivevaiwsh_stoixeiwn_btn.setEnabled(false);
+            submit_testDrive_btn.setEnabled(true);
+        }
+        
+    }//GEN-LAST:event_epivevaiwsh_stoixeiwn_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1417,14 +1481,14 @@ PreparedStatement pst=null;
     private javax.swing.JPanel Welcome;
     private javax.swing.JMenuItem agora_btn;
     private javax.swing.JTextField ari8mos_txt;
+    private javax.swing.JTable diathesima_table;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JMenu edit_profile_button;
     private javax.swing.JTextField email_txt;
     private javax.swing.JMenuItem enoikiasi_btn;
     private javax.swing.JPanel epexergasia_profile;
+    private javax.swing.JButton epivevaiwsh_stoixeiwn_btn;
     private javax.swing.JTextField eponimo_txt;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1442,6 +1506,7 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1468,7 +1533,6 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1494,12 +1558,12 @@ PreparedStatement pst=null;
     private javax.swing.JPanel rent;
     private javax.swing.JButton save_wishlist;
     private javax.swing.JTextField selected_car_name;
+    private javax.swing.JTextField selected_date;
     private javax.swing.JPanel shop;
+    private javax.swing.JButton submit_testDrive_btn;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JPanel testDrive;
     private javax.swing.JMenuItem test_drive;
-    private javax.swing.JTable test_drive_table;
-    private javax.swing.JTable test_drive_table1;
     private javax.swing.JTable test_drive_table2;
     private javax.swing.JTable test_drive_table3;
     private javax.swing.JPanel trade_in;
