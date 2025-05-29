@@ -261,7 +261,8 @@ INSERT INTO Trade_in_eleuthera (TradeINID, FreeDates, Status_) VALUES
 (41,'2025-06-04 12:30:00','Unavailable'),
 (42,'2025-06-04 13:00:00','Unavailable'),
 (43,'2025-06-04 13:30:00','Unavailable'),
-(44,'2025-06-04 14:00:00','Unavailable');
+(44,'2025-06-04 14:00:00','Unavailable'),
+(45,'2025-06-07 14:00:00','Unavailable');
 
 
 INSERT INTO Package (PackageID, PackageOrderID, PackcageStatus) VALUES
