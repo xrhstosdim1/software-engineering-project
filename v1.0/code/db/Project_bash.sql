@@ -3,8 +3,9 @@ CREATE TABLE Product
     ProductID INT(10) PRIMARY KEY,
     ProductName VARCHAR(100) UNIQUE,
     Price DECIMAL(10, 2),
-    Quantity INT(3),
-    Status ENUM('Available for purchase', 'Unavailable','Available for leasing')
+    Quantity INT(4) UNSIGNED,
+    Status ENUM('Available for purchase','Available for leasing'),
+    Image_path VARCHAR(150)
 );
 
 
@@ -21,10 +22,30 @@ CREATE TABLE User
 	
 );
 
+
+
 CREATE TABLE Customer
 (
     CustomerUsername VARCHAR(30) PRIMARY KEY,
      CONSTRAINT FK_CustomerID FOREIGN KEY (CustomerUsername)   REFERENCES User(Username)
+    ON UPDATE CASCADE ON DELETE CASCADE
+  
+);
+
+
+CREATE TABLE Mechanic
+(
+    MechanicUsername VARCHAR(30) PRIMARY KEY,
+     CONSTRAINT FK_MechanicID FOREIGN KEY (MechanicUsername)   REFERENCES User(Username)
+    ON UPDATE CASCADE ON DELETE CASCADE
+  
+);
+
+
+CREATE TABLE Admin
+(
+    AdminUsername VARCHAR(30) PRIMARY KEY,
+     CONSTRAINT FK_AdminID FOREIGN KEY (AdminUsername)   REFERENCES User(Username)
     ON UPDATE CASCADE ON DELETE CASCADE
   
 );
@@ -37,24 +58,15 @@ CREATE TABLE Mechanic
   
 );
 
-CREATE TABLE Admin
-(
-    AdminUsername VARCHAR(30) PRIMARY KEY,
-     CONSTRAINT FK_AdminID FOREIGN KEY (AdminUsername)   REFERENCES User(Username)
-    ON UPDATE CASCADE ON DELETE CASCADE
-  
-);
-
 CREATE TABLE Order_
 (
-    OrderNum INT(10) PRIMARY KEY AUTO_INCREMENT,
-    OrderID INT(10)  NOT NULL,
+    OrderID INT(10)  PRIMARY KEY AUTO_INCREMENT,
     OrderDate DATE,
     CustomerName VARCHAR(30),
     ProductID INT(10) NOT NULL,
     Quantity INT(2),
-    Sub_date DATE,
-    F_date DATE,
+    Sub_date DATETIME,
+    F_date DATETIME,
     Status_ ENUM('Pending', 'Ready for Pickup', 'Finished', 'Cancelled'),
     MechanicName VARCHAR(30),
     Price DECIMAL(10, 2),
@@ -67,8 +79,6 @@ CREATE TABLE Order_
 
 );
 
-
-
 CREATE TABLE Test_Drive
 (
     TestDriveID INT(10) PRIMARY KEY AUTO_INCREMENT,
@@ -78,6 +88,7 @@ CREATE TABLE Test_Drive
     CONSTRAINT FF_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
+
 
 CREATE Table Repairs
 (
@@ -89,6 +100,7 @@ CREATE Table Repairs
     CONSTRAINT FL_CustomerID3 FOREIGN KEY (OwnerName)  REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
+
 
 CREATE TABLE Trade_In
 (
@@ -104,13 +116,25 @@ CREATE TABLE Trade_In
    
 );
 
+CREATE TABLE CarCustomer
+(
+    CarCustomerID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    CarPlate VARCHAR(6) UNIQUE,
+    CustomerName VARCHAR(30) NOT NULL,
+    CONSTRAINT FA_CustomerName FOREIGN KEY (CustomerName)  REFERENCES Customer(CustomerUsername)
+    ON UPDATE CASCADE ON DELETE CASCADE
+)
+
+
 
 CREATE TABLE ServiceHistory(
     ServiceID INT(10) PRIMARY KEY AUTO_INCREMENT,
-    CarPlate VARCHAR(6),
+    CarCostumerID INT(10) NOT NULL,
     ServiceType VARCHAR(50) NOT NULL,
     ServiceDate DATE NOT NULL DEFAULT (CURRENT_DATE),
-    Description TEXT
+    Description TEXT,
+    CONSTRAINT FQ_CarCostumerID FOREIGN KEY (CarCostumerID)  REFERENCES CarCustomer(CarCustomerID)
+    ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
@@ -136,7 +160,24 @@ CREATE TABLE Messages(
     MessageID INT(10) PRIMARY KEY AUTO_INCREMENT,
     MessageText TEXT,
     SenderName VARCHAR(30),
-    CONSTRAINT FA_Customerr FOREIGN KEY (SenderName)   REFERENCES User(Username)
+    CONSTRAINT FA_Customerr FOREIGN KEY (SenderName)  REFERENCES User(Username)
     ON UPDATE CASCADE ON DELETE CASCADE
  
+);
+
+
+CREATE TABLE Trade_in_eleuthera
+(
+    TradeINID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    FreeDates DATETIME UNIQUE NOT NULL,
+    Status_ ENUM('Available', 'Unavailable')
+)
+
+
+CREATE TABLE Package
+(
+    PackageID INT(10) PRIMARY KEY AUTO_INCREMENT,
+    PackageOrderID INT(10) NOT NULL,
+    PackcageStatus ENUM('Packed', 'Unpacked'),
+    CONSTRAINT FP_PackageOrderID FOREIGN KEY (PackageOrderID) REFERENCES Order_(OrderID)
 );
