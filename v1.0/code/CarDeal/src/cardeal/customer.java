@@ -47,20 +47,18 @@ PreparedStatement pst=null;
         jLabel9 = new javax.swing.JLabel();
         shop = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        wishlist_info_txt1 = new javax.swing.JTextField();
-        wishlist_price_txt1 = new javax.swing.JTextField();
+        add_to_wishlist = new javax.swing.JButton();
+        product_name_txt = new javax.swing.JTextField();
+        product_price_txt = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        wishlist_info_txt2 = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        place_order_btn = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        wishlist_table1 = new javax.swing.JTable();
+        available_shop_table = new javax.swing.JTable();
         rent = new javax.swing.JPanel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel32 = new javax.swing.JLabel();
@@ -285,22 +283,22 @@ PreparedStatement pst=null;
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel20.setText("Shop");
 
-        jButton5.setText("Προσθήκη στα αγαπημένα");
+        add_to_wishlist.setText("Προσθήκη στα αγαπημένα");
+        add_to_wishlist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_to_wishlistActionPerformed(evt);
+            }
+        });
 
-        wishlist_info_txt1.setEditable(false);
-        wishlist_info_txt1.setEnabled(false);
+        product_name_txt.setEditable(false);
+        product_name_txt.setEnabled(false);
 
-        wishlist_price_txt1.setEditable(false);
-        wishlist_price_txt1.setEnabled(false);
+        product_price_txt.setEditable(false);
+        product_price_txt.setEnabled(false);
 
         jLabel21.setText("Όνομα");
 
-        jLabel22.setText("Πληροφορίες");
-
         jLabel23.setText("Τιμή");
-
-        wishlist_info_txt2.setEditable(false);
-        wishlist_info_txt2.setEnabled(false);
 
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel24.setText("eikona");
@@ -310,9 +308,14 @@ PreparedStatement pst=null;
 
         jButton4.setText("οκ");
 
-        jButton3.setText("Αγορά");
+        place_order_btn.setText("Αγορά");
+        place_order_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                place_order_btnActionPerformed(evt);
+            }
+        });
 
-        wishlist_table1.setModel(new javax.swing.table.DefaultTableModel(
+        available_shop_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -323,7 +326,12 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane4.setViewportView(wishlist_table1);
+        available_shop_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                available_shop_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(available_shop_table);
 
         javax.swing.GroupLayout shopLayout = new javax.swing.GroupLayout(shop);
         shop.setLayout(shopLayout);
@@ -344,28 +352,22 @@ PreparedStatement pst=null;
                     .addComponent(jLabel20)
                     .addGroup(shopLayout.createSequentialGroup()
                         .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(add_to_wishlist, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                        .addGap(114, 114, 114)
-                        .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(shopLayout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addGap(25, 25, 25)
-                                .addComponent(wishlist_info_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(shopLayout.createSequentialGroup()
+                                .addGap(163, 163, 163)
+                                .addComponent(place_order_btn)
+                                .addGap(115, 115, 115))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shopLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel23)
-                                    .addComponent(jLabel22))
-                                .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(shopLayout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(wishlist_price_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, shopLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(wishlist_info_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, shopLayout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addComponent(jButton3)))))
+                                    .addComponent(jLabel21))
+                                .addGap(25, 25, 25)
+                                .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(product_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(product_price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(116, 116, 116))
         );
         shopLayout.setVerticalGroup(
@@ -378,17 +380,13 @@ PreparedStatement pst=null;
                         .addGap(65, 65, 65)
                         .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel21)
-                            .addComponent(wishlist_info_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                            .addComponent(product_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(26, 26, 26)
                         .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel22)
-                            .addComponent(wishlist_info_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(wishlist_price_txt1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23))
-                        .addGap(143, 143, 143)
-                        .addComponent(jButton3))
+                            .addComponent(jLabel23)
+                            .addComponent(product_price_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(175, 175, 175)
+                        .addComponent(place_order_btn))
                     .addGroup(shopLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(shopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,7 +400,7 @@ PreparedStatement pst=null;
                             .addGroup(shopLayout.createSequentialGroup()
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5)))))
+                                .addComponent(add_to_wishlist)))))
                 .addContainerGap(102, Short.MAX_VALUE))
         );
 
@@ -1151,6 +1149,17 @@ PreparedStatement pst=null;
         parent_panel.add(shop);
         parent_panel.repaint();
         parent_panel.revalidate();  
+        
+        try {
+            String sql = "SELECT ProductID, ProductName, Price FROM Product WHERE Status = 'Available for purchase'";
+            pst=conn.prepareStatement(sql);
+            rs=pst.executeQuery();
+            available_shop_table.setModel(DbUtils.resultSetToTableModel(rs));            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,ex);
+        }          
+        
+        
     }//GEN-LAST:event_agora_btnActionPerformed
 
     private void enoikiasi_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enoikiasi_btnActionPerformed
@@ -1440,6 +1449,67 @@ PreparedStatement pst=null;
         
     }//GEN-LAST:event_epivevaiwsh_stoixeiwn_btnActionPerformed
 
+    private void available_shop_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_available_shop_tableMouseClicked
+        int row = available_shop_table.getSelectedRow();
+        product_name_txt.setText(available_shop_table.getModel().getValueAt(row, 1).toString());
+        product_price_txt.setText(available_shop_table.getModel().getValueAt(row, 2).toString()); 
+    }//GEN-LAST:event_available_shop_tableMouseClicked
+
+    private void add_to_wishlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_to_wishlistActionPerformed
+        int row = available_shop_table.getSelectedRow();
+        String product_id=(available_shop_table.getModel().getValueAt(row,0).toString());
+        try{
+            String sql = "INSERT INTO Wishlist (CustomerName, ProductID) VALUES (?, ?)";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, Session.getUsername());
+            pst.setString(2, product_id);
+            int affectedRows = pst.executeUpdate();
+            pst.close();
+            
+            if(affectedRows > 0){
+                JOptionPane.showMessageDialog(null, "Το αντικείμενο που επιλέξατε προστέθηκε επιτυχώς στο wishlist!");
+                int choice = JOptionPane.showConfirmDialog(null, "Επιθυμείτε να λαμβάνετε ενημερώσεις μέσω μηνυμάτων για το συγκεκριμένο προϊόν;", "Εγγραφή σε ενημερώσεις", JOptionPane.YES_NO_OPTION);
+                if (choice == JOptionPane.YES_OPTION){
+                    String updateSql = "UPDATE Wishlist SET NewsLetter = TRUE WHERE CustomerName = ? AND ProductID = ?";
+                    pst = conn.prepareStatement(updateSql);
+                    pst.setString(1, Session.getUsername());
+                    pst.setString(2, product_id);
+                    pst.executeUpdate();
+                    pst.close();
+                    
+                    JOptionPane.showMessageDialog(null, "Επιτυχής εγγραφή στις ενημερώσεις.");
+                }
+            }    
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }  
+    }//GEN-LAST:event_add_to_wishlistActionPerformed
+
+    private void place_order_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_place_order_btnActionPerformed
+        //menoun vhmata 6 kai 7
+        int row = available_shop_table.getSelectedRow();
+        String product_id=(available_shop_table.getModel().getValueAt(row,0).toString()); 
+        String product_price=(available_shop_table.getModel().getValueAt(row,2).toString());
+        try{
+            String sql = "INSERT INTO Order_ (CustomerName, ProductID, Quantity, Price) VALUES (?, ?, ?, ?, ?)";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, Session.getUsername());
+            pst.setString(2, product_id);
+            pst.setString(3, "1");
+            pst.setString(4, product_price);
+            int affectedRows = pst.executeUpdate();
+            pst.close();
+            
+            if(affectedRows > 0){
+                JOptionPane.showMessageDialog(null, "Η παραγγελίας σας καταχωρήθηκε επιτυχώς. Θα ενημερωθείτε με μήνυμα για την παραλαβή της.");
+            }
+        }
+        catch(Exception ex){
+            JOptionPane.showMessageDialog(null, ex);
+        }        
+    }//GEN-LAST:event_place_order_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1479,8 +1549,10 @@ PreparedStatement pst=null;
     private javax.swing.JMenu Logout_button;
     private javax.swing.JButton Update_DB;
     private javax.swing.JPanel Welcome;
+    private javax.swing.JButton add_to_wishlist;
     private javax.swing.JMenuItem agora_btn;
     private javax.swing.JTextField ari8mos_txt;
+    private javax.swing.JTable available_shop_table;
     private javax.swing.JTable diathesima_table;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JMenu edit_profile_button;
@@ -1489,9 +1561,7 @@ PreparedStatement pst=null;
     private javax.swing.JPanel epexergasia_profile;
     private javax.swing.JButton epivevaiwsh_stoixeiwn_btn;
     private javax.swing.JTextField eponimo_txt;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -1511,7 +1581,6 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
@@ -1553,6 +1622,9 @@ PreparedStatement pst=null;
     private javax.swing.JCheckBox newsletter_checkbox;
     private javax.swing.JTextField onoma_txt;
     private javax.swing.JPanel parent_panel;
+    private javax.swing.JButton place_order_btn;
+    private javax.swing.JTextField product_name_txt;
+    private javax.swing.JTextField product_price_txt;
     private javax.swing.JPanel rantevou;
     private javax.swing.JButton remove_from_wishlist;
     private javax.swing.JPanel rent;
@@ -1570,13 +1642,9 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem trade_in_btn;
     private javax.swing.JPanel wishlist;
     private javax.swing.JMenuItem wishlist_btn;
-    private javax.swing.JTextField wishlist_info_txt1;
-    private javax.swing.JTextField wishlist_info_txt2;
     private javax.swing.JTextField wishlist_name_txt;
     private javax.swing.JTextField wishlist_price_txt;
-    private javax.swing.JTextField wishlist_price_txt1;
     private javax.swing.JTable wishlist_table;
-    private javax.swing.JTable wishlist_table1;
     private javax.swing.JTable wishlist_table2;
     // End of variables declaration//GEN-END:variables
 }
