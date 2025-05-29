@@ -114,5 +114,5 @@ INSERT INTO Package (PackageID, PackageOrderID, PackcageStatus) VALUES
 (3, 3, 'Unpacked');
 
 
-INSERT INTO WISHLIST(WishlistID, CustomerName, ProductID) VALUES
-(1, 'lisa_taylor', 9);
+INSERT INTO WISHLIST(WishlistID, CustomerName, ProductID,NewLetter) VALUES
+(1, 'lisa_taylor', 9, TRUE);
