@@ -1,12 +1,5 @@
 # Software Engineering Project
-
-## 🛠 Tools  
-- [PapandjoDoc](https://docs.google.com/document/d/1LWYzZj5g0PrTYVeoMqu034dFPwDdbO9STg9uPr1al0A/edit?usp=sharing) - Brainstorming and notetaking
-- [LucidChart](https://lucid.app/lucidchart/b7b5925f-630f-4628-9e5f-98b20517f435/edit?invitationId=inv_cb69ee14-0ade-4774-986f-2fcaaf9d790e) – Use cases
-- [LucidChart](https://lucid.app/lucidchart/3400ca0a-1a28-4ef3-b3d4-da28f1e84853/edit?invitationId=inv_4a7d0ba6-4ceb-4a82-a134-dba140d9f103&page=0_0#) – Classes
-- [Figma](https://www.figma.com/design/e2IRaLEFlU9UrK6JDbOffz/Untitled?node-id=0-1&p=f&t=hAz5esz2v2Bemz1S-0) – Mock-Ups
   
----
 
 ### 📌 Deliverable 1
 - **📅 Deadline:** **April 4, 2025**  
@@ -44,11 +37,11 @@
 ### 📌 Deliverable 4
 - **📅 Deadline:** **May 30, 2025**  
 - **📝 Includes:**
-  - ⏳ [`Use_Case (v1.0)`](https://docs.google.com/document/d/12Yoq20UkKgS-gp--jqZdtO155eha7_yQuQPoXKjlXsw/edit?tab=t.0)
-  - ⏳ [`Final Code`](https://github.com/xrhstosdim1/software-engineering-project/tree/main/v1.0/code) (_Final-code.zip_)  
-  - ⏳ `Class Diagram` (_Class-diagram-v1.0.pdf_)  
-  - ⏳ [`Test Cases`](https://docs.google.com/document/d/1ZDeaNQJe4I4jmmOQBs5ZdZeJNSAVJ2oTEImh33KD89s/edit?tab=t.0) (_Test-cases-v1.0.pdf_)  
-  - ⏳ [`Project Description`](https://docs.google.com/document/d/1Ty3MZd2tWGfw6rEcdYK-lCJRSbrYUXmJ81v8pnYViKE/edit?tab=t.0) (_Project-description-v1.0.pdf_)  
+  - ✔️ [`Use_Case (v1.0)`](https://docs.google.com/document/d/12Yoq20UkKgS-gp--jqZdtO155eha7_yQuQPoXKjlXsw/edit?tab=t.0)
+  - ✔️ [`Final Code`](https://github.com/xrhstosdim1/software-engineering-project/tree/main/v1.0/code) (_Final-code.zip_)  
+  - ✔️ `Class Diagram` (_Class-diagram-v1.0.pdf_)  
+  - ✔️ [`Test Cases`](https://docs.google.com/document/d/1ZDeaNQJe4I4jmmOQBs5ZdZeJNSAVJ2oTEImh33KD89s/edit?tab=t.0) (_Test-cases-v1.0.pdf_)  
+  - ✔️ [`Project Description`](https://docs.google.com/document/d/1Ty3MZd2tWGfw6rEcdYK-lCJRSbrYUXmJ81v8pnYViKE/edit?tab=t.0) (_Project-description-v1.0.pdf_)  
 
 ---
 
