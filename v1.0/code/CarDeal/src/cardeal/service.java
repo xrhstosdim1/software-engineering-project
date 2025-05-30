@@ -61,6 +61,29 @@ public class service extends javax.swing.JFrame {
         pros8ikiadalaktikwn_btn = new javax.swing.JButton();
         search_numPlate_txt = new javax.swing.JTextField();
         search_numPlate_btn = new javax.swing.JButton();
+        xrewsh_antallaktikwn_dash = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        mileage_txt2 = new javax.swing.JTextField();
+        carplate_txt2 = new javax.swing.JTextField();
+        model_txt2 = new javax.swing.JTextField();
+        year_txt2 = new javax.swing.JTextField();
+        jLabel44 = new javax.swing.JLabel();
+        pelatis_txt2 = new javax.swing.JTextField();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        service_table1 = new javax.swing.JTable();
+        jLabel47 = new javax.swing.JLabel();
+        selected_part_num = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        selected_part_name = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        selected_part_price = new javax.swing.JTextField();
+        xrewsh_antallaktikoy_btn = new javax.swing.JButton();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
@@ -403,6 +426,217 @@ public class service extends javax.swing.JFrame {
 
         parentPanel.add(service_dash, "card4");
 
+        jLabel25.setText("Χιλιόμετρα");
+
+        jLabel27.setText("Πινακίδα");
+
+        jLabel29.setText("Μοντέλο");
+
+        jLabel43.setText("Χρονολογία");
+
+        mileage_txt2.setEditable(false);
+        mileage_txt2.setEnabled(false);
+        mileage_txt2.setFocusable(false);
+        mileage_txt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mileage_txt2ActionPerformed(evt);
+            }
+        });
+
+        carplate_txt2.setEditable(false);
+        carplate_txt2.setEnabled(false);
+        carplate_txt2.setFocusable(false);
+
+        model_txt2.setEditable(false);
+        model_txt2.setEnabled(false);
+        model_txt2.setFocusable(false);
+
+        year_txt2.setEditable(false);
+        year_txt2.setEnabled(false);
+        year_txt2.setFocusable(false);
+
+        jLabel44.setText("Πελάτης");
+
+        pelatis_txt2.setEditable(false);
+        pelatis_txt2.setEnabled(false);
+        pelatis_txt2.setFocusable(false);
+        pelatis_txt2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pelatis_txt2ActionPerformed(evt);
+            }
+        });
+
+        jLabel45.setText("Στοιχεία οχήματος");
+
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel46.setText("Χρέωση ανταλλακτικών");
+
+        jButton1.setText("Επιβεβαίωση οχήματος");
+
+        jScrollPane6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane6MouseClicked(evt);
+            }
+        });
+
+        service_table1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        service_table1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                service_table1MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(service_table1);
+
+        jLabel47.setText("Κωδικός ανταλλακτικού");
+
+        selected_part_num.setEditable(false);
+        selected_part_num.setEnabled(false);
+        selected_part_num.setFocusable(false);
+        selected_part_num.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selected_part_numActionPerformed(evt);
+            }
+        });
+
+        jLabel48.setText("Όνομα ανταλλακτικού");
+
+        selected_part_name.setEditable(false);
+        selected_part_name.setEnabled(false);
+        selected_part_name.setFocusable(false);
+        selected_part_name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selected_part_nameActionPerformed(evt);
+            }
+        });
+
+        jLabel49.setText("Τιμή");
+
+        selected_part_price.setEditable(false);
+        selected_part_price.setEnabled(false);
+        selected_part_price.setFocusable(false);
+        selected_part_price.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selected_part_priceActionPerformed(evt);
+            }
+        });
+
+        xrewsh_antallaktikoy_btn.setText("Χρέωση ανταλλακτικού στον πελάτη");
+        xrewsh_antallaktikoy_btn.setEnabled(false);
+
+        javax.swing.GroupLayout xrewsh_antallaktikwn_dashLayout = new javax.swing.GroupLayout(xrewsh_antallaktikwn_dash);
+        xrewsh_antallaktikwn_dash.setLayout(xrewsh_antallaktikwn_dashLayout);
+        xrewsh_antallaktikwn_dashLayout.setHorizontalGroup(
+            xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                .addGap(590, 590, 590)
+                .addComponent(jLabel46)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel44)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel25))
+                        .addGap(48, 48, 48)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(carplate_txt2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                            .addComponent(model_txt2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(year_txt2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pelatis_txt2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(mileage_txt2)))
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jLabel45))
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jButton1)))
+                .addGap(131, 131, 131)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(selected_part_num, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(selected_part_name))
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(selected_part_price))
+                    .addComponent(xrewsh_antallaktikoy_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
+                .addGap(149, 149, 149))
+        );
+        xrewsh_antallaktikwn_dashLayout.setVerticalGroup(
+            xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addComponent(jLabel45)
+                        .addGap(26, 26, 26)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(mileage_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel25))
+                        .addGap(18, 18, 18)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(carplate_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel27))
+                        .addGap(18, 18, 18)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(model_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29))
+                        .addGap(18, 18, 18)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(year_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel43))
+                        .addGap(18, 18, 18)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pelatis_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel44))
+                        .addGap(47, 47, 47)
+                        .addComponent(jButton1)
+                        .addGap(133, 133, 133))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel47)
+                            .addComponent(selected_part_num, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel48)
+                            .addComponent(selected_part_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel49)
+                            .addComponent(selected_part_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addComponent(xrewsh_antallaktikoy_btn)
+                        .addContainerGap())))
+        );
+
+        parentPanel.add(xrewsh_antallaktikwn_dash, "card8");
+
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel14.setText("Μηνύματα");
 
@@ -538,7 +772,7 @@ public class service extends javax.swing.JFrame {
                     .addComponent(ari8mos_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(telephone_txt)
                     .addComponent(dief8insi_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 445, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
                 .addComponent(jLabel2))
             .addGroup(epexergasia_profileLayout.createSequentialGroup()
                 .addGroup(epexergasia_profileLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1290,6 +1524,34 @@ public void close() {
         
     }//GEN-LAST:event_search_numPlate_btnActionPerformed
 
+    private void mileage_txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mileage_txt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mileage_txt2ActionPerformed
+
+    private void pelatis_txt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pelatis_txt2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pelatis_txt2ActionPerformed
+
+    private void service_table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_service_table1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_service_table1MouseClicked
+
+    private void jScrollPane6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane6MouseClicked
+
+    private void selected_part_numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selected_part_numActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selected_part_numActionPerformed
+
+    private void selected_part_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selected_part_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selected_part_nameActionPerformed
+
+    private void selected_part_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selected_part_priceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_selected_part_priceActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1334,6 +1596,7 @@ public void close() {
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JTextField ari8mos_txt1;
     private javax.swing.JTextField carplate_txt;
+    private javax.swing.JTextField carplate_txt2;
     private javax.swing.JButton deny_btn1;
     private javax.swing.JTextField dief8insi_txt;
     private javax.swing.JTextField dief8insi_txt1;
@@ -1344,6 +1607,7 @@ public void close() {
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JTextField eponimo_txt1;
     private javax.swing.JButton ipovoli_btn;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1361,8 +1625,11 @@ public void close() {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -1378,6 +1645,13 @@ public void close() {
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1389,12 +1663,15 @@ public void close() {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JMenu leitourgies_btn;
     private javax.swing.JTextField make_txt1;
     private javax.swing.JPanel messages;
     private javax.swing.JTextField mileage_txt;
+    private javax.swing.JTextField mileage_txt2;
     private javax.swing.JMenuItem minimata_btn;
     private javax.swing.JTextField model_txt;
+    private javax.swing.JTextField model_txt2;
     private javax.swing.JPanel new_client_dash;
     private javax.swing.JButton new_customer_btn;
     private javax.swing.JTextField new_make_txt;
@@ -1407,23 +1684,31 @@ public void close() {
     private javax.swing.JPanel parentPanel;
     private javax.swing.JTextField pelatis_txt;
     private javax.swing.JTextField pelatis_txt1;
+    private javax.swing.JTextField pelatis_txt2;
     private javax.swing.JTextField price_txt;
     private javax.swing.JButton pros8ikiadalaktikwn_btn;
     private javax.swing.JButton save_data;
     private javax.swing.JButton search_numPlate_btn;
     private javax.swing.JTextField search_numPlate_txt;
+    private javax.swing.JTextField selected_part_name;
+    private javax.swing.JTextField selected_part_num;
+    private javax.swing.JTextField selected_part_price;
     private javax.swing.JButton send_new_message_btn;
     private javax.swing.JMenuItem service_btn;
     private javax.swing.JPanel service_dash;
     private javax.swing.JTextArea service_notes_txt;
     private javax.swing.JTable service_table;
+    private javax.swing.JTable service_table1;
     private javax.swing.JTable servicehistory_table;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JTextField telephone_txt1;
     private javax.swing.JMenuItem trade_in_btn;
     private javax.swing.JPanel trade_in_dash;
     private javax.swing.JTable tradein_table;
+    private javax.swing.JButton xrewsh_antallaktikoy_btn;
+    private javax.swing.JPanel xrewsh_antallaktikwn_dash;
     private javax.swing.JTextField year_txt;
     private javax.swing.JTextField year_txt1;
+    private javax.swing.JTextField year_txt2;
     // End of variables declaration//GEN-END:variables
 }
