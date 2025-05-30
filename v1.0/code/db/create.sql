@@ -65,7 +65,7 @@ CREATE TABLE Order_
     Quantity INT(2),
     Sub_date DATETIME,
     F_date DATETIME,
-    Status_ ENUM('Pending', 'Active', 'Ready for Pickup', 'Finished', 'Cancelled') DEFAULT 'Active',
+    Status_ ENUM('Pending', 'Active', 'Ready for Pickup', 'Finished', 'Cancelled') DEFAULT 'Pending',
     MechanicName VARCHAR(30),
     Price INT(8),
     CONSTRAINT FP_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
