@@ -52,26 +52,28 @@ PreparedStatement pst=null;
         diaxeirisi_paraggeliwn = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        id_paragelias_txt = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        c_first_name_txt = new javax.swing.JTextField();
+        c_last_name_txt = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        c_email_txt = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        status_txt = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        date_txt = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
         save_packing_progress_btn = new javax.swing.JButton();
         finish_packing_btn = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Table_show1 = new javax.swing.JTable();
+        paraggelies_table = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
-        Table_show2 = new javax.swing.JTable();
+        products_orderedWstock_table = new javax.swing.JTable();
+        jLabel30 = new javax.swing.JLabel();
+        stock_txt = new javax.swing.JTextField();
         diaxeirisi_apothematos = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         search_id_txt = new javax.swing.JTextField();
@@ -271,11 +273,11 @@ PreparedStatement pst=null;
 
         jLabel19.setText("Αρ. επιλεγμένης παραγγελίας");
 
-        jTextField2.setEditable(false);
-        jTextField2.setEnabled(false);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        id_paragelias_txt.setEditable(false);
+        id_paragelias_txt.setEnabled(false);
+        id_paragelias_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                id_paragelias_txtActionPerformed(evt);
             }
         });
 
@@ -283,26 +285,26 @@ PreparedStatement pst=null;
 
         jLabel25.setText("Επώνυμο");
 
-        jTextField3.setEditable(false);
-        jTextField3.setEnabled(false);
+        c_first_name_txt.setEditable(false);
+        c_first_name_txt.setEnabled(false);
 
-        jTextField4.setEditable(false);
-        jTextField4.setEnabled(false);
+        c_last_name_txt.setEditable(false);
+        c_last_name_txt.setEnabled(false);
 
         jLabel27.setText("email");
 
-        jTextField6.setEditable(false);
-        jTextField6.setEnabled(false);
+        c_email_txt.setEditable(false);
+        c_email_txt.setEnabled(false);
 
         jLabel28.setText("Κατάσταση");
 
-        jTextField7.setEditable(false);
-        jTextField7.setEnabled(false);
+        status_txt.setEditable(false);
+        status_txt.setEnabled(false);
 
         jLabel18.setText("Ημερομηνία");
 
-        jTextField5.setEditable(false);
-        jTextField5.setEnabled(false);
+        date_txt.setEditable(false);
+        date_txt.setEnabled(false);
 
         jLabel26.setText("Παραγγελίες");
 
@@ -316,13 +318,23 @@ PreparedStatement pst=null;
         finish_packing_btn.setText("Ολοκλήρωση συσκευασίας");
         finish_packing_btn.setToolTipText("");
         finish_packing_btn.setEnabled(false);
+        finish_packing_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finish_packing_btnActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Ακύρωση παραγγελίας");
         jButton3.setEnabled(false);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jLabel29.setText("Προιόντα");
+        jLabel29.setText("Παραγγελθέντα προιόντα");
 
-        Table_show1.setModel(new javax.swing.table.DefaultTableModel(
+        paraggelies_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -333,9 +345,14 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(Table_show1);
+        paraggelies_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                paraggelies_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(paraggelies_table);
 
-        Table_show2.setModel(new javax.swing.table.DefaultTableModel(
+        products_orderedWstock_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -346,7 +363,18 @@ PreparedStatement pst=null;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(Table_show2);
+        products_orderedWstock_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                products_orderedWstock_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(products_orderedWstock_table);
+
+        jLabel30.setText("Διαθέσιμα");
+
+        stock_txt.setEditable(false);
+        stock_txt.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        stock_txt.setEnabled(false);
 
         javax.swing.GroupLayout diaxeirisi_paraggeliwnLayout = new javax.swing.GroupLayout(diaxeirisi_paraggeliwn);
         diaxeirisi_paraggeliwn.setLayout(diaxeirisi_paraggeliwnLayout);
@@ -355,19 +383,39 @@ PreparedStatement pst=null;
             .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jLabel26))
-                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(299, 299, 299)
+                        .addComponent(jLabel26)))
+                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addComponent(jButton3)
+                                .addGap(18, 18, 18)
+                                .addComponent(finish_packing_btn)
+                                .addGap(18, 18, 18)
+                                .addComponent(save_packing_progress_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addGap(62, 62, 62)
+                                        .addComponent(jLabel30))
+                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addComponent(stock_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(59, 59, 59))))
+                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addGap(224, 224, 224)
+                                .addComponent(jLabel29))
+                            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel19)
                                     .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -376,76 +424,72 @@ PreparedStatement pst=null;
                                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(c_first_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(c_email_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(56, 56, 56)
                                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jLabel25)
                                             .addComponent(jLabel18))
                                         .addGap(18, 18, 18))
                                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(id_paragelias_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel28)
                                         .addGap(18, 18, 18)))
                                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField7)
-                                    .addComponent(jTextField4)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                                .addGap(98, 98, 98))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                                .addComponent(jLabel29)
-                                .addGap(321, 321, 321))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                                        .addComponent(jButton3)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(finish_packing_btn)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(save_packing_progress_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 609, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(39, 39, 39))))))
+                                    .addComponent(status_txt)
+                                    .addComponent(c_last_name_txt)
+                                    .addComponent(date_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))))
+                        .addContainerGap())))
+            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                .addGap(566, 566, 566)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         diaxeirisi_paraggeliwnLayout.setVerticalGroup(
             diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaxeirisi_paraggeliwnLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(46, 46, 46)
                 .addComponent(jLabel13)
-                .addGap(36, 36, 36)
+                .addGap(49, 49, 49)
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id_paragelias_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(status_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
                 .addGap(18, 18, 18)
                 .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(c_first_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel25)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(c_last_name_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(c_email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel27)
                             .addComponent(jLabel18)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(date_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(46, 46, 46)
                         .addComponent(jLabel29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(save_packing_progress_btn)
-                            .addComponent(finish_packing_btn)
-                            .addComponent(jButton3))
-                        .addGap(27, 27, 27))
+                        .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addGroup(diaxeirisi_paraggeliwnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(save_packing_progress_btn)
+                                    .addComponent(finish_packing_btn)
+                                    .addComponent(jButton3))
+                                .addGap(27, 27, 27))
+                            .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addComponent(jLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(stock_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(diaxeirisi_paraggeliwnLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
                         .addContainerGap())))
@@ -830,10 +874,7 @@ PreparedStatement pst=null;
                   pst=conn.prepareStatement(sql);
                   rs=pst.executeQuery();
                     Table_show.setModel(DbUtils.resultSetToTableModel(rs));
-              } catch (SQLException ex) {
-                  JOptionPane.showMessageDialog(null,ex);
- 
-    }
+              } catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);}
 }
  
  private void updateStockFields(){
@@ -855,10 +896,17 @@ PreparedStatement pst=null;
        parent_panel.add(diaxeirisi_paraggeliwn);
        parent_panel.repaint();
        parent_panel.revalidate();
+       
+        try {
+            String sql = "SELECT OrderID, CustomerName, Sub_date, Status_ FROM Order_";
+            pst=conn.prepareStatement(sql);
+            rs=pst.executeQuery();
+            paraggelies_table.setModel(DbUtils.resultSetToTableModel(rs));
+            } catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);}  
     }//GEN-LAST:event_diaxeirisi_parageliwnActionPerformed
 
     private void Logout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Logout_buttonActionPerformed
-        Login Lg = new Login();
+       Login Lg = new Login();
        Lg.setVisible(true);
        Lg.pack();
        Lg.setLocationRelativeTo(null);
@@ -1037,12 +1085,51 @@ PreparedStatement pst=null;
             JOptionPane.showMessageDialog(null, ex);}  
     }//GEN-LAST:event_afairesh_stock_btnActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void id_paragelias_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_id_paragelias_txtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_id_paragelias_txtActionPerformed
 
     private void save_packing_progress_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_packing_progress_btnActionPerformed
-        // TODO add your handling code here:
+        int row = paraggelies_table.getSelectedRow();
+        int row2 = products_orderedWstock_table.getSelectedRow();
+        
+               
+        String id_paraggelias = paraggelies_table.getModel().getValueAt(row,0).toString();
+        
+        String prod_id = products_orderedWstock_table.getModel().getValueAt(row2,0).toString();
+        int id_product = Integer.parseInt(prod_id);
+        
+        String prod_or_quan = products_orderedWstock_table.getModel().getValueAt(row2,1).toString();
+        int product_order_quantity = Integer.parseInt(prod_or_quan);
+        
+        String cu_st = stock_txt.getText();
+        int curr_stock = Integer.parseInt(cu_st);
+        
+        int new_stock = curr_stock;
+        
+        if(product_order_quantity > curr_stock){
+            JOptionPane.showMessageDialog(null,"Ανεπαρκής ποσότητα στην αποθήκη");
+        }else{
+            new_stock = curr_stock - product_order_quantity;
+        }
+                
+                
+        try{
+            String sqlRemoveStock = "UPDATE Product SET Quantity = ? WHERE ProductID = ?";
+            PreparedStatement pstStock = conn.prepareStatement(sqlRemoveStock);
+            pstStock.setInt(1, new_stock);
+            pstStock.setInt(2, id_product);
+            pstStock.executeUpdate();
+            
+            String sqlUpdate = "UPDATE Package SET PackageStatus = 'Packed' WHERE PackageID = ?";
+            PreparedStatement pstUpdate = conn.prepareStatement(sqlUpdate);
+            pstUpdate.setString(1, id_paraggelias);
+            pstUpdate.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Το προιόν θεωρείται συσκευασμένο.");
+            stock_txt.setText(String.valueOf(new_stock));
+            finish_packing_btn.setEnabled(true);
+            
+        }catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);}     
     }//GEN-LAST:event_save_packing_progress_btnActionPerformed
 
     private void send_new_message_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_new_message_btnActionPerformed
@@ -1083,6 +1170,89 @@ PreparedStatement pst=null;
         JOptionPane.showMessageDialog(null, ex);}
     }//GEN-LAST:event_search_btnActionPerformed
 
+    private void paraggelies_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_paraggelies_tableMouseClicked
+        int row = paraggelies_table.getSelectedRow();
+        String customer_uname = paraggelies_table.getModel().getValueAt(row,1).toString();
+        String id_paraggelias = paraggelies_table.getModel().getValueAt(row,0).toString();
+        
+        try{ //plhrofories paraggelias
+            String SelectCustomerData = "SELECT FirstName, LastName, Email FROM User WHERE Username = ?";
+            pst=conn.prepareStatement(SelectCustomerData);
+            pst.setString(1,customer_uname);
+            rs=pst.executeQuery(); 
+            if(rs.next()){
+                String add1 =rs.getString("FirstName");
+                c_first_name_txt.setText(add1);
+                String add2 =rs.getString("LastName");
+                c_last_name_txt.setText(add2); 
+                String add3 =rs.getString("Email");
+                c_email_txt.setText(add3); 
+            }
+            rs.close();
+            pst.close();
+            
+            id_paragelias_txt.setText(id_paraggelias);
+            date_txt.setText(paraggelies_table.getModel().getValueAt(row,2).toString());
+            status_txt.setText(paraggelies_table.getModel().getValueAt(row,3).toString());           
+        } catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);}  
+        
+        try{ //proionta
+            String sql = "SELECT ProductID, Quantity FROM Order_ WHERE OrderID = ?";
+            PreparedStatement pst2 = conn.prepareStatement(sql);
+            pst2.setString(1, id_paraggelias);
+            ResultSet rs2 = pst2.executeQuery();
+            products_orderedWstock_table.setModel(DbUtils.resultSetToTableModel(rs2));
+        } catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);} 
+    }//GEN-LAST:event_paraggelies_tableMouseClicked
+
+    private void products_orderedWstock_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_products_orderedWstock_tableMouseClicked
+        int row = products_orderedWstock_table.getSelectedRow();
+        String product_selected_id = (products_orderedWstock_table.getModel().getValueAt(row,0).toString());
+        
+        try{
+            String SelectStock = "SELECT Quantity FROM Product WHERE ProductID = ?";
+            pst=conn.prepareStatement(SelectStock);
+            pst.setString(1, product_selected_id);
+            rs=pst.executeQuery(); 
+            if(rs.next()){
+                String add1 =rs.getString("Quantity");
+                stock_txt.setText(add1);
+            } 
+        }catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);} 
+    }//GEN-LAST:event_products_orderedWstock_tableMouseClicked
+
+    private void finish_packing_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finish_packing_btnActionPerformed
+        int row = paraggelies_table.getSelectedRow();
+        String id_paraggelias = paraggelies_table.getModel().getValueAt(row,0).toString();
+        String stat = "Ready for Pickup";
+        
+        try{
+            String sqlUpdateOrderStatus = "UPDATE Order_ SET Status = ? WHERE OrderID = ?";
+            PreparedStatement pstOrSt = conn.prepareStatement(sqlUpdateOrderStatus);
+            pstOrSt.setString(1, stat);
+            pstOrSt.setString(2, id_paraggelias);
+            pstOrSt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Η παραγγελία άλλαξε κατάσταση σε 'Έτοιμη για παραλαβή'.");
+            
+        }catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);}   
+    }//GEN-LAST:event_finish_packing_btnActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        int row = paraggelies_table.getSelectedRow();
+        String id_paraggelias = paraggelies_table.getModel().getValueAt(row,0).toString();
+        String stat = "Cancelled";
+        
+        try{
+            String sqlUpdateOrderStatus = "UPDATE Order_ SET Status = ? WHERE OrderID = ?";
+            PreparedStatement pstOrSt = conn.prepareStatement(sqlUpdateOrderStatus);
+            pstOrSt.setString(1, stat);
+            pstOrSt.setString(2, id_paraggelias);
+            pstOrSt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Η παραγγελία ακυρώθηκε.");
+            
+        }catch (SQLException ex) {JOptionPane.showMessageDialog(null,ex);} 
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1122,11 +1292,13 @@ PreparedStatement pst=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Logout_button;
     private javax.swing.JTable Table_show;
-    private javax.swing.JTable Table_show1;
-    private javax.swing.JTable Table_show2;
     private javax.swing.JButton Update_DB;
     private javax.swing.JButton afairesh_stock_btn;
     private javax.swing.JTextField ari8mos_txt;
+    private javax.swing.JTextField c_email_txt;
+    private javax.swing.JTextField c_first_name_txt;
+    private javax.swing.JTextField c_last_name_txt;
+    private javax.swing.JTextField date_txt;
     private javax.swing.JPanel default_loggedIn;
     private javax.swing.JPanel diaxeirisi_apothematos;
     private javax.swing.JMenuItem diaxeirisi_parageliwn;
@@ -1138,6 +1310,7 @@ PreparedStatement pst=null;
     private javax.swing.JPanel epexergasia_profile;
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JButton finish_packing_btn;
+    private javax.swing.JTextField id_paragelias_txt;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1162,6 +1335,7 @@ PreparedStatement pst=null;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1172,16 +1346,11 @@ PreparedStatement pst=null;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel messages;
     private javax.swing.JMenu messages_btn;
     private javax.swing.JTextField new_message_txt;
     private javax.swing.JTextField onoma_txt;
+    private javax.swing.JTable paraggelies_table;
     private javax.swing.JPanel parent_panel;
     private javax.swing.JTextField part_id;
     private javax.swing.JTextField part_id2;
@@ -1191,12 +1360,15 @@ PreparedStatement pst=null;
     private javax.swing.JTextField part_new_stock2;
     private javax.swing.JTextField part_stock;
     private javax.swing.JTextField part_stock2;
+    private javax.swing.JTable products_orderedWstock_table;
     private javax.swing.JButton prosthiki_stock_btn;
     private javax.swing.JButton save_packing_progress_btn;
     private javax.swing.JButton search_btn;
     private javax.swing.JTextField search_id_txt;
     private javax.swing.JButton send_new_message_btn;
+    private javax.swing.JTextField status_txt;
     private javax.swing.JMenuItem stock_btn;
+    private javax.swing.JTextField stock_txt;
     private javax.swing.JTextField telephone_txt;
     // End of variables declaration//GEN-END:variables
 }
