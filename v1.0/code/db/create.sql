@@ -61,7 +61,7 @@ CREATE TABLE Order_
     OrderID INT(10)  PRIMARY KEY AUTO_INCREMENT,
     OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     CustomerName VARCHAR(30),
-    ProductID JSON NOT NULL,
+    ProductID INT(10) NOT NULL,
     Quantity INT(2),
     Sub_date DATETIME,
     F_date DATETIME,
