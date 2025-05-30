@@ -45,3 +45,19 @@ END$$
 DELIMITER ;
 
 
+
+DELIMITER $$
+
+CREATE TRIGGER Active_Order
+AFTER INSERT ON Order_
+FOR EACH ROW
+BEGIN
+    IF New.Status_ = 'Active' THEN
+        INSERT INTO Package (PackageOrderID,PackcageStatus) VALUES (NEW.OrderID, 'Unpacked');
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+
