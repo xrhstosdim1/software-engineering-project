@@ -61,18 +61,16 @@ CREATE TABLE Order_
     OrderID INT(10)  PRIMARY KEY AUTO_INCREMENT,
     OrderDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     CustomerName VARCHAR(30),
-    ProductID INT(10) NOT NULL,
+    ProductID JSON NOT NULL,
     Quantity INT(2),
     Sub_date DATETIME,
     F_date DATETIME,
-    Status_ ENUM('Pending', 'Ready for Pickup', 'Finished', 'Cancelled'),
+    Status_ ENUM('Pending', 'Ready for Pickup', 'Finished', 'Cancelled') DEFAULT 'Pending',
     MechanicName VARCHAR(30),
     Price INT(8),
     CONSTRAINT FP_CustomerID FOREIGN KEY (CustomerName)   REFERENCES Customer(CustomerUsername)
     ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT FP_MechanicID FOREIGN KEY (MechanicName)   REFERENCES Mechanic(MechanicUsername)
-    ON UPDATE CASCADE ON DELETE CASCADE,
-    CONSTRAINT FP_ProductID FOREIGN KEY (ProductID)   REFERENCES Product(ProductID)
     ON UPDATE CASCADE ON DELETE CASCADE
 
 );
@@ -133,6 +131,7 @@ CREATE TABLE ServiceHistory(
     ServiceType VARCHAR(50) NOT NULL,
     ServiceDate DATE NOT NULL DEFAULT (CURRENT_DATE),
     Description TEXT,
+    partsList JSON,
     CONSTRAINT FQ_CarCostumerID FOREIGN KEY (CarCostumerID)  REFERENCES CarCustomer(CarCustomerID)
     ON UPDATE CASCADE ON DELETE CASCADE
 );
