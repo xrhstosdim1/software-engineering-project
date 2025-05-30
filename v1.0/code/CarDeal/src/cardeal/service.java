@@ -59,6 +59,8 @@ public class service extends javax.swing.JFrame {
         servicehistory_table = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
         pros8ikiadalaktikwn_btn = new javax.swing.JButton();
+        search_numPlate_txt = new javax.swing.JTextField();
+        search_numPlate_btn = new javax.swing.JButton();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
@@ -260,15 +262,36 @@ public class service extends javax.swing.JFrame {
 
         jLabel19.setText("Ιστορικό Service");
 
-        pros8ikiadalaktikwn_btn.setText("Προσθήκη Ανταλλακτικών");
+        pros8ikiadalaktikwn_btn.setText("Χρέωση Ανταλλακτικών");
+
+        search_numPlate_txt.setText("Αναζήτηση με Αρ. κυκλοφορίας");
+        search_numPlate_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_numPlate_txtActionPerformed(evt);
+            }
+        });
+
+        search_numPlate_btn.setText("Αναζήτηση");
+        search_numPlate_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_numPlate_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout service_dashLayout = new javax.swing.GroupLayout(service_dash);
         service_dash.setLayout(service_dashLayout);
         service_dashLayout.setHorizontalGroup(
             service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(service_dashLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 628, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(search_numPlate_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(search_numPlate_btn)))
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(service_dashLayout.createSequentialGroup()
                         .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,7 +392,11 @@ public class service extends javax.swing.JFrame {
                 .addComponent(new_customer_btn)
                 .addGap(17, 17, 17))
             .addGroup(service_dashLayout.createSequentialGroup()
-                .addGap(107, 107, 107)
+                .addGap(73, 73, 73)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(search_numPlate_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(search_numPlate_btn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4)
                 .addContainerGap())
         );
@@ -904,11 +931,11 @@ public class service extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(parentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(parentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(parentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+            .addComponent(parentPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -1047,7 +1074,7 @@ public void close() {
         parentPanel.add(service_dash);
         parentPanel.repaint();
         parentPanel.revalidate();
-        Update_Table("Repairs", service_table);
+        Update_Table("CarCustomer", service_table);
     }//GEN-LAST:event_service_btnActionPerformed
 
     private void mileage_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mileage_txtActionPerformed
@@ -1180,7 +1207,7 @@ public void close() {
     private void service_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_service_tableMouseClicked
         try {
             int row = service_table.getSelectedRow();
-            String Table_click = (service_table.getModel().getValueAt(row, 0).toString());
+            String Table_click = (service_table.getModel().getValueAt(row, 1).toString());
             String sql = "select * from Repairs where CarPlate='" + Table_click + "' ";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -1200,9 +1227,10 @@ public void close() {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
+        
         try {
             int row = service_table.getSelectedRow();
-            String Table_click = (service_table.getModel().getValueAt(row, 0).toString());
+            String Table_click = (service_table.getModel().getValueAt(row, 1).toString());
             String sql = "SELECT sh.* FROM ServiceHistory sh JOIN CarCustomer cc ON sh.CarCostumerID = cc.CarCustomerID WHERE cc.CarPlate = '" + Table_click + "' AND cc.CarPlate IN (SELECT CarPlate FROM Repairs) AND cc.CarPlate IN (SELECT CarPlate FROM CarCustomer)";
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
@@ -1211,7 +1239,7 @@ public void close() {
         parentPanel.add(service_dash);
         parentPanel.repaint();
         parentPanel.revalidate();
-        Update_Table("Repairs", service_table);
+        Update_Table("CarCustomer", service_table);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
@@ -1220,29 +1248,47 @@ public void close() {
 
     private void ipovoli_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipovoli_btnActionPerformed
     
-  try {
-    int row = service_table.getSelectedRow();
-    String Table_click = service_table.getModel().getValueAt(row, 0).toString();
+    try {
+      int row = service_table.getSelectedRow();
+      String Table_click = service_table.getModel().getValueAt(row, 0).toString();
 
-    String sql = "INSERT INTO ServiceHistory (CarCostumerId, ServiceType, Description) VALUES ((SELECT CarCustomerID FROM CarCustomer WHERE CarPlate = ?), ?, ?)";
+      String sql = "INSERT INTO ServiceHistory (CarCostumerId, ServiceType, Description) VALUES ((SELECT CarCustomerID FROM CarCustomer WHERE CarPlate = ?), ?, ?)";
 
-    PreparedStatement pst = conn.prepareStatement(sql);
-    pst.setString(1, Table_click); 
-    pst.setString(2, "General Service"); 
-    pst.setString(3, service_notes_txt.getText()); 
+      PreparedStatement pst = conn.prepareStatement(sql);
+      pst.setString(1, Table_click); 
+      pst.setString(2, "General Service"); 
+      pst.setString(3, service_notes_txt.getText()); 
 
-    pst.executeUpdate();
-    JOptionPane.showMessageDialog(null, "Service history added successfully.");
-    pst.close();
-    String del = "DELETE from Repairs where CarPlate='" + Table_click + "' ";
-    PreparedStatement pst2 = conn.prepareStatement(del);
-    pst2.execute();
+      pst.executeUpdate();
+      JOptionPane.showMessageDialog(null, "Service history added successfully.");
+      pst.close();
+      String del = "DELETE from Repairs where CarPlate='" + Table_click + "' ";
+      PreparedStatement pst2 = conn.prepareStatement(del);
+      pst2.execute();
 
-} catch (Exception ex) {
-    JOptionPane.showMessageDialog(null, ex);
-}
-  
+    } catch (Exception ex) {
+       JOptionPane.showMessageDialog(null, ex);
+    }
     }//GEN-LAST:event_ipovoli_btnActionPerformed
+
+    private void search_numPlate_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_numPlate_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_numPlate_txtActionPerformed
+
+    private void search_numPlate_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_numPlate_btnActionPerformed
+        
+        try {
+            String sql = "SELECT * FROM CarCustomer WHERE CarPlate =?";
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, search_numPlate_txt.getText()); 
+            rs = pst.executeQuery();
+            service_table.setModel(DbUtils.resultSetToTableModel(rs));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+
+        }
+        
+    }//GEN-LAST:event_search_numPlate_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1364,6 +1410,8 @@ public void close() {
     private javax.swing.JTextField price_txt;
     private javax.swing.JButton pros8ikiadalaktikwn_btn;
     private javax.swing.JButton save_data;
+    private javax.swing.JButton search_numPlate_btn;
+    private javax.swing.JTextField search_numPlate_txt;
     private javax.swing.JButton send_new_message_btn;
     private javax.swing.JMenuItem service_btn;
     private javax.swing.JPanel service_dash;
