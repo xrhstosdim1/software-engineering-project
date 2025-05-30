@@ -13,6 +13,7 @@ public class service extends javax.swing.JFrame {
     Connection conn = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    String epilegmena_antalaktika_id = "";
 
     /**
      * Creates new form service
@@ -38,7 +39,7 @@ public class service extends javax.swing.JFrame {
         service_dash = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        service_notes_txt = new javax.swing.JTextArea();
+        epilegmena_antallaktika_txt = new javax.swing.JTextArea();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -58,9 +59,12 @@ public class service extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         servicehistory_table = new javax.swing.JTable();
         jLabel19 = new javax.swing.JLabel();
-        pros8ikiadalaktikwn_btn = new javax.swing.JButton();
+        goto_xrewsh_antallaktikwn_btn = new javax.swing.JButton();
         search_numPlate_txt = new javax.swing.JTextField();
         search_numPlate_btn = new javax.swing.JButton();
+        jLabel50 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        service_notes_txt = new javax.swing.JTextArea();
         xrewsh_antallaktikwn_dash = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -75,8 +79,8 @@ public class service extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        service_table1 = new javax.swing.JTable();
+        JScrollPane59834753498 = new javax.swing.JScrollPane();
+        antallaktika_table = new javax.swing.JTable();
         jLabel47 = new javax.swing.JLabel();
         selected_part_num = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
@@ -84,6 +88,7 @@ public class service extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         selected_part_price = new javax.swing.JTextField();
         xrewsh_antallaktikoy_btn = new javax.swing.JButton();
+        back_btn = new javax.swing.JButton();
         messages = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         send_new_message_btn = new javax.swing.JButton();
@@ -194,9 +199,9 @@ public class service extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel10.setText("Service");
 
-        service_notes_txt.setColumns(20);
-        service_notes_txt.setRows(5);
-        jScrollPane1.setViewportView(service_notes_txt);
+        epilegmena_antallaktika_txt.setColumns(20);
+        epilegmena_antallaktika_txt.setRows(5);
+        jScrollPane1.setViewportView(epilegmena_antallaktika_txt);
 
         jLabel11.setText("Χιλιόμετρα");
 
@@ -285,7 +290,12 @@ public class service extends javax.swing.JFrame {
 
         jLabel19.setText("Ιστορικό Service");
 
-        pros8ikiadalaktikwn_btn.setText("Χρέωση Ανταλλακτικών");
+        goto_xrewsh_antallaktikwn_btn.setText("Χρέωση Ανταλλακτικών");
+        goto_xrewsh_antallaktikwn_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goto_xrewsh_antallaktikwn_btnActionPerformed(evt);
+            }
+        });
 
         search_numPlate_txt.setText("Αναζήτηση με Αρ. κυκλοφορίας");
         search_numPlate_txt.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +310,12 @@ public class service extends javax.swing.JFrame {
                 search_numPlate_btnActionPerformed(evt);
             }
         });
+
+        jLabel50.setText("Επιλεγμένα ανταλλακτικά");
+
+        service_notes_txt.setColumns(20);
+        service_notes_txt.setRows(5);
+        jScrollPane6.setViewportView(service_notes_txt);
 
         javax.swing.GroupLayout service_dashLayout = new javax.swing.GroupLayout(service_dash);
         service_dash.setLayout(service_dashLayout);
@@ -317,67 +333,75 @@ public class service extends javax.swing.JFrame {
                         .addComponent(search_numPlate_btn)))
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(service_dashLayout.createSequentialGroup()
+                        .addGap(29, 29, 29)
                         .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(service_dashLayout.createSequentialGroup()
-                                .addGap(29, 29, 29)
                                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                                        .addComponent(jLabel20)
-                                        .addGap(61, 61, 61))
-                                    .addGroup(service_dashLayout.createSequentialGroup()
-                                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12)
-                                            .addComponent(jLabel13)
-                                            .addComponent(jLabel15)
-                                            .addComponent(jLabel18))
-                                        .addGap(65, 65, 65)
-                                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(mileage_txt)
-                                            .addComponent(carplate_txt)
-                                            .addComponent(model_txt)
-                                            .addComponent(year_txt)
-                                            .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel10)))
-                            .addGroup(service_dashLayout.createSequentialGroup()
-                                .addGap(169, 169, 169)
-                                .addComponent(pros8ikiadalaktikwn_btn)))
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jLabel13)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel18))
+                                .addGap(65, 65, 65)
+                                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(mileage_txt)
+                                    .addComponent(carplate_txt)
+                                    .addComponent(model_txt)
+                                    .addComponent(year_txt)
+                                    .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel10)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel20))
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(goto_xrewsh_antallaktikwn_btn))
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
                         .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(ipovoli_btn)
-                                .addGap(95, 95, 95))
-                            .addGroup(service_dashLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(22, Short.MAX_VALUE))))
+                            .addComponent(jLabel50)
+                            .addComponent(new_customer_btn))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(service_dashLayout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(22, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                                .addComponent(new_customer_btn)
-                                .addGap(285, 285, 285))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 704, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
+                                .addComponent(ipovoli_btn)
+                                .addGap(138, 138, 138))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
                                 .addComponent(jLabel16)
-                                .addGap(317, 317, 317))))))
+                                .addGap(148, 148, 148))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel19)
                 .addGap(153, 153, 153))
+            .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(service_dashLayout.createSequentialGroup()
+                    .addGap(1048, 1048, 1048)
+                    .addComponent(jScrollPane6)
+                    .addGap(12, 12, 12)))
         );
         service_dashLayout.setVerticalGroup(
             service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(service_dashLayout.createSequentialGroup()
+                        .addContainerGap(53, Short.MAX_VALUE)
+                        .addComponent(jLabel19)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(194, 194, 194))
+                    .addGroup(service_dashLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel20)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
                             .addComponent(mileage_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -397,23 +421,19 @@ public class service extends javax.swing.JFrame {
                         .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
                             .addComponent(pelatis_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47))
-                    .addGroup(service_dashLayout.createSequentialGroup()
-                        .addContainerGap(53, Short.MAX_VALUE)
-                        .addComponent(jLabel19)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)))
-                .addComponent(jLabel16)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                        .addComponent(new_customer_btn)
+                        .addGap(24, 24, 24)
+                        .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel50)
+                            .addComponent(jLabel16))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)))
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ipovoli_btn)
-                    .addComponent(pros8ikiadalaktikwn_btn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(new_customer_btn)
-                .addGap(17, 17, 17))
+                    .addComponent(goto_xrewsh_antallaktikwn_btn))
+                .addGap(46, 46, 46))
             .addGroup(service_dashLayout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -422,6 +442,11 @@ public class service extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4)
                 .addContainerGap())
+            .addGroup(service_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, service_dashLayout.createSequentialGroup()
+                    .addContainerGap(392, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(77, 77, 77)))
         );
 
         parentPanel.add(service_dash, "card4");
@@ -472,14 +497,19 @@ public class service extends javax.swing.JFrame {
         jLabel46.setText("Χρέωση ανταλλακτικών");
 
         jButton1.setText("Επιβεβαίωση οχήματος");
-
-        jScrollPane6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jScrollPane6MouseClicked(evt);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
 
-        service_table1.setModel(new javax.swing.table.DefaultTableModel(
+        JScrollPane59834753498.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JScrollPane59834753498MouseClicked(evt);
+            }
+        });
+
+        antallaktika_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -490,12 +520,12 @@ public class service extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        service_table1.addMouseListener(new java.awt.event.MouseAdapter() {
+        antallaktika_table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                service_table1MouseClicked(evt);
+                antallaktika_tableMouseClicked(evt);
             }
         });
-        jScrollPane6.setViewportView(service_table1);
+        JScrollPane59834753498.setViewportView(antallaktika_table);
 
         jLabel47.setText("Κωδικός ανταλλακτικού");
 
@@ -532,6 +562,18 @@ public class service extends javax.swing.JFrame {
 
         xrewsh_antallaktikoy_btn.setText("Χρέωση ανταλλακτικού στον πελάτη");
         xrewsh_antallaktikoy_btn.setEnabled(false);
+        xrewsh_antallaktikoy_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xrewsh_antallaktikoy_btnActionPerformed(evt);
+            }
+        });
+
+        back_btn.setText("Επιστροφή");
+        back_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                back_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout xrewsh_antallaktikwn_dashLayout = new javax.swing.GroupLayout(xrewsh_antallaktikwn_dash);
         xrewsh_antallaktikwn_dash.setLayout(xrewsh_antallaktikwn_dashLayout);
@@ -565,23 +607,29 @@ public class service extends javax.swing.JFrame {
                         .addGap(84, 84, 84)
                         .addComponent(jButton1)))
                 .addGap(131, 131, 131)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addComponent(JScrollPane59834753498, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(selected_part_num, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                        .addGap(55, 55, 55)
+                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(selected_part_num, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE))
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(selected_part_name))
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(selected_part_price))
+                            .addComponent(xrewsh_antallaktikoy_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
+                        .addGap(149, 149, 149))
                     .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(selected_part_name))
-                    .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(selected_part_price))
-                    .addComponent(xrewsh_antallaktikoy_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE))
-                .addGap(149, 149, 149))
+                        .addGap(127, 127, 127)
+                        .addComponent(back_btn)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         xrewsh_antallaktikwn_dashLayout.setVerticalGroup(
             xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,35 +637,36 @@ public class service extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(jLabel46)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
-                        .addComponent(jLabel45)
-                        .addGap(26, 26, 26)
-                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mileage_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel25))
-                        .addGap(18, 18, 18)
-                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(carplate_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel27))
-                        .addGap(18, 18, 18)
-                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(model_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel29))
-                        .addGap(18, 18, 18)
-                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(year_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel43))
-                        .addGap(18, 18, 18)
-                        .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pelatis_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel44))
-                        .addGap(47, 47, 47)
-                        .addComponent(jButton1)
-                        .addGap(133, 133, 133))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
+                .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                            .addComponent(jLabel45)
+                            .addGap(26, 26, 26)
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(mileage_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel25))
+                            .addGap(18, 18, 18)
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(carplate_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel27))
+                            .addGap(18, 18, 18)
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(model_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel29))
+                            .addGap(18, 18, 18)
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(year_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel43))
+                            .addGap(18, 18, 18)
+                            .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(pelatis_txt2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel44))
+                            .addGap(47, 47, 47)
+                            .addComponent(jButton1)
+                            .addGap(133, 133, 133))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
+                            .addComponent(JScrollPane59834753498, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)))
                     .addGroup(xrewsh_antallaktikwn_dashLayout.createSequentialGroup()
                         .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel47)
@@ -630,9 +679,11 @@ public class service extends javax.swing.JFrame {
                         .addGroup(xrewsh_antallaktikwn_dashLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel49)
                             .addComponent(selected_part_price, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(37, 37, 37)
+                        .addGap(34, 34, 34)
                         .addComponent(xrewsh_antallaktikoy_btn)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(back_btn)
+                        .addGap(58, 58, 58))))
         );
 
         parentPanel.add(xrewsh_antallaktikwn_dash, "card8");
@@ -1174,7 +1225,7 @@ public class service extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void close() {
+    public void close() {
         this.setVisible(false); // FUNCTION GIA KLEISIMO PARA8IROU
         this.dispose();
     }
@@ -1308,6 +1359,7 @@ public void close() {
         parentPanel.add(service_dash);
         parentPanel.repaint();
         parentPanel.revalidate();
+        epilegmena_antalaktika_id = "";
         Update_Table("CarCustomer", service_table);
     }//GEN-LAST:event_service_btnActionPerformed
 
@@ -1483,15 +1535,17 @@ public void close() {
     private void ipovoli_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipovoli_btnActionPerformed
     
     try {
+      int timh=0;
       int row = service_table.getSelectedRow();
       String Table_click = service_table.getModel().getValueAt(row, 0).toString();
 
-      String sql = "INSERT INTO ServiceHistory (CarCostumerId, ServiceType, Description) VALUES ((SELECT CarCustomerID FROM CarCustomer WHERE CarPlate = ?), ?, ?)";
+      String sql = "INSERT INTO ServiceHistory (CarCostumerId, ServiceType, Description, partsList) VALUES ((SELECT CarCustomerID FROM CarCustomer WHERE CarPlate = ?), ?, ?, ?)";
 
       PreparedStatement pst = conn.prepareStatement(sql);
       pst.setString(1, Table_click); 
       pst.setString(2, "General Service"); 
       pst.setString(3, service_notes_txt.getText()); 
+      pst.setString(4, epilegmena_antallaktika_txt.getText()); 
 
       pst.executeUpdate();
       JOptionPane.showMessageDialog(null, "Service history added successfully.");
@@ -1500,9 +1554,27 @@ public void close() {
       PreparedStatement pst2 = conn.prepareStatement(del);
       pst2.execute();
 
-    } catch (Exception ex) {
-       JOptionPane.showMessageDialog(null, ex);
-    }
+        try{
+            String sqlSouma = "SELECT SUM(price) FROM Product WHERE part_id IN ("+ epilegmena_antalaktika_id + ")";
+            PreparedStatement _pst = conn.prepareStatement(sqlSouma);
+            ResultSet soumes = _pst.executeQuery();
+            if (soumes.next()){
+                timh = rs.getInt(1);
+            }      
+            try{
+                String PlaceOrder = "INSERT INTO Order_ (CustomerName, ProductID, MechanicName, Price) VALUES (?, ?, ?, ?)";
+                PreparedStatement pst_ = conn.prepareStatement(PlaceOrder);
+                pst_.setString(1, pelatis_txt.getText()); 
+                pst_.setString(2, epilegmena_antalaktika_id);
+                pst_.setString(3, Session.getUsername()); 
+                pst_.setInt(4, timh); 
+
+                pst_.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Service history added successfully.");
+                pst_.close();        
+            } catch (Exception ex) {JOptionPane.showMessageDialog(null, ex);}
+        }catch (Exception ex) {JOptionPane.showMessageDialog(null, ex);}  
+    }catch (Exception ex) {JOptionPane.showMessageDialog(null, ex);}
     }//GEN-LAST:event_ipovoli_btnActionPerformed
 
     private void search_numPlate_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_numPlate_txtActionPerformed
@@ -1532,13 +1604,31 @@ public void close() {
         // TODO add your handling code here:
     }//GEN-LAST:event_pelatis_txt2ActionPerformed
 
-    private void service_table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_service_table1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_service_table1MouseClicked
+    private void antallaktika_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_antallaktika_tableMouseClicked
+        xrewsh_antallaktikoy_btn.setEnabled(true);
+        
+        try {
+            int row = antallaktika_table.getSelectedRow();
+            String Table_click = (antallaktika_table.getModel().getValueAt(row, 1).toString());
+            String sql = "select * from Repairs where CarPlate='" + Table_click + "' ";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                String add1 = rs.getString("ProductID");
+                selected_part_num.setText(add1);
+                String add2 = rs.getString("ProductName");
+                selected_part_name.setText(add2);
+                String add3 = rs.getString("Price");
+                selected_part_price.setText(add3);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }//GEN-LAST:event_antallaktika_tableMouseClicked
 
-    private void jScrollPane6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane6MouseClicked
+    private void JScrollPane59834753498MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JScrollPane59834753498MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jScrollPane6MouseClicked
+    }//GEN-LAST:event_JScrollPane59834753498MouseClicked
 
     private void selected_part_numActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selected_part_numActionPerformed
         // TODO add your handling code here:
@@ -1551,6 +1641,60 @@ public void close() {
     private void selected_part_priceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selected_part_priceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_selected_part_priceActionPerformed
+
+    private void goto_xrewsh_antallaktikwn_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goto_xrewsh_antallaktikwn_btnActionPerformed
+        parentPanel.removeAll();
+        parentPanel.add(xrewsh_antallaktikwn_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        
+        try {
+            int row = service_table.getSelectedRow();
+            String Table_click = (service_table.getModel().getValueAt(row, 1).toString());
+            String sql = "select * from Repairs where CarPlate='" + Table_click + "' ";
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                String add1 = rs.getString("Mileage");
+                mileage_txt2.setText(add1);
+                String add2 = rs.getString("CarName");
+                model_txt2.setText(add2);
+                String add3 = rs.getString("Model");
+                year_txt2.setText(add3);
+                String add4 = rs.getString("OwnerName");
+                pelatis_txt2.setText(add4);
+                String add5 = rs.getString("CarPlate");
+                carplate_txt2.setText(add5);
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+    }//GEN-LAST:event_goto_xrewsh_antallaktikwn_btnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Update_Table("Products", antallaktika_table);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void xrewsh_antallaktikoy_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xrewsh_antallaktikoy_btnActionPerformed
+        String epilegmeno_id = selected_part_num.getText();
+        
+        if (epilegmena_antalaktika_id.length() == 0){
+            epilegmena_antalaktika_id += epilegmeno_id;
+        }else{
+            epilegmena_antalaktika_id += ","+epilegmeno_id;
+        }
+    }//GEN-LAST:event_xrewsh_antallaktikoy_btnActionPerformed
+
+    private void back_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_btnActionPerformed
+        parentPanel.removeAll();
+        parentPanel.add(xrewsh_antallaktikwn_dash);
+        parentPanel.repaint();
+        parentPanel.revalidate();
+        Update_Table("CarCustomer", service_table);
+        
+        epilegmena_antallaktika_txt.setText(epilegmena_antalaktika_id);
+        
+    }//GEN-LAST:event_back_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1588,13 +1732,16 @@ public void close() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane JScrollPane59834753498;
     private javax.swing.JMenu Logout_btn;
     private javax.swing.JTable Table_show;
     private javax.swing.JButton Update_DB1;
     private javax.swing.JPanel Welcome;
     private javax.swing.JButton accepttrdin_btn;
+    private javax.swing.JTable antallaktika_table;
     private javax.swing.JTextField ari8mos_txt;
     private javax.swing.JTextField ari8mos_txt1;
+    private javax.swing.JButton back_btn;
     private javax.swing.JTextField carplate_txt;
     private javax.swing.JTextField carplate_txt2;
     private javax.swing.JButton deny_btn1;
@@ -1604,8 +1751,10 @@ public void close() {
     private javax.swing.JTextField email_new_txt1;
     private javax.swing.JTextField email_txt;
     private javax.swing.JPanel epexergasia_profile;
+    private javax.swing.JTextArea epilegmena_antallaktika_txt;
     private javax.swing.JTextField eponimo_txt;
     private javax.swing.JTextField eponimo_txt1;
+    private javax.swing.JButton goto_xrewsh_antallaktikwn_btn;
     private javax.swing.JButton ipovoli_btn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -1653,6 +1802,7 @@ public void close() {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1686,7 +1836,6 @@ public void close() {
     private javax.swing.JTextField pelatis_txt1;
     private javax.swing.JTextField pelatis_txt2;
     private javax.swing.JTextField price_txt;
-    private javax.swing.JButton pros8ikiadalaktikwn_btn;
     private javax.swing.JButton save_data;
     private javax.swing.JButton search_numPlate_btn;
     private javax.swing.JTextField search_numPlate_txt;
@@ -1698,7 +1847,6 @@ public void close() {
     private javax.swing.JPanel service_dash;
     private javax.swing.JTextArea service_notes_txt;
     private javax.swing.JTable service_table;
-    private javax.swing.JTable service_table1;
     private javax.swing.JTable servicehistory_table;
     private javax.swing.JTextField telephone_txt;
     private javax.swing.JTextField telephone_txt1;
